@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DCAB63602750F86700FA27DF /* chapter_oneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB635F2750F86700FA27DF /* chapter_oneApp.swift */; };
+		DCAB63602750F86700FA27DF /* ChapterOneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB635F2750F86700FA27DF /* ChapterOneApp.swift */; };
 		DCAB63622750F86700FA27DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB63612750F86700FA27DF /* ContentView.swift */; };
 		DCAB63642750F86C00FA27DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCAB63632750F86C00FA27DF /* Assets.xcassets */; };
 		DCAB63672750F86C00FA27DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCAB63662750F86C00FA27DF /* Preview Assets.xcassets */; };
@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		DCAB635C2750F86700FA27DF /* chapter-one.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chapter-one.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCAB635F2750F86700FA27DF /* chapter_oneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter_oneApp.swift; sourceTree = "<group>"; };
+		DCAB635F2750F86700FA27DF /* ChapterOneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterOneApp.swift; sourceTree = "<group>"; };
 		DCAB63612750F86700FA27DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCAB63632750F86C00FA27DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCAB63662750F86C00FA27DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -36,6 +36,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC5F5332275124310064A84F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCAB63612750F86700FA27DF /* ContentView.swift */,
+				DCAB636D2751014F00FA27DF /* CarBrandImageView.swift */,
+				DCAB636F275102F800FA27DF /* CarDealersMapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC5F53332751243E0064A84F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC5F53342751244A0064A84F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DCAB63532750F86700FA27DF = {
 			isa = PBXGroup;
 			children = (
@@ -55,11 +79,11 @@
 		DCAB635E2750F86700FA27DF /* chapter-one */ = {
 			isa = PBXGroup;
 			children = (
-				DCAB635F2750F86700FA27DF /* chapter_oneApp.swift */,
-				DCAB63612750F86700FA27DF /* ContentView.swift */,
+				DC5F53342751244A0064A84F /* Resources */,
+				DC5F53332751243E0064A84F /* Model */,
+				DCAB635F2750F86700FA27DF /* ChapterOneApp.swift */,
+				DC5F5332275124310064A84F /* Views */,
 				DCAB63632750F86C00FA27DF /* Assets.xcassets */,
-				DCAB636D2751014F00FA27DF /* CarBrandImageView.swift */,
-				DCAB636F275102F800FA27DF /* CarDealersMapView.swift */,
 				DCAB63652750F86C00FA27DF /* Preview Content */,
 			);
 			path = "chapter-one";
@@ -145,7 +169,7 @@
 			files = (
 				DCAB63622750F86700FA27DF /* ContentView.swift in Sources */,
 				DCAB6370275102F800FA27DF /* CarDealersMapView.swift in Sources */,
-				DCAB63602750F86700FA27DF /* chapter_oneApp.swift in Sources */,
+				DCAB63602750F86700FA27DF /* ChapterOneApp.swift in Sources */,
 				DCAB636E2751014F00FA27DF /* CarBrandImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
