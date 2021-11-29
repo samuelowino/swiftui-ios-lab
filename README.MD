@@ -16,5 +16,10 @@ Create your own custom views that conform to the **View protocol** , and compose
 
 > You can also customize **accessibility** support in SwiftUI, and **localize** your app's user interface for different languages,countries and cultural regions.
 
+### Swift UI Navigation
+
+You add navigation capabilities to a view by emebedding it in a NavigationView, and then nesting each row in a **NavigationView**,
+and then nesting navigation view in a **NavigationLink** to set up a transition to a destination view.
+
 
 

@@ -34,7 +34,11 @@ import MapKit
  */
 
 
-struct CarDealersMapView: View {
+struct NationalParkMapView: View {
+    
+    var coordinate: CLLocationCoordinate2D
+    
+    @State private var region = MKCoordinateRegion()
     
     @State private var lamborghiniHQ = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 44.6722, longitude: 11.1183),
@@ -43,11 +47,20 @@ struct CarDealersMapView: View {
     
     var body: some View {
         Map(coordinateRegion: $lamborghiniHQ)
+            .onAppear(perform: {
+                setRegion(coordinate)
+            })
+    }
+    
+    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
+        lamborghiniHQ = MKCoordinateRegion(
+        center: coordinate,
+        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     }
 }
 
 struct CarDealersMapView_Previews: PreviewProvider {
     static var previews: some View {
-        CarDealersMapView()
+        NationalParkMapView(coordinate: CLLocationCoordinate2D(latitude: -30.00, longitude: 20.1))
     }
 }

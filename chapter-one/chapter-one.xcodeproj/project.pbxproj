@@ -7,30 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC5F5336275132110064A84F /* LamboDealership.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F5335275132110064A84F /* LamboDealership.swift */; };
+		DC1712042754B46A005AB964 /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1712032754B46A005AB964 /* LandmarkListView.swift */; };
+		DC5F5336275132110064A84F /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F5335275132110064A84F /* Landmark.swift */; };
 		DC5F53382751368E0064A84F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F53372751368E0064A84F /* ModelData.swift */; };
 		DC5F533A275139C40064A84F /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = DC5F5339275139C40064A84F /* landmarkData.json */; };
-		DC5F533D27513B520064A84F /* LamborghiniDealershipRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F533C27513B520064A84F /* LamborghiniDealershipRow.swift */; };
+		DC5F533D27513B520064A84F /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F533C27513B520064A84F /* LandmarkRow.swift */; };
 		DCAB63602750F86700FA27DF /* ChapterOneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB635F2750F86700FA27DF /* ChapterOneApp.swift */; };
 		DCAB63622750F86700FA27DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB63612750F86700FA27DF /* ContentView.swift */; };
 		DCAB63642750F86C00FA27DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCAB63632750F86C00FA27DF /* Assets.xcassets */; };
 		DCAB63672750F86C00FA27DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCAB63662750F86C00FA27DF /* Preview Assets.xcassets */; };
-		DCAB636E2751014F00FA27DF /* CarBrandImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB636D2751014F00FA27DF /* CarBrandImageView.swift */; };
-		DCAB6370275102F800FA27DF /* CarDealersMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB636F275102F800FA27DF /* CarDealersMapView.swift */; };
+		DCAB636E2751014F00FA27DF /* ParkCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB636D2751014F00FA27DF /* ParkCircleImageView.swift */; };
+		DCAB6370275102F800FA27DF /* NationalParkMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB636F275102F800FA27DF /* NationalParkMapView.swift */; };
+		DCDD6F2A2754CB0B00B214E8 /* LandmarkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD6F292754CB0B00B214E8 /* LandmarkDetailView.swift */; };
+		DCDD6F2C2754E44900B214E8 /* charleyrivers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F2B2754E44900B214E8 /* charleyrivers.jpg */; };
+		DCDD6F2F2754E47500B214E8 /* chincoteague.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F2E2754E47500B214E8 /* chincoteague.jpg */; };
+		DCDD6F312754E47B00B214E8 /* hiddenlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F302754E47B00B214E8 /* hiddenlake.jpg */; };
+		DCDD6F332754E48A00B214E8 /* lakemcdonald.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F322754E48A00B214E8 /* lakemcdonald.jpg */; };
+		DCDD6F352754E49200B214E8 /* rainbowlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F342754E49200B214E8 /* rainbowlake.jpg */; };
+		DCDD6F372754E49D00B214E8 /* silversalmoncreek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F362754E49D00B214E8 /* silversalmoncreek.jpg */; };
+		DCDD6F392754E4A600B214E8 /* stmarylake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F382754E4A600B214E8 /* stmarylake.jpg */; };
+		DCDD6F3B2754E4AF00B214E8 /* twinlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F3A2754E4AF00B214E8 /* twinlake.jpg */; };
+		DCDD6F3D2754E4B600B214E8 /* umbagog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F3C2754E4B600B214E8 /* umbagog.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DC5F5335275132110064A84F /* LamboDealership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamboDealership.swift; sourceTree = "<group>"; };
+		DC1712032754B46A005AB964 /* LandmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
+		DC5F5335275132110064A84F /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		DC5F53372751368E0064A84F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		DC5F5339275139C40064A84F /* landmarkData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
-		DC5F533C27513B520064A84F /* LamborghiniDealershipRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamborghiniDealershipRow.swift; sourceTree = "<group>"; };
+		DC5F533C27513B520064A84F /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
 		DCAB635C2750F86700FA27DF /* chapter-one.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chapter-one.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCAB635F2750F86700FA27DF /* ChapterOneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterOneApp.swift; sourceTree = "<group>"; };
 		DCAB63612750F86700FA27DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCAB63632750F86C00FA27DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCAB63662750F86C00FA27DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DCAB636D2751014F00FA27DF /* CarBrandImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandImageView.swift; sourceTree = "<group>"; };
-		DCAB636F275102F800FA27DF /* CarDealersMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDealersMapView.swift; sourceTree = "<group>"; };
+		DCAB636D2751014F00FA27DF /* ParkCircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkCircleImageView.swift; sourceTree = "<group>"; };
+		DCAB636F275102F800FA27DF /* NationalParkMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalParkMapView.swift; sourceTree = "<group>"; };
+		DCDD6F292754CB0B00B214E8 /* LandmarkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailView.swift; sourceTree = "<group>"; };
+		DCDD6F2B2754E44900B214E8 /* charleyrivers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charleyrivers.jpg; sourceTree = "<group>"; };
+		DCDD6F2E2754E47500B214E8 /* chincoteague.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chincoteague.jpg; sourceTree = "<group>"; };
+		DCDD6F302754E47B00B214E8 /* hiddenlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hiddenlake.jpg; sourceTree = "<group>"; };
+		DCDD6F322754E48A00B214E8 /* lakemcdonald.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lakemcdonald.jpg; sourceTree = "<group>"; };
+		DCDD6F342754E49200B214E8 /* rainbowlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbowlake.jpg; sourceTree = "<group>"; };
+		DCDD6F362754E49D00B214E8 /* silversalmoncreek.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silversalmoncreek.jpg; sourceTree = "<group>"; };
+		DCDD6F382754E4A600B214E8 /* stmarylake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stmarylake.jpg; sourceTree = "<group>"; };
+		DCDD6F3A2754E4AF00B214E8 /* twinlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twinlake.jpg; sourceTree = "<group>"; };
+		DCDD6F3C2754E4B600B214E8 /* umbagog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = umbagog.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				DCAB63612750F86700FA27DF /* ContentView.swift */,
-				DCAB636D2751014F00FA27DF /* CarBrandImageView.swift */,
-				DCAB636F275102F800FA27DF /* CarDealersMapView.swift */,
-				DC5F533C27513B520064A84F /* LamborghiniDealershipRow.swift */,
+				DCAB636D2751014F00FA27DF /* ParkCircleImageView.swift */,
+				DCAB636F275102F800FA27DF /* NationalParkMapView.swift */,
+				DC5F533C27513B520064A84F /* LandmarkRow.swift */,
+				DC1712032754B46A005AB964 /* LandmarkListView.swift */,
+				DCDD6F292754CB0B00B214E8 /* LandmarkDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -58,7 +82,7 @@
 		DC5F53332751243E0064A84F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DC5F5335275132110064A84F /* LamboDealership.swift */,
+				DC5F5335275132110064A84F /* Landmark.swift */,
 				DC5F53372751368E0064A84F /* ModelData.swift */,
 			);
 			path = Model;
@@ -76,6 +100,15 @@
 		DC5F533B275139DB0064A84F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DCDD6F3C2754E4B600B214E8 /* umbagog.jpg */,
+				DCDD6F3A2754E4AF00B214E8 /* twinlake.jpg */,
+				DCDD6F382754E4A600B214E8 /* stmarylake.jpg */,
+				DCDD6F362754E49D00B214E8 /* silversalmoncreek.jpg */,
+				DCDD6F342754E49200B214E8 /* rainbowlake.jpg */,
+				DCDD6F322754E48A00B214E8 /* lakemcdonald.jpg */,
+				DCDD6F302754E47B00B214E8 /* hiddenlake.jpg */,
+				DCDD6F2E2754E47500B214E8 /* chincoteague.jpg */,
+				DCDD6F2B2754E44900B214E8 /* charleyrivers.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -175,9 +208,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDD6F3D2754E4B600B214E8 /* umbagog.jpg in Resources */,
+				DCDD6F332754E48A00B214E8 /* lakemcdonald.jpg in Resources */,
 				DCAB63672750F86C00FA27DF /* Preview Assets.xcassets in Resources */,
 				DCAB63642750F86C00FA27DF /* Assets.xcassets in Resources */,
+				DCDD6F372754E49D00B214E8 /* silversalmoncreek.jpg in Resources */,
 				DC5F533A275139C40064A84F /* landmarkData.json in Resources */,
+				DCDD6F2C2754E44900B214E8 /* charleyrivers.jpg in Resources */,
+				DCDD6F392754E4A600B214E8 /* stmarylake.jpg in Resources */,
+				DCDD6F352754E49200B214E8 /* rainbowlake.jpg in Resources */,
+				DCDD6F312754E47B00B214E8 /* hiddenlake.jpg in Resources */,
+				DCDD6F2F2754E47500B214E8 /* chincoteague.jpg in Resources */,
+				DCDD6F3B2754E4AF00B214E8 /* twinlake.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,11 +231,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCAB63622750F86700FA27DF /* ContentView.swift in Sources */,
-				DCAB6370275102F800FA27DF /* CarDealersMapView.swift in Sources */,
-				DC5F5336275132110064A84F /* LamboDealership.swift in Sources */,
+				DCDD6F2A2754CB0B00B214E8 /* LandmarkDetailView.swift in Sources */,
+				DCAB6370275102F800FA27DF /* NationalParkMapView.swift in Sources */,
+				DC5F5336275132110064A84F /* Landmark.swift in Sources */,
+				DC1712042754B46A005AB964 /* LandmarkListView.swift in Sources */,
 				DCAB63602750F86700FA27DF /* ChapterOneApp.swift in Sources */,
-				DCAB636E2751014F00FA27DF /* CarBrandImageView.swift in Sources */,
-				DC5F533D27513B520064A84F /* LamborghiniDealershipRow.swift in Sources */,
+				DCAB636E2751014F00FA27DF /* ParkCircleImageView.swift in Sources */,
+				DC5F533D27513B520064A84F /* LandmarkRow.swift in Sources */,
 				DC5F53382751368E0064A84F /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

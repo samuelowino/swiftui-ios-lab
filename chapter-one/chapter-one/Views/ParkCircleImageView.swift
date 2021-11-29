@@ -14,9 +14,11 @@ import SwiftUI
  Replace the default tex with Image
  */
 
-struct CarBrandImageView: View {
+struct ParkCircleImageView: View {
+    var image: Image
     var body: some View {
-        Image("lambo")
+        image
+            .frame(width: 120, height: 120)
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.white, lineWidth: 4)
@@ -27,6 +29,6 @@ struct CarBrandImageView: View {
 
 struct CarBrandImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CarBrandImageView()
+        ParkCircleImageView(image: Image("twinlake"))
     }
 }

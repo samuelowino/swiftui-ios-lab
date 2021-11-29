@@ -38,4 +38,4 @@ func load<T: Decodable>(_ fileName: String) -> T {
     }
 }
 
-var lamborghiniDealers: [LamboDealership] = load("landmarkData.json")
+var lamborghiniDealers: [Landmark] = load("landmarkData.json")

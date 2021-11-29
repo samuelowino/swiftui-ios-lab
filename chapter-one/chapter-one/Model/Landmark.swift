@@ -17,9 +17,13 @@ import CoreLocation
  Add a coordinates property to the structure using a nested Coordinates type that reflexts the storage in the JSON data structure.
  
 var coordinates is marked as private because its only used to create a public computed property -locationCoordinate
+ 
+ Making the Model conform to the Identifiable protocol makes it possible to omit the id property in the DealershipListView
+ as long as their is a unique id for each element. The id property is used to decode it when reading the data.
+ 
  */
 
-struct LamboDealership: Hashable, Codable {
+struct Landmark: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     var park: String

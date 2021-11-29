@@ -23,34 +23,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        VStack {
-            
-            CarDealersMapView()
-                .ignoresSafeArea(edges: .top)
-                .frame(height: 300)
-            
-            CarBrandImageView()
-                .offset(y: -230)
-                .padding(.bottom, -230)
-            
-            VStack(alignment: .leading) {
-                Text("Lamborghini HQ")
-                    .textCase(.none)
-                    .foregroundColor(.blue)
-                    .font(.title)
-                
-                HStack {
-                    Text("Lamborghini Global Head Quaters")
-                        .font(.subheadline)
-                    Spacer()
-                    Text("Main Dealership")
-                        .font(.subheadline)
-                }
-            }
-            .padding()
-            Spacer()
-        }
+        LandmarkListView()
     }
 }
 
