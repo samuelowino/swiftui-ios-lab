@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC5F5336275132110064A84F /* LamboDealership.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F5335275132110064A84F /* LamboDealership.swift */; };
+		DC5F53382751368E0064A84F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F53372751368E0064A84F /* ModelData.swift */; };
+		DC5F533A275139C40064A84F /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = DC5F5339275139C40064A84F /* landmarkData.json */; };
+		DC5F533D27513B520064A84F /* LamborghiniDealershipRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F533C27513B520064A84F /* LamborghiniDealershipRow.swift */; };
 		DCAB63602750F86700FA27DF /* ChapterOneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB635F2750F86700FA27DF /* ChapterOneApp.swift */; };
 		DCAB63622750F86700FA27DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB63612750F86700FA27DF /* ContentView.swift */; };
 		DCAB63642750F86C00FA27DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCAB63632750F86C00FA27DF /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC5F5335275132110064A84F /* LamboDealership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamboDealership.swift; sourceTree = "<group>"; };
+		DC5F53372751368E0064A84F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		DC5F5339275139C40064A84F /* landmarkData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
+		DC5F533C27513B520064A84F /* LamborghiniDealershipRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamborghiniDealershipRow.swift; sourceTree = "<group>"; };
 		DCAB635C2750F86700FA27DF /* chapter-one.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chapter-one.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCAB635F2750F86700FA27DF /* ChapterOneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterOneApp.swift; sourceTree = "<group>"; };
 		DCAB63612750F86700FA27DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +50,7 @@
 				DCAB63612750F86700FA27DF /* ContentView.swift */,
 				DCAB636D2751014F00FA27DF /* CarBrandImageView.swift */,
 				DCAB636F275102F800FA27DF /* CarDealersMapView.swift */,
+				DC5F533C27513B520064A84F /* LamborghiniDealershipRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -49,6 +58,8 @@
 		DC5F53332751243E0064A84F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DC5F5335275132110064A84F /* LamboDealership.swift */,
+				DC5F53372751368E0064A84F /* ModelData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -56,8 +67,17 @@
 		DC5F53342751244A0064A84F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DC5F533B275139DB0064A84F /* images */,
+				DC5F5339275139C40064A84F /* landmarkData.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DC5F533B275139DB0064A84F /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		DCAB63532750F86700FA27DF = {
@@ -157,6 +177,7 @@
 			files = (
 				DCAB63672750F86C00FA27DF /* Preview Assets.xcassets in Resources */,
 				DCAB63642750F86C00FA27DF /* Assets.xcassets in Resources */,
+				DC5F533A275139C40064A84F /* landmarkData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,8 +190,11 @@
 			files = (
 				DCAB63622750F86700FA27DF /* ContentView.swift in Sources */,
 				DCAB6370275102F800FA27DF /* CarDealersMapView.swift in Sources */,
+				DC5F5336275132110064A84F /* LamboDealership.swift in Sources */,
 				DCAB63602750F86700FA27DF /* ChapterOneApp.swift in Sources */,
 				DCAB636E2751014F00FA27DF /* CarBrandImageView.swift in Sources */,
+				DC5F533D27513B520064A84F /* LamborghiniDealershipRow.swift in Sources */,
+				DC5F53382751368E0064A84F /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
