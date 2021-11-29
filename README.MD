@@ -22,4 +22,34 @@ You add navigation capabilities to a view by emebedding it in a NavigationView, 
 and then nesting navigation view in a **NavigationLink** to set up a transition to a destination view.
 
 
+### Data Binding
+```
+@EnvironmentObject annotation is used in views that lower down in the view hierarchy to receive data from views that are higher up.
+```
+
+```
+The **environmentObject(_:) modifier can be applied so that views further down in the view hierarchy can read data objects passed down through the environment.
+```
+
+> Binding is a value and a way to change that value.
+
+```
+A binding controls the storage for a value, so you can pass data around to different views that need to read or write it.
+
+You can use binding to plumb data throughout your app's views; bindings aren't limited to just two views.
+
+```
+### Creating State for a View
+
+> **@State** 
+
+```
+Use the @State property wrapper to mark a value as state, declare the property as private, and give it a a default value.
+
+@State private var showFavoritesOnly = false
+
+@State private var defaultCountry = "Kenya"
+
+```
+
 

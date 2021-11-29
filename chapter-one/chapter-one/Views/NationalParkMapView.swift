@@ -40,20 +40,20 @@ struct NationalParkMapView: View {
     
     @State private var region = MKCoordinateRegion()
     
-    @State private var lamborghiniHQ = MKCoordinateRegion(
+    @State private var landmarkRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 44.6722, longitude: 11.1183),
         span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
     )
     
     var body: some View {
-        Map(coordinateRegion: $lamborghiniHQ)
+        Map(coordinateRegion: $landmarkRegion)
             .onAppear(perform: {
                 setRegion(coordinate)
             })
     }
     
     private func setRegion(_ coordinate: CLLocationCoordinate2D) {
-        lamborghiniHQ = MKCoordinateRegion(
+        landmarkRegion = MKCoordinateRegion(
         center: coordinate,
         span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     }

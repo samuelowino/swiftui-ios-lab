@@ -28,6 +28,7 @@
 		DCDD6F392754E4A600B214E8 /* stmarylake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F382754E4A600B214E8 /* stmarylake.jpg */; };
 		DCDD6F3B2754E4AF00B214E8 /* twinlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F3A2754E4AF00B214E8 /* twinlake.jpg */; };
 		DCDD6F3D2754E4B600B214E8 /* umbagog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDD6F3C2754E4B600B214E8 /* umbagog.jpg */; };
+		DCDD6F402755223300B214E8 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD6F3F2755223200B214E8 /* FavoriteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		DCDD6F382754E4A600B214E8 /* stmarylake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stmarylake.jpg; sourceTree = "<group>"; };
 		DCDD6F3A2754E4AF00B214E8 /* twinlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twinlake.jpg; sourceTree = "<group>"; };
 		DCDD6F3C2754E4B600B214E8 /* umbagog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = umbagog.jpg; sourceTree = "<group>"; };
+		DCDD6F3F2755223200B214E8 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		DCAB635E2750F86700FA27DF /* chapter-one */ = {
 			isa = PBXGroup;
 			children = (
+				DCDD6F3E2755221B00B214E8 /* CustomViews */,
 				DC5F53342751244A0064A84F /* Resources */,
 				DC5F53332751243E0064A84F /* Model */,
 				DCAB635F2750F86700FA27DF /* ChapterOneApp.swift */,
@@ -148,6 +151,14 @@
 				DCAB63662750F86C00FA27DF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DCDD6F3E2755221B00B214E8 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				DCDD6F3F2755223200B214E8 /* FavoriteButton.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 				DCAB63622750F86700FA27DF /* ContentView.swift in Sources */,
 				DCDD6F2A2754CB0B00B214E8 /* LandmarkDetailView.swift in Sources */,
 				DCAB6370275102F800FA27DF /* NationalParkMapView.swift in Sources */,
+				DCDD6F402755223300B214E8 /* FavoriteButton.swift in Sources */,
 				DC5F5336275132110064A84F /* Landmark.swift in Sources */,
 				DC1712042754B46A005AB964 /* LandmarkListView.swift in Sources */,
 				DCAB63602750F86700FA27DF /* ChapterOneApp.swift in Sources */,

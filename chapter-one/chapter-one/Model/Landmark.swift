@@ -21,6 +21,18 @@ var coordinates is marked as private because its only used to create a public co
  Making the Model conform to the Identifiable protocol makes it possible to omit the id property in the DealershipListView
  as long as their is a unique id for each element. The id property is used to decode it when reading the data.
  
+ =================
+ Binding
+ =================
+ A binding acts as a refence to a mutable state. When a user taps the toggle from off to on, and off a gain, the control uses the binding to udate the view's state accordingly.
+ 
+ ==================
+ Observable Objects
+ ==================
+ A observable object is a custom object for your data that can be bound to a view from storage in SwiftUI's environment.
+ SwiftUI watches for any changes to observable objects that could affect a view, and displays the correct version of the view after a change.
+ Swift UI subscribes to your observable object, and updates any views that need refreshing when the data changes.
+ 
  */
 
 struct Landmark: Hashable, Codable, Identifiable {
@@ -28,7 +40,8 @@ struct Landmark: Hashable, Codable, Identifiable {
     var name: String
     var park: String
     var state: String
-    var description:String
+    var description: String
+    var isFavorite: Bool
     private var imageName: String
     private var coordinates: Coordinates
 

@@ -10,44 +10,52 @@ import MapKit
 
 struct LandmarkDetailView: View {
     
-    var dealership:Landmark
+    @EnvironmentObject var modelData:ModelData
+    
+    var landmark:Landmark
+    
+    var landmarkIndex:Int {
+        modelData.landmarks.firstIndex(where: {data in data.id == landmark.id})!
+    }
     
     var body: some View {
         ScrollView {
             
-            NationalParkMapView(coordinate: dealership.locationCoordinates)
+            NationalParkMapView(coordinate: landmark.locationCoordinates)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
-            ParkCircleImageView(image: dealership.image)
+            ParkCircleImageView(image: landmark.image)
                 .offset(y: -230)
                 .padding(.bottom, -230)
             
-            VStack {
-                VStack(alignment: .leading) {
-                    Text(dealership.name)
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(landmark.name)
                         .textCase(.none)
                         .foregroundColor(.blue)
                         .font(.title)
                     
-                    HStack {
-                        Text(dealership.state)
-                            .font(.subheadline)
-                        Spacer()
-                        Text(dealership.park)
-                            .font(.subheadline)
-                    }
-                    
-                    Text("About \(dealership.name)")
-                        .font(.title2)
-                    
-                    Text(dealership.description)
+                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
                 }
-                .padding()
-                Spacer()
+                
+                HStack {
+                    Text(landmark.state)
+                        .font(.subheadline)
+                    Spacer()
+                    Text(landmark.park)
+                        .font(.subheadline)
+                }
+                
+                Text("About \(landmark.name)")
+                    .font(.title2)
+                
+                Text(landmark.description)
             }
+            .padding()
+            Spacer()
         }
-        .navigationTitle(dealership.name)
+        .navigationTitle(landmark.name)
         .navigationBarTitleDisplayMode(.inline)
     }
        
@@ -55,6 +63,6 @@ struct LandmarkDetailView: View {
 
 struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetailView(dealership: lamborghiniDealers[0])
+        LandmarkDetailView(landmark: ModelData().landmarks[0])
     }
 }

@@ -9,32 +9,38 @@ import SwiftUI
 
 struct LandmarkRow: View {
     
-    var dealership: Landmark
+    var landmark: Landmark
     
     var body: some View {
         HStack {
-            dealership.image
+            landmark.image
                 .resizable()
                 .frame(width: 50, height: 50)
             
             VStack {
-                Text(dealership.name)
-                Text(dealership.park)
+                Text(landmark.name)
+                Text(landmark.park)
                     .lineLimit(1)
             }
             
             Spacer()
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
         }
     }
 }
 
 struct LandmarkRow_Previews: PreviewProvider {
+    static var landmarks = ModelData().landmarks
     static var previews: some View {
         Group {
-                LandmarkRow(dealership: lamborghiniDealers[1])
+            LandmarkRow(landmark: landmarks[1])
                 .previewLayout(.fixed(width: 300, height: 70))
             
-                    LandmarkRow(dealership: lamborghiniDealers[6])
+                    LandmarkRow(landmark: landmarks[6])
                         .previewLayout(.fixed(width: 300, height: 70))
         }
     }
