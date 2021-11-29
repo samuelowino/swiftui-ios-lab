@@ -61,4 +61,28 @@ declare the property as private, and give it a a default value.
 
 ```
 
+### Drawing Paths and Shapes
+
+> **GeometryReader
+
+You use GeometryReader to dynamically drawa, position, and size views instead of hard-coding number that might not
+be correct when you reuse a view somewhere else in your app, or on a difference sized display.
+
+**GeometryReader** dynamically reports size and position information about the parent view and the device, and updates whenever the size changes; for example, when the user rotates their iPhone.
+
+> **ZStack**
+
+ZStack overlays views on top of each other
+
+```
+
+ZStack {
+   Circle().fill(.green)
+   Circle().fill(.yellow).scaleEffect(0.8)
+   Circle().fill(.orange).scaleEffect(0.6)
+   Circle().fill(.red).scaleEffect(0.4)
+}
+
+```
+
 
