@@ -28,7 +28,7 @@ struct LandmarkRow: View {
     }
 }
 
-struct LamborghiniDealershipRow_Previews: PreviewProvider {
+struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
                 LandmarkRow(dealership: lamborghiniDealers[1])

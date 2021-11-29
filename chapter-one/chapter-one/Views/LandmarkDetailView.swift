@@ -53,7 +53,7 @@ struct LandmarkDetailView: View {
        
 }
 
-struct DealershipDetailView_Previews: PreviewProvider {
+struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
         LandmarkDetailView(dealership: lamborghiniDealers[0])
     }

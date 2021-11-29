@@ -27,7 +27,7 @@ struct ParkCircleImageView: View {
     }
 }
 
-struct CarBrandImageView_Previews: PreviewProvider {
+struct ParkCircleImageView_Previews: PreviewProvider {
     static var previews: some View {
         ParkCircleImageView(image: Image("twinlake"))
     }

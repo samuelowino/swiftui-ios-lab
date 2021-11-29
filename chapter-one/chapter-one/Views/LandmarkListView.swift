@@ -31,7 +31,7 @@ struct LandmarkListView: View {
     }
 }
 
-struct DealershipListView_Previews: PreviewProvider {
+struct LandmarkListView_Previews: PreviewProvider {
     static var previews: some View {
         LandmarkListView()
     }

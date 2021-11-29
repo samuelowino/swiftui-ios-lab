@@ -59,7 +59,7 @@ struct NationalParkMapView: View {
     }
 }
 
-struct CarDealersMapView_Previews: PreviewProvider {
+struct NationalParkMapView_Previews: PreviewProvider {
     static var previews: some View {
         NationalParkMapView(coordinate: CLLocationCoordinate2D(latitude: -30.00, longitude: 20.1))
     }
