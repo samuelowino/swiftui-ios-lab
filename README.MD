@@ -302,5 +302,37 @@ Style a navigation view by modifying it with the **navigationViewStyle(_:)**
 Use other modifiers, like **navigationTitle()**, on views presented by navigation view to customize the navigation interface for the presented view.
 
 
+> **NavigationLink**
+
+A view that controls a navigation presentation
+
+```
+
+Declaration
+
+struct NavigationLink<Label, Destination> where Label: View, Destination : View
+
+```
+
+Users click or tap a navigation link to present a view inside a NavigationView.
+You control the visual appearance of the link by providing view content in the link's trailing closure.
+
+```
+
+NavigationLink(destination: FolderList(id: workFolder.id)) {
+    Label("Work Folder", systemImage: "folder")
+}
+
+```
+
+For link composed only of text, you can use one of the convinience initializers that takes a string and creates a **Text** view for you.
+
+```
+
+NavigationLink("Work Folder", destination: FolderList(id: workFolder.id))
+
+```
+
+
 
 
