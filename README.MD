@@ -262,4 +262,45 @@ Toggle("Checkout Enabled", isOn: $model.isEnabled)
 
 ```
 
+## Navigation
+
+![Swift Logo](NavigationView-1_dark@2x.png)
+
+> **NavigationView**
+
+A view for presenting a stack of views that represents a visible path in a navigation hierarchy.
+
+```
+
+Declaration
+
+struct NavigationView<Content> where Content: View
+
+```
+
+Use a **NavigationView** to create a *navigation-based app* in which the user can traverse a collection of views.
+Users navigate to a destination view by selectiong a **NavigationLink** that you provide.
+
+On **iPadOS** and **macOS**, the destination content appears in the text column. Other platforms push a new view onto the stack and enable removing items from the stack with platform specific controls, like a Back button or a swipe gesture.
+
+Use the **init(content:)** initializer to create a navigation view that directly associates navigation links and their destination views:
+
+```
+
+NavigationView {
+    List(model.notes) { note in 
+        NavigationLink(note.title, destination: NoteEditor(id: note.id))
+    }
+    
+    Text("Select a note entry")
+}
+
+```
+
+Style a navigation view by modifying it with the **navigationViewStyle(_:)**
+
+Use other modifiers, like **navigationTitle()**, on views presented by navigation view to customize the navigation interface for the presented view.
+
+
+
 
