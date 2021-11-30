@@ -333,6 +333,90 @@ NavigationLink("Work Folder", destination: FolderList(id: workFolder.id))
 
 ```
 
+## Layouts
+
+### VStack
+
+> A view that arranges its children in a vertical line.
+
+```
+
+Declaration
+
+@frozen struct VStack<Content> where Content: View
+
+```
+
+Unlike **LazyVStack**, which only renders the views when your app needs to display them onscreen, a VStack renders the views all at once, regardless of whether they are on- or offscreen.
+
+Use the regular VStack when you have a small number of child views or don't want the delayed rendering behaviour of the "lazy" version.
+
+```
+
+//Example
+
+var body: some View {
+    VStack(alignment: .leading, spacing: 10) {
+        ForEach(1..10, id: \.self){
+            Text("Item \($0)")
+        }
+    }
+}
+
+```
+
+### HStack
+
+> A view that arranges its children in a horizontal line.
+
+```
+
+Declaration
+
+@frozen struct HStack<Content> where Content: View
+
+```
+
+Unlike **LazyHStack**, which only renders the views when your app needs to display them onscreen, an HStack renders the views all at once, regardless of whether they are on- or offscreen. 
+
+```
+
+var body: some View {
+    HStack(
+        alignment: .top,
+        spacing: 10
+    ) {
+        ForEach(
+            1...5,
+            id: \.self
+        ) {
+            Text("Item \($0)")
+        }
+    }
+}
+
+```
+
+### ScrollView
+
+> Scrollable view.
+
+The scroll view displays its contents within the scrollable content region. 
+ScrollView can scroll vertically, horizontally or both.
+
+```
+
+var body: some View {
+    ScrollView {
+        VStack(alignment: .leading) {
+            ForEach(0..<100) {
+                Text("Row \($0)")
+            }
+        }   
+    }
+}
+
+```
 
 
 
