@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject private var modelData: ModelData
+    @StateObject private var modelData: ModelData = ModelData()
     
     var body: some View {
         HikeView(hike:modelData.hikes[0])
