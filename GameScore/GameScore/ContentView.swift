@@ -11,12 +11,17 @@ struct ContentView: View {
     
     @StateObject var settings = GameSettings()
     
+    @State private var scoreIncreases: Int = 0
+    
     var body: some View {
         NavigationView {
             VStack {
                 
+                Text("Score has increased by \(scoreIncreases)")
+                
                 Button("Increase Score") {
                     settings.score += 1
+                    scoreIncreases += 1
                 }
                 
                 NavigationLink(destination: ScoreView()) {
