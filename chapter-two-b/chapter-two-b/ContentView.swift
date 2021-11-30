@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject private var modelData: ModelData
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        HikeView(hike:modelData.hikes[0])
     }
 }
 
