@@ -43,6 +43,7 @@
 		DCA3CD0C27578455005B7245 /* hikeData.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA3CD0B27578455005B7245 /* hikeData.json */; };
 		DCA3CD0F2757A43E005B7245 /* ParkBrandEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3CD0E2757A43E005B7245 /* ParkBrandEnvironmentKey.swift */; };
 		DCA3CD112757A527005B7245 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3CD102757A527005B7245 /* ViewExtensions.swift */; };
+		DCA3CD142757B11C005B7245 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3CD132757B11C005B7245 /* ProfileEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		DCA3CD0B27578455005B7245 /* hikeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hikeData.json; sourceTree = "<group>"; };
 		DCA3CD0E2757A43E005B7245 /* ParkBrandEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkBrandEnvironmentKey.swift; sourceTree = "<group>"; };
 		DCA3CD102757A527005B7245 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		DCA3CD132757B11C005B7245 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				DCA3CCF027577A2F005B7245 /* ProfileSummaryView.swift */,
 				DCA3CCF227577D5A005B7245 /* HikeBadgeView.swift */,
 				DCA3CD0127578323005B7245 /* HikeView.swift */,
+				DCA3CD132757B11C005B7245 /* ProfileEditor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				DCA3CD112757A527005B7245 /* ViewExtensions.swift in Sources */,
 				DCA3CD0F2757A43E005B7245 /* ParkBrandEnvironmentKey.swift in Sources */,
 				DCA3CCFC27577F3B005B7245 /* HexagonParameters.swift in Sources */,
+				DCA3CD142757B11C005B7245 /* ProfileEditor.swift in Sources */,
 				DCA3CCFE27577F6A005B7245 /* HikeBadge.swift in Sources */,
 				DCA3CD0027577F8D005B7245 /* RotatedBadgeSymbol.swift in Sources */,
 				DC6C13F727569C5D0057D6F4 /* Tab.swift in Sources */,
