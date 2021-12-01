@@ -333,6 +333,8 @@ NavigationLink("Work Folder", destination: FolderList(id: workFolder.id))
 
 ```
 
+- - -
+
 ## Layouts
 
 ### VStack
@@ -397,6 +399,8 @@ var body: some View {
 
 ```
 
+- - -
+
 ### ScrollView
 
 > Scrollable view.
@@ -418,5 +422,246 @@ var body: some View {
 
 ```
 
+- - -
+
+## Date and Time
+
+> **Date**
+
+A specific point in time, independent of any calendar or time zone.
+
+```
+
+Declaration
+
+struct Date
+
+```
+
+A date value encapsulates a single point in time, independent of any particular calendrical system or time zone. Date values represent a time interval relative to an absolute reference date.
+
+The Date structure provides methods for comparing dates, calculating the time interval between two date and creating a new date from a time interval relative to another date.
+
+Use date values in conjuction with **DateFormatter** instances to create localized representations of date and times and with instances to perform calendar sirthmentic.
+
+> **DateFormatter**
+
+A formatter that converts between dates and their textual representations.
+
+```
+
+Declaration
+
+class DateFormatter: Formatter
+
+```
+
+Instances of DateFormatter creat string representations of **NSDate** objects, and convert textual representations of dates and times into **NSDate** objects.
+
+### Working with User-Visible Representations of Dates and Times
+
+When displaying a date to a user, you set the **dateStyle** and **timeStyle** properties of the dateFormatter according to your particular needs.
+For example, if you want to show the month, data and year without showing the time, you would set the **dateStyle** property to **DateFormatter.Style.long** property to **DateFormatter.Style.long** .
+
+```
+
+let dateFormatter = DateFormatter()
+dateFormatter.dateStyle = .medium
+dateFormatter.timeStyle = .none
+
+let date = Date()
+
+//US english locale (en_US)
+
+dateFormatter.locale = Locale(indentifier: "en_US")
+
+```
+
+If you want to define a format that cannot be achieved using the predefines styles, you can use the **setLocalizedDateFormatFromTemplate()** to specify a localized date format fromm a template.
+
+```
+
+let dateFormatter = DateFormatter()
+let date = Date()
+
+dateFormatter.locale = Locale(identifier: "en_GB")
+dateFormatter.setLocalizedDateFromTemplate("MMMMd")
+
+```
+
+
+> **Calendar**
+
+A definition of the relationships between calendar units (such as eras, years and weekdays) and absolute points in time, providing calculation and comparison of date.
+
+
+- - -
+
+## CaseIterable Protocol
+
+A type that provides a collection of all of its values
+
+```
+
+Declaration
+
+protocol CaseIterable
+
+```
+
+When using a **CaseIterable type**, you can access a collection of all the type's cases by using the type's **allCases property**.
+
+```
+
+enum CompassDirection: CaseIterable {
+    case north, south, east, west
+}
+
+print("There are \(CompassDirection.allCases.count) directions.")
+
+//prints "There are 4  directions."
+
+let caseList = CompassDirection.allCases
+                                .map({case "\(case)"})
+                                .joined(seperator: ", ")
+                                
+// caseList contains ==> "north, south, east, west"
+
+```
+
+You can take advantage of this compiler support when defining your own custom enumeration by declaring conformance to **CaseIterable** in the enumeration's original declaration. 
+
+
+- - -
+
+## Environment @Environment
+
+A property wrapper that reads a value from a view's environment.
+
+Use the **Environment property** wrapper to read a value stored in a view's environment. Indicate the value to read using an **EnvironmentValues** key path in the property declaration.
+For example you an create a property that read the color scheme of the current view using the key path of the **colorScheme** property.
+
+```
+
+@Environment(\.colorScheme) var colorScheme: ColorScheme
+
+or
+
+@Environment(\.editMode) var editMode: EditMode
+
+```
+
+You can condition a view's content on the associated value, which you can read from the declared property's **wrapperValue**. As with any property wrapper, you access the wrapped value by directly referrring to the property:
+
+```
+
+if colorScheme == .dark { //checks the wrapped value
+    DarkContentView()
+} else {
+    LightContentView()
+}
+
+```
+
+If the value changes, SwiftUI updates any parts of your view that depends on the value. For example is user changes the Appearance settings.
+
+> NOTE: You can use this property wrapper to *read* -- but *not set* - an environment value. SwiftUI updates some environment values automatically based on system settings and providers reasonable defaults for others. 
+
+> You can override some of these as well as set custom environment vqlues that you define, using the **environment() view modifier**
+
+### EnvironmentValues
+
+A collection of environment values propagated through a view hierarchy.
+
+SwiftUI exposes a collection of values to your app's views in an environmentValues structures.
+To read a value from the structure, declare a property using the **Environement** property wrapper and specify the value's key path. 
+
+```
+//You can read the current locale
+
+@Environment(\.locale) var locale: Locale
+
+```
+
+Use the property you declare to dynamically control a view's layout. SwiftUI automatically sets or updates many environment values, like **pixelLength**, **scenePhase** or **Locale**, based on device characteristics, system state or user settings.
+
+You can set or override some values using the **environemtn()** view modifier:
+
+```
+
+MyView()
+    .environment(\.lineLimit, 2)
+    
+```
+
+The value that you set affects the environment for the view that you modify- *includingin its descendants in the view hierarchy* - but only upto the point where you apply a different environment modifier.
+
+
+SwiftUI provides dedicated view modifiers for setting some values, whcih typically makes your code easier to read.
+For example, rather thatn setting the **lineLimit** value directly, as in the previous example, you should instead use the **lineLimit()** modifier:
+
+```
+
+MyView()
+    .lineLimit(2)
+    
+```
+
+```
+
+MyVeiw()
+    .popover(isPresented: $isPopped) {
+        PopoverContent()
+            .preferredColorScheme(.dark)
+    }
+
+```
+
+> **Custom Environment values**
+
+Create custom environment values by defining a type that conforms to the **EnvironmentKey** protocol, and then **extending** the environment values structure with a new property. Use your key to **get** and **set** the value, and provide a dedicated modifier for clients to use when setting the value:
+
+```
+
+private struct MyEnvironmentKey: EnvironmentKey {
+    static let defaultValue: String = "Default value"
+}
+
+extension EnvironmentValues {
+    var myCustomValue: String {
+        get { self[MyEnvironmentKey.self]}
+        set { self[MyEnviromentKey.self] = newValue }
+    }
+}
+
+extension View {
+    func myCustomValue(_ myCustomValue: String) -> some View {
+        environment(\.myCustomValue, myCustomValue)
+    }
+}
+
+```
+
+Clients of your value then access the value in the usual way, reading it with the **Environment** property wrapper and setting it with the **myCustomValue** view modifier.
+
+> **WrappedValue**
+
+The current value of the environment propery
+
+The wrapped value property provides primary access to the value's data. However, you don't access wrapped value directed. Instead, you read the property variable created with the environment property wrapper:
+
+```
+
+@Environment(\.colorScheme) var colorScheme: ColorScheme
+
+var body: some View {
+    if color Scheme == .dark {
+        DarkContent()
+    } else {
+        LightContent()
+    }
+}
+
+```
 
 

@@ -10,6 +10,7 @@ import SwiftUI
 struct CategoryHomeView: View {
     
     @EnvironmentObject var modelData:ModelData
+    @State private var showProfile: Bool = false
     
     var body: some View {
         NavigationView {
@@ -19,6 +20,7 @@ struct CategoryHomeView: View {
                     .image
                     .resizable()
                     .scaledToFit()
+                    .aspectRatio(contentMode: .fill)
                     .frame(height: 200)
                     .clipped()
                     .listRowInsets(EdgeInsets())
@@ -29,7 +31,19 @@ struct CategoryHomeView: View {
                 }
                 .listRowInsets(EdgeInsets())
             }
+            .listStyle(.inset)
             .navigationTitle("Featured")
+            .toolbar {
+                Button {
+                    showProfile.toggle()
+                } label: {
+                    Label("Toolbar", systemImage: "person.crop.circle")
+                }
+            }
+            .sheet(isPresented: $showProfile){
+                ProfileHost()
+                    .environmentObject(modelData)
+            }
         }
     }
 }
