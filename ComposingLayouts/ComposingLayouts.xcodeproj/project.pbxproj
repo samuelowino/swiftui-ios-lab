@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC3A346A275DFFDB00B72C4C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3A3469275DFFDB00B72C4C /* SettingsView.swift */; };
 		DC6C13AF275657390057D6F4 /* ComposingLayoutsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6C13AE275657390057D6F4 /* ComposingLayoutsApp.swift */; };
 		DC6C13B1275657390057D6F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6C13B0275657390057D6F4 /* ContentView.swift */; };
 		DC6C13B32756573C0057D6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6C13B22756573C0057D6F4 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC3A3469275DFFDB00B72C4C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DC6C13AB275657390057D6F4 /* ComposingLayouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposingLayouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6C13AE275657390057D6F4 /* ComposingLayoutsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingLayoutsApp.swift; sourceTree = "<group>"; };
 		DC6C13B0275657390057D6F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC3A3468275DFFC600B72C4C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DC3A3469275DFFDB00B72C4C /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		DC6C13A2275657390057D6F4 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		DC6C13AD275657390057D6F4 /* ComposingLayouts */ = {
 			isa = PBXGroup;
 			children = (
+				DC3A3468275DFFC600B72C4C /* Settings */,
 				DCA3CD0D2757A40E005B7245 /* EnvironmentValues */,
 				DCA3CCF427577E15005B7245 /* Graphics */,
 				DC6C13F527569C4F0057D6F4 /* Enums */,
@@ -307,6 +318,7 @@
 				DCA3CCEF2757786F005B7245 /* ProfileHost.swift in Sources */,
 				DCA3CCF627577E82005B7245 /* Badge.swift in Sources */,
 				DCA3CCED275768B5005B7245 /* Season.swift in Sources */,
+				DC3A346A275DFFDB00B72C4C /* SettingsView.swift in Sources */,
 				DC6C13EE275688CC0057D6F4 /* ParkCircleImageView.swift in Sources */,
 				DCA3CCEB27576869005B7245 /* Profile.swift in Sources */,
 				DCA3CCFA27577F05005B7245 /* BadgeSymbol.swift in Sources */,

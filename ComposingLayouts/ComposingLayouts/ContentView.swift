@@ -26,6 +26,17 @@ struct ContentView: View {
                 }
                 .tag(Tab.list)
             
+            #if APPCLIP
+                Text(verbatim: "App Store Overlay")
+                .hidden()
+                .appStoreOverlay(isPresented: $presentAppStoreOverlay){
+                    SKOverlay.AppClipConfiguration(position: .bottom)
+                    
+                }
+            #endif
+        }.onChange(of: ModelData.hasAccount){ _ in
+            if ModelData.hasAccount {
+            }
         }
     }
 }

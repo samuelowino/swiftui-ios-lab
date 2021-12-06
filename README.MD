@@ -690,4 +690,333 @@ struct PlayButton: View {
 
 ```
 
+- - -
+
+## App
+
+A type that represents the structure and behaviour of an app.
+
+```
+
+Declaration
+
+protocol App
+
+```
+
+Create an app by declaring a structure that conforms to the App protocol. Implement the required *body computed property* to define the app's content.
+
+```
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindoeGroup {
+           Text("Hello world!") 
+        }
+    }
+}
+
+```
+
+Precede the structure's declaration with the **@main** attribute to indicate that your custom App protocol conformer provides the entry point into your app. 
+
+The protocol provides a default implementation of the *main()* method that the system calls to launch your app. 
+
+*You can have exactly one entry point among all of your app's files.**
+
+Compose the app's body from instances that conform to the **Scene** protocol. 
+
+Each scene contains the root view of a view hierachy and a has a life cycle managed by the system. 
+SwiftUI provides some concrete scene types to handle common scenarios, like displaying documents or **settings**. You can also create custom scenes.
+
+```
+
+@main 
+struct MailApp: App {
+    var body: some Scene {
+        WindowGroup {
+                MailViewer()
+        }
+        
+        Settings {
+            SetttinsView()
+        }
+    }
+}
+
+```
+
+You can declare state in your app to share across all of its scenes. For example, you can use the StateObject attribute to initialize a data model, and then provide that model on a view input as an ObservedOject or through the environment as an EnvironmentObject to scenes in the app.
+
+```
+
+@main
+struct Mail: App {
+    
+    @StateObject private var model = MailModel()
+
+    WindowGroup {
+        MailViewer()
+            .environmentObject(model) // Passed through the environment.
+    }
+    
+    Settings {
+        SettingsView(model: model) // Passed as an observed object.
+    }   
+}
+
+```
+
+- - -
+
+## UILaunchScreen
+
+The user interface to show while an app launches.
+
+You use this key to define the launch screen that the system displays while your app launches. If you need to provide different launch screens in response to being launched by different URL schemes, use UILaunchScreens instead.
+
+- - -
+
+## Scene
+
+A part of an app's user interface with a life cycle managed by the system.
+
+```
+
+Declaration
+
+protocol Scene
+
+```
+
+You create an **App** by combinig one or more instances that conform to the Scene protocol in the app's *body*. You can use the built-in scenes that SwiftUI provides, like **WindowGroup**, along with custom scenes that you compose from other scenes. To create a custom scene, declare a type that conforms to the Scene protocol. Implement the required **body** computed property and provide the content for your custom scene.
+
+
+```
+struct MyScene: Scene {
+    var body: some Scene {
+        WindowGroup {
+            MyRootView()
+        }
+    }
+}
+
+```
+
+A scene acts as a container for a view hierarchy that you want to display to the user. The system decides when and how to present the view hierarchy in the user interface in a way that'splatform-appropriate and dependent on the current state of the app.
+
+For example, for the window group shown above, the system lets the user create or remove windows that contain MyRootView on platforms like **macOS** and **iPadOS**. On other platforms, the same view hierarchy might consume the entire display when active.
+
+On other platforms, the same view hierarchy might consume the entire display when active.
+
+Read the **scenePhase** environment value from within a scene or one of its views to check whether a scene is active or in some oher state. You can create a property that contains the scene phase, which is one of the values in the **ScenePhase** enumeration, using the **Environment** attribute.
+
+```
+struct MyScene: Scene {
+    @Environment(\.scenePhase) private var scencePhase
+    
+    //...
+}
+
+```
+
+The Scene protocol provides scene modifiers, defined as protocol methods with default implementations, that you use to configure a scene. For example, you can use the **onChange(ofLperform:)** modifier to trigger an action when value changes.
+
+```
+//The following code empties the cache when all of the scenes 
+//in the window group have moved to the background.
+
+struct MyScene: Scene {
+    @Environment(\.scenePhase) private var scenePhase
+    @StateObject private var cache = DataChache()
+    
+    var body: some Scene {
+        WidowGroup {
+            MyRootView()
+        }
+        .onChange(of: scenePhase) { newScenePhase in 
+            if newScenePhase == .background {
+                cache.empty()
+            }   
+        }
+    }
+}
+
+```
+
+- - -
+
+## WindowGroup
+
+A scene that presents a group of identically structured windows.
+
+Use a WindowGroup as a container for a view hierarchy presented by your app. The hierarchy that you declare as the group's content serves as a template for each window that the app creates from that group.
+
+```
+
+@main
+struct Mail: App {
+    var body: some Scene  {
+        WindowGroup {
+            MailViewer() // Declare a view hierarchy here.
+        }
+    }
+}
+
+```
+
+SwiftUI takes care of certain platform-specific behaviours. For example, on platforms that support it, like macOS and iPadOS, users can open more than one window from the group simulatenously. In macOS, users can gather open windows together in a tabbed interface. Also in macOS, window groups automatically provide commands for standard window management.
+
+Every window created from the group maintains independent state. For example, for each new window created from the group, the system allocates new storage for any **State** or **StateObject** variables instantiated by the scene's view hierarchy.
+
+- - -
+
+## DocumentGroup
+
+A scene that enables support for opening,creating and saving documents.
+
+```
+
+Declaration
+
+struct DocumentGroup<Document, Content> where Content : View 
+
+```
+
+Use a DocumentGroup scene to tell SwiftUI what kinds of documents your app can open when you declare your app using the **App** protocol.
+
+Initialize a document group scene by passing in the document model and a view capable of displaying the document type. The document types you supply to DocumentGroup must conform to **FileDocument** or **ReferenceFileDocument**.
+
+SwiftUI uses the model to add document support to your app. In macOS this includes document-based menu support, including the ability to open multiple documents. In iOS this includes a document browser that can navigate to the documents stored on the file system and multiwindow support.
+
+```
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        DocumentGroup(newDocument: TextFile()) { file in
+            ContentView(document: file.$document)
+        }
+    }
+}
+
+```
+
+If your app only needs to display but not modify a specific document type, you can use the file viewer document group scene. You supply the file type of the document, and a view that displays the document type that you provide:
+
+
+```
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        DocumentGroup(viewing: MyImageFormatDocument.self) { data in
+            MyImageFormatViewer(image: data.document)
+        }
+    }
+}
+
+```
+
+- - -
+
+## Settings
+
+A scene that presents an interface for viewing and modifying an app's settings.
+
+Use a settings scene to have SwiftUI manage views with controls for your app's settings when you declare your app using the **App** protocol. When you use an **App** declaration for multiple platforms, compile the settings scene only in **macOS**.
+
+```
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        
+        #if os(macOS)
+        Settings {
+            SettingsView()
+        }
+        #endif
+    }
+}
+
+```
+
+Passing a view as the argument to a settings scene in the **App** declaration causes SwiftUI to enable the app's Preferences menu item. SwiftUI manages displaying and removing the settings view the user selects the Preference item from the application menu or the equivalent keyboard shortcut:
+
+The contents of your settings view are controls that modify bindings to **UserDefaults** values that SwiftUI manages using the **AppStorage** property wrapper:
+
+```
+struct GeneralSettingsView: View {
+    @AppStorage("showPreview") private var showPreview = true
+    @AppStorage("fontSize") private var fontSize = 12.0
+    
+    var body: some View {
+        Form {
+            Toggle("Show Previews", iOn: $showPreview)
+            Slider(value: $fontSize, in:9...96) {
+                Text("Font size (\(fontSize, specifier: "%.0f")) pts)")
+            }
+        }
+        .padding(20)
+        .frame(width: 350, height: 100)
+    }
+}
+
+```
+
+You can define your settings in a single view, or you can use a **TabView** to group settings into different collections:
+
+```
+
+struct SettingsView: View {
+    private enum Tabs: Hashable {
+        case general, advanced
+    }
+    
+    var body: some View {
+        TabView {
+            GeneralSettingsView()
+                .tabItem {
+                    Label("General", systemImage: "gear")
+                }
+                .tag(Tabs.general)
+                
+            AdvancedSettingsView()
+                .tabItem {
+                    Label("Advanced", systemImage: "star")
+                }
+                .tag(Tabs.advanced)   
+        }
+        .padding(20)
+        .frame(width: 375, height: 150)
+    }
+}
+
+```
+
+- - -
+
+## WKNotificationScene
+
+A scene which appears in response to receiving the specified categpry of remote or local notifications.
+
+- - -
+
+
+
+
+
+
+
+
+
+
+
+
+
 
