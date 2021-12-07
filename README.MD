@@ -1007,10 +1007,989 @@ A scene which appears in response to receiving the specified categpry of remote 
 
 - - -
 
+## Declaring a Custom View
+
+### Conform to the view Protocol
+
+Declare a custom view type by defining a strcuture that conforms to the **View** protocol.
+
+```
+
+struct MyCustomView: View {
+
+}
+
+```
+
+Life other **Swift protocols**, the **View** protocol provides a blueprint for functionality - in this case, the behaviour of an element that SwiftUI draws onscreen. Conformance to the protocol comes with both requirements that a view must fulfill, and functionality that the protocol provides.
+
+After you fulfill the requirements, you can insert your custom view into a view hierarchy so that it becomes part of your app's user interface.
+
+### Declare a Body
+
+The **View** protocol's main requirement is that conforming types must define a **body computed property**:
+
+```
+
+struct MyView: View {
+    var body: some View {
+    }
+}
+
+```
+
+SwiftUI reads the value of this property any time it needs to update the view.
+The value that the view returns is an element that SwiftUI draws onscreen.
+
+The **View** protocol secondary requirement is that conforming types must indicate an associated type for the body property. However, you don't make an explicit declaration. Instead, you declare the body property as an **opaque type** using the **some View** syntax, to indicate only that the body type conforms to **View**. 
 
 
+### Assemble the View's Contents
+
+Describe your view's appearance by adding content to the view's body property. You can compose the body from primitive views that SwiftUI provides, as well as custom views that you've defined elsewhere.
+
+For example, you can create a body that draws the string "Hello, World!" using a built-in **Text** view.
+
+```
+
+struct MyView: View {
+    var body: some View {
+        Text("Hello, World!")
+    }
+}
+
+```
+
+In addition to views for specific kinds of content, controls and indicators, like **Text**, **Toggle** and **ProgressView**, SwiftUI also provides primitive views that you can use to arrange other views. For example, you can vertically stack two **Text** views using a **VStack**.
+
+```
+
+struct MyView: View {
+    var body: some View {
+        VStack {
+            Text("Hello, World!")
+            Text("Glad to meet you.")
+        }
+    }
+}
+
+```
+
+Views that take multiple input child views, like the stack in the example above, typically do so using a closure marked with the **ViewBuilder** attribute. This enables a multiple-statement closure that doesn't require additional syntax at the call site. You only need to list the input views in succession.
 
 
+### Configure Views with Modifiers
+
+To configure the views in your view's body, you apply view modifiers. 
+
+A modifier is nothing more than a method called ona particular view. The method returns a new, altered view that effectively take the place of the original in the view hierarchy.
+
+SwiftUI extends the **View** protocol with a large set of methods for this purpose. All View protocol conformers - both primitive and custom views - have access to these methods that alter the behaviour of a view in some way.
+
+```
+
+struct MyView: View {
+    var body: some View {
+        VStack {
+            Text("Hello, World!")
+                .font(.title)
+            Text("Glad to meet you.")
+                .font(.headline)
+        }
+    }
+}
+
+```
+
+### Manage Data
+
+To supply input to your view, add properties. 
+
+```
+
+struct MyView: View {
+    let helloFont: Font
+    
+    var body: some View {
+        VStack {
+            Text("Helo, World")
+                .font(helloFont)
+            Text("Glad to meet you.")
+        }
+    }
+}
+
+```
+
+### Add your View to the View Hierarchy
+
+After you define a view, you can incorporate it into other views, just like you do with primitive views. You add your view by declararing it at the point in the hierarchy at which you want it to appear.  For example, you could put MyView in your app's ContentView, which XCode creates automcatically as the root view of a new app:
+
+```
+struct ContentView: View {
+    var body: some View {
+        MyView(helloFont: .title)
+    }
+}
+
+```
+
+- - -
+
+## Configuring Views
+
+Adjust the characteristics of a view by applying view modifiers.
+
+In SwiftUI, you assemble views into a hierarchy that describes your app's user interface. To help you cistomize the appearance and behaviour of your app's views, you use a *view modifier*. 
+
+You can use modifiers to:
+
+* Add accessibility features to a view
+* Adjust a view's styling, layout and other appearance characteristics.
+* Respond to events, like copy and paste
+* Conditionally present model views, like popovers
+* Configure supporting views like toolbars
+
+Because view modifiers are Swift methods with behaviour provided by the View protocol, you can apply them to any type that conforms to the View protocol.
+That includes primitive views like Text, Image and Button, as well as view that you define.
+
+### Configure a View with a Modifier
+
+```
+
+Text("Hello, world")
+    .foregorundColor(.red) //Display red text
+    
+```
+
+Modifiers return a view that wraps the original view and replaces it in the view hierarcy. You can think of the two lines the example above as resolving to a single view that displays red text.
+
+### Chain Modifiers to Achive Complex Effects
+
+You commonly chain modifiers, each wrapping the result of the previous one, by calling them one after the other. For example, you can wrap a text view in an invisible box with a given width using the **frame(width:height:alignment:)** modifier to influence  its layout and them use the **boder(:width:) modifier to draw an outline around that:
+
+```
+
+Text("Title")
+    .frame(width: 100)
+    .border(Color.gray)
+
+```
+
+### Configure Child Views
+
+You can apply any view modifier defined by the **View** protocol to any concrete view, even when the modifier doesn't have an immediate effect on its target view. 
+The effects of a modifier propagate to child views that don't explicitly override the modifier.
+
+For example, a **VStack** instance on its own acts only to vertically stack other views - it doesn't have any text to display. Therefore, applying a **font()** modifier to the stack has no effect on the stack. Yet the font modifier does apply to any of the stack's child views, some of which might display text. You can, however, locally override the stack's modifier by adding another specific child view:
+
+```
+
+VStack {
+    Text("Title")
+        .font(.title) //Override the font of this view
+    Text("First body line")
+    Text("Second body line")
+}
+.font(.body) // Set a default font for text in the stack
+
+```
+
+### Use View-Specific Modifiers
+
+While many view types rely on standard view modifiers for customization and control, some views do define modifiers that are specific to that view type. You can't use such a modifier on anything but the appropriate kind of view. For example, **Text** defines the **bold()** modifier as a convenience for adding a bold effect to the view's text. While you can use font() on any view because its part of the View protocol, you can use **bolder()** only on **Text** views. As a result, you can't use it on container such as VStack.
+
+```
+VStack {
+    Text("Hello World!")
+}
+.bold() //Fail because 'VStack' doesn't have a bold modifier.
+
+```
+
+You also can't use it on a **Text** view after applying another general modifier becuase general modifiers return an **opaque type**. For example, the return value fromt he padding modifier isn't **Text**, but rather an opaque result type that can't take a bold modifier:
+
+```
+Text("Hello, world!")
+    .padding()
+    .bold() // Fails because 'some View' doesn't have a 'bold' modifier,
+    
+```
+
+Instead apply the bold modifier directly to the view and then add the padding.
+
+```
+
+Text("Hello, world!")
+    .bold() // Succeeds.
+    .padding()
+
+```
+
+## View
+
+A type that represents part of your app's user intreface and provides modifiers that you use to configure views.
+
+```
+Declaration
+
+protocol View
+
+```
+
+## Text
+
+A view that displays one or more lines of read-only text.
+
+```
+Declaration
+
+@frozen struct Text
+
+```
+
+A text view draws a string in your app's user interface using a **body** font that's appropriate for the current platform. You can choose a different standard font, like **title** or **cpation**, using the **font** view modifier.
+
+```
+Text("Hamlet")
+    .font(.title)
+```
+
+If you need finer control over styling of the text, you can use the same modifier to configure a system font or choose a custom font. You can also apply view modifiers like **bold()** or **italic()** to further adjust the formatting.
+
+```
+Text("by William Shakespeare")
+    .font(.system(size:21, weight:.light, design:.serif)
+    .italic()
+```
+
+A text view always uses exactly the amount of space it needs to display its rendered contents, but you can affect the view's layout. For example, you can use the **frame(width:heigh:alignment)** modifier to propose specific dimensions to the view. 
+
+Use modifiers like **lineLimit()**, **allowTightening()**, **minimumScaleFacor()**, and **truncationMode()** to configure the view handles space constraints. For example, combinging a fixed width and line limit of 1 results in truncation for text that doesn't fit in that space.
+
+```
+Text("Brevity is the soul of wit.")
+    .frame(width: 100)
+    .lineLimit(1)
+```
+
+### Localizing Strings
+
+If you initialize a text view with a string literal, the view uses the **init(tableName:bundle:comment)** initializer, which interprets the string as a localization key and searches for the key in the table you specify or in the default table if you don't specify one.
+
+```
+Text("pencil") //Searches the default table in the main bundle
+
+```
+
+## TextField
+
+A control that displays an editable text interface.
+
+```
+struct TextField<Label> where Label : View
+
+```
+
+You can create a text field with a label and a binding to a value. If the value is a string, the text field updates this value contonuously as the user types or otherwise edits the text in the field.
+
+For non-string types, it updates the value when the user commits their edits, such as by pressing the Return key.
+
+The following example shows a text field to accept a username, and a Text view below it that shadows the continously updated value of username. The **Text** view changes color as the user begins and ends editing. When the user submits their completed entry to the text field, the onSubmit(of:) modifier calls an internal valicate(name:) method.
+
+```
+@State private var username: String = ""
+@Focused private var emailFieldIsFocused: Bool = false
+
+var body: some View {
+    TextField(
+        "User name (email address)",
+        text: $username
+    )
+    .focused($emailFieldIsFocused)
+    .onSubmit {
+        validate(name: username)
+    }
+    .textInputAutocapitalization(.never)
+    .disableAutocorrection(true)
+    .border(.secondary)
+    
+    Text(username)
+        .foregroundColor(emailFieldIsFocused ? .red : .blue)
+}
+
+```
+
+### TextField Prompts
+
+You can set an explicit prompt on the text field to guide users on what text they should provide. 
+Each text field style determines where and when the text field uses a prompt and label. 
+For example, a form on macOS, always places the label at the leading edge of the field and uses a prompt, when available, as placeholder text within the field itself. In the same context on iOS, the text field uses either the prompt or label as placeholder text, depending on whether the intializer provided a prompt.
+
+The following example shows a **Form** with two text fields, each of which provides a prompt to indicate that the field is required, and a view builder to provide a label:
+
+```
+Form {
+    TextField(text: $username, prompt: Text("Required")) {
+        Text("Username")
+    }
+    SecureField(text: $password, prompt: Text("Required")) {
+        Text("Password")
+    }
+}
+
+```
+
+### Styling Text Fields
+
+SwiftUI provides a default text field style that reflects an appearance and behaviour appropriate to the platform. The default style also takes the current context into consideration, like whether the text field is ina container that presents text fields with a special style.
+
+Beyond this, you can customize the appearnce and interaction of the text fields using the **textFieldStyle()** modifier, passing in an instance of **TextFieldStyle**. 
+
+```
+@State private var givenName: String = ""
+@State private var familyName: String = ""
+
+var body: some View {
+    VStack {
+        TextField(
+            "Given Name",
+            text: $givenName
+        )
+        .disableAutocorrection(true)
+        
+        TextField(
+            "Family Name",
+            text: $familyName
+        )
+        .disableAutoCorrection(true)
+    }
+    .textFieldStyle(.rounderBorder)
+}
+
+```
+
+- - -
+
+## SecureField
+
+
+A control into which a user securely enters private text.
+
+```
+struct SecureField<Label> where Label : View
+
+```
+
+Use a SecureField when you want behaviour similar to a **TextField**, but you don't want the user's text to be visible. Typically, you use this for entering passwords and other sensitive information.
+
+A SecureField uses a binding to a string value, and a closure that executes when the user commits their edits, such as by pressing the Return key.
+
+The Field updates the bound string on every keytroke or other edit, so you can read its value at anytime from another control such as a Done button.
+
+
+```
+@State private var username: String = ""
+@State private var password: String = ""
+
+var body: some View {
+    TextField(
+    "User name (email address)",
+    text: $username)
+        .autocapitalization(.none)
+        .disableAutocorrection(true)
+        .border(Color(UIColor.seperator))
+    
+    SecureField(
+        "Password",
+        text: $password
+    ) {
+        handleLogin(username: username, password: password)
+    }
+    .border(Color(UIColor.seperator))
+    
+}
+
+```
+
+## TextEditor
+
+A view that can display and edit long-form text.
+
+A text editor allows you to display and edit multiline,scrollable text in your app's user interface. By default, the text editor view styles the text using characteristics inherited fron environment, like **font()**, **foregroundColor()**, and **multilineTextAlignment()**.
+
+You create a text editor by adding a TextEditor instance to the body of your view, and initialize it by passing in a **Binding** to a string variable in your app:
+
+```
+struct TextEditingView: View {
+    @State private var fullText: String = ""
+    
+    var body: some View {
+        TextEditor(text: $fullText)
+    }
+}
+
+```
+
+## Fiting Images into Available Space
+
+SwiftUI provides modifiers to scale, clip and transform images to fit your interface perfectly.
+
+* **resizable(cpaInsets:resizingMode) **
+
+Tells the image view to adjust the image representation to match the size of the view. By default, this modifier scales the image by reducing the size of larger images and enlarges images smaller than the view. By default, the modifier scales each axis of the image independently.
+
+* **aspectRatio()** 
+
+Corrects the behaviour where the image scaling is different for each axis. This preseves the image's origincal aspect ratio, using one of two strategies defined by the **ContentMode** enumeration. **ContentMode.fit** scales the image to fit the view size along one axis, possibly leaving empty space along the other axis. 
+**ContentMode.fill** scales the image to fill the entire view.
+
+```
+
+Image("image-file-name")
+    .resizable()
+    .aspectRatio(contentMode: .fit)
+    .frame(width: 300, heightL 400, alignment: .topLeading)
+    .border(.blue)
+    
+```
+
+### Keep Image Data Inside the View's Bound Using Clipping
+
+If you use **ContentMode.fill** when scaling an image, a portion of an image may extend beyond the view's bounds, unless the view matches the image's aspect ratio exactly. 
+
+To prevent this problem, add the **clipped(antialiased:)** modifier. This modifier simply cuts off excess image rendering at the bounding frame of the view. Optionally, you can add an antialiasing behaviour to apply smoothing to the edges of the clipping rectangle; this parameter defaults to **falsse**. 
+
+```
+
+Image("image-file-name")
+    .resizable()
+    .apsectRatio(contentMode: .fill)
+    .frame(width: 300, height: 400, alignment: .topLeading)
+    .border(.blue)
+    .clipped()
+    
+```
+
+- - - 
+
+## Image
+
+A view that displays an image
+
+Use an Image instances when you want to add images to your SwiftUI app. You can create images from many sources:
+
+* Image files in your app's asset library or bundle.
+* Instances of platform-specific image types,like **UIImage** and **NSImage**.
+* A bitmap stored ina Core Graphics CGImage instance.
+* System graphics from the SF Symbols set.
+
+### Making Images Accessible
+
+To use an image as a control, use one of the initializers that takes a label parameter. This allows the system's accessibility frameworks to use the label as the name of the control for users who use features like **VoiceOver**.
+
+## AsyncImage
+
+A view that asynchronously loads and displays an image.
+
+This view uses the shared **URLSession** instance to load an image from the specified URL, and then display it.
+
+```
+AsyncImage(url: URL(string: "https://example.com/"))
+    .frame(width: 200, height: 200)
+    
+```
+
+Until the image loads, the view displays a standard placeholder that fills the available space. After the load completes successfully, the view updates to display the image. 
+
+You can specify a custom placeholder using the **init(url:scale:content:placeholder)**.
+With this initializer, you can also use the content parameter to manipulate the loaded image.
+
+```
+
+AsyncImage(url: URL(string: "https://example.com/icon.png")) { image in 
+    image.resizable()
+} placeholder: {
+    ProgressView()
+}
+.frame(width: 50, height: 50)
+
+```
+
+To gain more control over the loading process, uses the **init(url:scale:transaction:content:)** initializer, which takes a content closure that receives an **AsyncImagePhase** to indicate the state of the loading operation. Return a view that's appropriate for the current phase:
+
+```
+AsyncImage(url: URL(string: "https://example.com/")) { phase in 
+    if let image = phase.image {
+        image //Displays the loaded image
+    } else if phase.error != nil {
+        Color.red
+    } else {
+        Color.blue
+    }
+}
+
+```
+
+## Button
+
+A control that initiates an action
+
+```
+
+struct Button<Label> where Label : View
+
+```
+
+You create a button by providing an action and label. The action is either a method or closure property that does something when a user clicks or taps the button. The label is a view that describes the button's action - for example, by showing text, an icon or both:
+
+```
+Button(action: signIn) {
+    Text("Sign in")
+}
+
+```
+
+For the common case of text-only labels, you can use the convinience initializer that takes a title string or **LocalizedStringKey** as its first parameter, instead of trailing closure:
+
+```
+Button("Sign in", action: signIn)
+
+```
+
+How the user activates the button varies by platform:
+
+* In iOS and watchOS, the user taps the button.
+* In macOS, the user clicks the button
+* In tvOS, the user presses "select" on an external remote, like the Siri Remote, while focusing on the button.
+
+
+### Adding Buttons to Containers
+
+Use buttons for any user interface element that initiate an action. Buttons automatically adpat their visual style to match the expectd style within these containers and contexts.
+
+```
+List {
+    //Calls that show all the current folders.
+    ForEach(folders) {folder in 
+        Text(folder.title)
+    }
+    
+    // A cell that, when selected, adds a new folder
+    Button(action: addItem) {
+        Label("Add Folder", systemImage: "folder.badge.plus")
+    }
+}
+
+```
+
+Similarly, to create a context menu item that initiates an action, add a button to the **contextMenu()** modifier's content closure:
+
+```
+.contextMenu {
+    Button("Cut", action: cut)
+    Button("Copy", action: copy)
+    Button("Paste", action: paste)
+}
+
+```
+
+### Assigning a Role
+
+You can optionally initialize a button with a **ButtonRole** that characterizes the button's purpose. For example, you can create a **destructive** button for a deletion action:
+
+```
+Button("Delete", role: .destructive, action: delete)
+
+```
+
+### Stylng Buttons
+
+You can customize a button's appearance using one of the standard button styles, like **bordered**, and apply the style with the **buttonStytle()** modifier.
+
+```
+HStack {
+    Button("Sign In", action: signIn)
+    Button("Register", action: register)
+}
+.buttonStyle(.bordered)
+
+```
+
+## EditButton
+
+A button that toggles the edit mode the current edit scope.
+
+An edit button toggles the editMode for content within a container that supports **EditMoe.active**. 
+
+```
+
+@State private var fruits = [
+    "Apple",
+    "Banana",
+    "Papaya",
+    "Mango"
+]
+
+var body: some View {
+    NavigationView {
+        List {
+            ForEach(fruits, id: \.self) { fruit in
+                Text(fruit)
+            }
+            .onDelete { self.deleteFruit(at :$0) }
+            .onMove { self.moveFuit(from: $0, to: $1) }
+        }
+        .navigationTitle("Fruits")
+        .toolbar { EditButton() }
+    }
+}
+
+```
+
+## PasteButton
+
+A system button that reads data from the pasteboard and delivers it to a closure.
+
+- - -
+
+## Link
+
+A control for navigation to a URL
+
+You create a link by providing a destination URL and title. The title tells the user the purpose of the link, which can be either a string, or a title key that returns a localized string used to contruct a label displayed to the user in your app;s UI.
+
+```
+Link("View Our Terms of Service",
+            destination: URL(string: "https://thelifeplanner.co/")!)
+
+```
+
+## Menu
+
+A control for presenting a menu of actions.
+
+```
+Menu("Actions") {
+    Button("Duplicate", action: duplicate)
+    Button("Rename", action: rename)
+    Button("Delete...", action: delete)
+    
+    Menu("Copy") {
+        Button("Copy", action: copy)
+        Button("Copy Formatted", action: copyFormatted)
+        Button("Copy Library Path", action: copyPath)
+    }
+}
+
+```
+- - -
+
+## Toggle
+
+A control that toggles between on and off states.
+
+You create a toggle by providing an **isOn** binding and a label. Bind **isON** to a Boolean property that determines whether the toggle is on or off. 
+Set the label to a view that visually describes the purpose of switching between toggle states.
+
+```
+@State private var vibrateOnRing = false
+
+var body: some View {
+    Toggle(isOn: $vibrateOnRing) {
+        Text("Vibrate on Ring")
+    }
+}
+
+```
+
+For the common case of text-only labels, you can use the convinience initializer that takes a title string (or localized string key) as its first parameter, instead of a trailing closure:
+
+```
+@State private var vibrateOnRing = true
+
+var body: some View {
+    Toggle("Vibrate on Ring", isOn: $vibrateOnRing)
+}
+
+```
+
+### Styling Toggles
+
+You can customize the appearance and interaction of toggles by creating styles that conform to the **ToggleStyle** protocol. To set a specific for all toggle instances within a view, use the **toggleStyle(:)** modifier:
+
+```
+VStack {
+    Toggle("Vibrate on Ring", isOn: $vibrateOnRing)
+    Toggle("Vibrate on Silent", isOn: $vibrateOnSilent)
+}
+.toggleStyle(.switch)
+
+```
+- - -
+
+## Slider
+
+A conrtol for selecting a value from a bounded linear range of values
+
+```
+
+@State private var speed = 50.0
+@State private var isEditing = false
+
+var body: some View {
+    VStack {
+        Slider(
+            value: $speed,
+            in: 0...100,
+            onEditingChanged: { editing in
+                isEditing = editing
+            }
+        )
+        Text("\(speed)")
+            .foregroundColor(isEditing ? .red : .blue)
+    }
+}
+
+```
+
+You can also use a **step parameter** to provide incremental steps along the path of the slider. For example, if you have a slider with a range of 0 to 100, and you set the step value to 5, the slider's inrements would be 0,5,10 and so on. 
+
+```
+@State private var speed = 50.0
+@State private var isEditing = false
+
+var body: some View {
+    Slider(
+        value: $speed,
+        in: 0...100,
+        step: 5
+    ) {
+        Text("Speed")
+    } minimumValueLabel: {
+        Text("0")
+    } maximumValueLabel: {
+        Text("100")
+    } onEditingChanged: { editing in 
+        isEditing = editing
+    }
+    
+    Text("\(speed)")
+        .foregorundColor(isEditing ? .red : .blue)
+}
+
+```
+
+> The slider also uses the step to increase or decrease the value when a VoiceOver user adjusts the slider with voice commands.
+
+- - -
+
+## Stepper
+
+A control that performs increment and decrement actions.
+
+Use a stepper control when you want the user to have granular control while incrementing or decrementing a value. For example use a stepper to:
+
+* Change a value up or down by 1
+* Operate strickly over a prescribed range
+* Step by specific amounts over a stepper's range of possible values.
+
+```
+struct StepperView: View {
+    @State private var value = 0
+    let step = 5
+    let range = 1...50
+    
+    var body: some View {
+        Stepper(value: $value,
+                in: range,
+                step: step) {
+            
+            Text("Current: \(value) in \(range.description) " + " stepping by \(step)")
+        }
+        .padding(10)
+    }
+}
+
+```
+
+- - -
+
+## Picker
+
+A control for selecting from a set of mutually exclusive values.
+
+You create a picker by providing a selection binding, a label and the content of the picker to display. Set the selection parameter to a bound property that provides value to display as the current selection.
+
+Set the label to a view that visually describes the purpose of selecting content in the picker, and then provide the content for the picker to display.
+
+```
+
+@State private var selectionFlavor = Flavor.chocolate //where flavor is an enum
+
+Picker("Flavor", selection: $selectionFlavor) {
+    Text("Chocolate").tag(Flavor.chocolate)
+    Text("Vanilla").tag(Flavor.vanilla)
+    Text("Strawberry").tag(Flavor.strawberry)
+}
+Text("Selected flavor: \(selectedFlavor.rawValue)")
+
+```
+> You append a tag to each text view so that the type of each selection matches the type of the bound state variable.
+
+### Iterating Over a Picker's Options
+
+To provide a selection values for the **Picker** without explicitly listing each option, you can create the picker with a **ForEach** construct, like this:
+
+```
+
+Picker("Falvor", selection: $selectedFlavor) {
+    ForEach(Flavor.allCases) { flavor in 
+        Text(flavor.rawValue.capitalized)
+    }
+}
+
+```
+
+### Styling Pickers
+
+You can customize the appearance and interaction of pickers by creating styles that conform to the **PickerStyle protocol**. You create your own style or use one of the styles provided by SwiftUI, like **segmented** or **menu**.
+
+- - - 
+
+## DatePicker
+
+A control for selecting an absolute date
+
+```
+Declaration
+
+struct DatePicker<Label> where Label : View 
+
+```
+
+Use a DatePicker when you want to provide a view that allows the user to select a calendar date, and optionally a time. The view binds to a **Date** instance.
+
+```
+@State private var date = Date()
+
+var body: some View {
+    DatePicker(
+        "Start Date",
+        selection: $date,
+        displayedCommponents: [.date]
+    )
+}
+
+```
+
+### Styling Date Pickers
+
+Use the **datePickerStyle(:) view modifier** to style date picker. 
+
+```
+
+@State private var date = Date()
+
+var body: some View {
+    DatePicker(
+        "Start Date",
+        selection: $date,
+        displayedComponents: [.date]
+    )
+}
+.datePickerStyle(.graphical)
+
+```
+
+- - -
+
+## ColorPicker
+
+A control used to select a color from the system color picker UI
+
+```
+
+struct ColorPicker<Label> where Label : View
+
+```
+
+The color picker provides a color well that shows the current selected color and displays the larger system color picker that allows user to collect a new color.
+
+By default color picker supports colors with opacity; to disable opacitiy support, set the **supportsOpacity** parameter to false. In this mode the color picker won't show controls for adjusting the opacity of the selected color, and strips out opacity from any color set programmatically or selected from the user's system favourites.
+
+```
+
+struct FormattingControls: View {
+    @State private var bgColor = Color.red
+    
+    var body: some View {
+        VStack {
+            ColorPicker("Alignment Guides", selection: $bgColor)
+        }
+    }
+}
+
+```
+
+- - -
+
+## Label
+
+A standard label for user interface items, consisting ot an icon with a title.
+
+```
+Label {
+    Text(person.fullname)
+        .font(.body)
+    Text(person.title)
+        .font(.subheading)
+    
+} icon: {
+    Circle()
+        .fill(person.profileColor)
+        .frame(width: 44, heightL 44, alignment: .center)
+        .overlay(Text(person.initials))
+}
+
+```
+
+- - -
+
+## ProgressView
+
+A view that shows the progress towards completion of a task
+
+Use a progressview to show that a task is making progress towards completion. A progress view can show both **determinate (percentage complete)** and **indeterminate(progressing or no)** types of progress.
+
+```
+
+//Determinate ProgressView
+
+@State private var progress = 0.5
+
+VStack {
+    ProgressView(value: progress)
+    Button("More", action: { progress += 0.05})
+}
+
+```
+
+To create an indetermiate progress view, use an initializer that doesn't take a progress value.
+
+```
+
+var body: some View {
+    ProgressView()
+}
+
+```
+
+- - -
+
+## Gauge
+
+A view that show a value within a range
 
 
 

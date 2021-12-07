@@ -15,10 +15,15 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Toggle("Dark Mode", isOn: $isDarkTheme)
-            Slider(value: $fontSize, in:12...21){
-                Text("Font size \(fontSize, specifier: "%.0f") pts")
-            }
+            Slider(value: $fontSize, in:12...21)
+            Text("Font size \(fontSize, specifier: "%.0f") pts")
+            Text("Developer, A Plus Creator Studios")
+                .bold()
+                .lineLimit(2)
+                .padding()
+                .foregroundColor(.yellow)
         }
+        .foregroundColor(.purple)
         .padding(2)
     }
 }
