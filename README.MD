@@ -1991,7 +1991,52 @@ var body: some View {
 
 A view that show a value within a range
 
+- - -
 
+# Picking Container Views for Your Content
+
+> Build flexible user interfaces by using **stacks**, **grids**, **lists**, and **forms**.
+
+SwiftUI provides a range of container views that group and repeat views. Use some containers purely for structure and layout, like stack views, lazy stack views and grid views. 
+Use others like **lists** and **forms**, to also adopt system-standard visuals and interactivity.
+
+### Group Collections of Views
+
+Stack views are the most primitive layout container available in SwiftUI. Use stacks to group collections of views into horizontal or vertical lines, or to stack them on top of one another.
+
+Use **HStack** to lay out views ina horizontal line, **VStack** to position views ina vertical line, and **ZStack** to layer views on top of one another. Then combine stack views to compose more complex layouts. These kinds of stacks, along with their alignment and spacing properties, view modifiers and **Spacer** views combine to allow extensive layout flexibility.
+
+
+### Repeat Views or Groups of Views
+
+You can use **HStack**, **VStack**, **LazyHStack** and **LazyVStack** to repeat views or groups of views. Place a stack view inside a **ScrollView** so your current content can expand beyond the bounds of its conainer.
+Users can simulateneously scroll horizontally, vertically or in both directions.
+
+Stack views load their child views all at once, making layout fast and reliable, because the system knows the size and shape of evvery subview as it loads them. Lazy stack trade some degree of layout correctness for performance, because the system only calculates the geometry for subviews as they become visible.
+
+### Position Views in a Two-Dimensional Layout
+
+To layout views horizontally and vertically at the same time, use a **LazyVGrid** or **LazyHGrid**.  
+
+Like stack views, SwiftUI grid views don't include a scrolling viewport; place them inside a **ScrollView** if the content might be larger than the available space.
+
+- - -
+
+## Display and Interact with Collections of Data
+
+**List** views in SwiftUI are conceptually similar to the combination of a **LazyVStack** and **ScrollView**, but by default will include platform-appropriate visual styling around and between their contained items. 
+
+For example, when running on iOS, the default configuration of a **List** adds seperator lines between rows and draws disclosure indicators for items which have navigation, and where the list is contained in a **NavigationView**.
+
+**List** views also support platform-appropriate interactivity for common tasks such as inserting, reodering and removing items. 
+
+Like **LazyHStack** and **LazyVStack**, rows inside a SwiftUI **List** also load lazily, and there is no non-lazy equivalent. Lists inherently scroll when necessary, and you don't need to wrap them in a ScrollView.
+
+- - -
+
+## Group Views and Controls for Data Entry
+
+Use **Form** to build data-entry interfaces,settings or preference screens that use system-standard controls.
 
 
 
