@@ -2038,6 +2038,357 @@ Like **LazyHStack** and **LazyVStack**, rows inside a SwiftUI **List** also load
 
 Use **Form** to build data-entry interfaces,settings or preference screens that use system-standard controls.
 
+Individually, **HStack**, **VStack**, and **ZStack** are simple views. 
+
+* **HStack** positions views in a horizontal line.
+* **VStack** positions them in a vertical line
+* **ZStack** overlays views on top of one another.
+
+
+### Position Views with Alignment and Spacer Views
+
+Align any contained views inside a stack view by using a combination of alignment property, **Spacer** and **Divider** views.
+
+The alignment property doesn't position the **VStack** inside its container; instead it positions the views inside the **VStack**.
+
+Use **Spacer** views to align views along the primary axis of an **HStack** or **VStack**.
+Spacers expand to fill any available space and push content apart from other views or the edges of the stack.
+
+**Divider** views also add space in between a stack;s subviews, but only insert enough space to draw a line across the stack's minor axis. They don't expand to fill available space.
+
+- - -
+
+## Add Depth in Alternative Ways
+
+ In some situations it may make sense to add depth to your layout using the **overlay(view,alignment:)** and **background(view,alignment)** view modifiers instead of a **ZStack**. The background view modifier places another view behind the view you're modifying and overlay place a view on top of it.
+ 
+ - - -
+ 
+ ## HStack
+ 
+ A view that arranges its children ina horizontal line.
+ 
+ ## VStack
+ 
+ A view that arranges its children in a vertical line.
+ 
+ ## ZStack
+ 
+ A view that overlays its children, aligning them in both axes.
+ 
+ The ZStack assigns each successive child view a higher z-axis value than the one before it, meaning later children appear "on top" of earlier ones.
+ 
+ - - - 
+ 
+ # Creating Performant Scrollable Stacks
+ 
+ Implementing repeating views or groups of views can be as simple as wrapping then in **HStack** or **VStack** inside a **ScrollView**.
+ 
+ ```
+ 
+ ScrollView(.horizontal) {
+    ProfileView()
+    ProfileView()
+    ProfileView()
+    ProfileView()
+    ProfileView()
+}
+
+```
+
+## Repeat Views for Your Data
+
+Use **ForEach** to repeat views for the data in your app. 
+
+```
+
+ScrollView(.horizontal) {
+    HStack {
+        ForEach(users) { userProfile in 
+            ProfileView(profile: userProfile)
+        }
+    }
+}
+
+```
+
+**Note**
+
+> When you use **ForEach**, each element you iterate over must be uniquely identifiable. Either conform elements to the **Identifiable** protocol, or pass a key path to a unique identifier as the id parameter of **init(id:content)**.
+
+## Consider Lazy Stack for Large Numbers of Views
+
+The three standard stack views, **HStack**, **VStack** and **ZStack**, all load their contained view hierarchy when they display, and loading large numbers of views all at once can result in slow runtime performance.
+
+As the number of views inside a stack grows, consider using a **LazyHStack** and **LazyVStack** instead of **HStack** and **VStack**. 
+Lazy stacks load and render their subviews on-demand, providing significant performance gains when loading largge numbers of subviews.
+
+![Swift Logo](lazy-loading-views.png)
+
+ - - -
+ 
+ ## Grouping Data with Lazy Stack Views
+ 
+ Split content into logical sections inside lazy stack views
+ 
+ Group data with **Section** views and pass in a header or footer view with the header and footer properties. 
+ 
+ ```
+ 
+var body: some View {
+    ScrollView {
+        LazyVStack(spacing: 1) {
+            ForEach(sections) { section in 
+                Section(header: SectionHeaderView()) {
+                    ForEach(section.variations) { variation in 
+                        ItemView(variation)
+                    }
+                }
+            }
+        }
+    }
+}
+
+```
+
+## LazyHStack
+
+A view that arranges its children in a line that grows horizontally, creating items only as needed.
+
+- - -
+
+## VStack
+
+A view that arranges its childre in a vertical line.
+
+- - -
+
+## ZStack
+
+A view that overlays its children, aligning them in both axes.
+
+- - -
+
+## LazyHGrid
+
+A container view that arranges its child views in a grid that grows horizontally, creating items only as needed.
+
+- - -
+
+## LazyVGrid
+
+A container view that arranges its child views in a grid that grows vertically, creating items only as needed.
+
+- - -
+
+# Containers
+
+## Form
+
+A container for grouping controls used for data entry, such as in settings or inspectors.
+
+SwiftUI applies platform-appropriate styling to views contained inside a form, to group them together. For-specific applies to things like buttons, toggles, labels, lists and more.
+
+## Group
+
+A type that collects multiple instances of a content type- like views, scenes or commands- into a single unit.
+
+Use a group to collect multiple views into a single instance, without affecting the layout of those views. 
+
+```
+Group {
+    Text("SwiftUI")
+    Text("Combine")
+    Text("Swift System")
+}.font(.headline)
+
+```
+
+## GroupBox
+
+A styled view, with an optional label, that visually collects a logical grouping of content.
+
+Use a group box when youo want to visually distinguish a portion of your user interface with an optional title for the boxed content.
+
+```
+
+var body: some View {
+        GroupBox(label:
+            Label("End-User Agreement", systemImage: "building.columns")
+        ) {
+            ScrollView(.vertical, showIndicators: true) {
+                Text(agreementText)
+                    .font(.footnote)
+        }
+        .frame(height: 100)
+        
+        Toggle(isON: $userAgree) {
+            Text("I agree to the above terms")
+        }
+    }
+
+}
+
+```
+
+- - -
+
+## ControlGroup
+
+A container view that displays semantically-related controls in a visually appropriate manner for the context.
+
+- - -
+
+## ScrollView
+
+A scrollable view.
+
+## Displaying Data in Lists
+
+Visualize collections of data with platform-appropriate appearance.
+
+- - -
+
+## List
+
+A container that presents rows of data arranged ina single column, optionally providing the ability to select one or more members.
+
+### Supporting Selection in Lists
+
+To make members of a list selectable, provide a binding to a selection variable. Binding to a single instance of the list data's **Identifiable.ID** type creates a single selection list. Binding to a **Set** creates a list that supports multiple selections.
+
+```
+
+struct Ocena: Identifiable, Hashable {
+    let name: String
+    let id = UUID()
+}
+
+private var oceans = [
+    Ocean(name: "Pacific"),
+    Ocean(name: "Atlantic"),
+    Ocean(name: "Indian"),
+    Ocean(name: "Southern"),
+    Ocean(name: "Arctic")
+]
+
+@State private var multiSelection = Set<UUID>()
+
+var body: some View {
+    NavigationView {
+        List(oceans, selection: $multiSelection) { oceanItem
+            Text(oceanItem.name)
+        }
+        .navigationTitle("Oceans")
+        .toolbar { EditButton() }
+    }
+    
+    Text("\(multiSelection.count) selections")
+}
+
+
+```
+
+- - -
+
+## Section
+
+A container view that you can use to add hierarchy to certain collection views.
+
+Use Section instances in views like **List**, **Picker** and **Form** to organize content into seperate sections. Each section has custom content that you provide on a per instance basics.
+
+- - -
+
+## ForEach
+
+A structure that computes views on demand from an underlying collection of identified data.
+
+Either the collection's elements must conform to **Identifiable** or you need to provide an id parameter to the ForEach initializer.
+
+```
+
+var body: some View {
+    ForEach(namedFonts) { namedFont in 
+        Text(namedFont.name)
+            .font(namedFont.font)
+    }
+}
+
+```
+
+- - -
+
+## NavigationView
+
+A view for presenting a stack of views that represents a visible path in navigation hierarchy.
+
+Use a navigationView to create a navigation-based app in which the user can traverse a collection of views. Users navigate to a destination view by selecting a **NavigationLink** that you provide. 
+
+```
+
+NavigationView {
+    List(mode.notes) { note in
+        NavigationLink(note.title, destination: NoteEditor(id, note.id))
+    }
+}
+
+```
+
+## NavigationLink
+
+A view that controls a navigation presentation.
+
+## DisclosureGroup
+
+A view that shows or hides another content view, based on the state of a disclosure control.
+
+## TabView
+
+
+A view that switches between multiple child views using interactive user intercase elements.
+
+To create a user interface with tabs, place views in a TabView and apply the **TabItem** modifier to the contents of each tab.
+
+```
+
+TabView {
+    Text("The First Tab")
+        .badge(10)
+        .tabItem {
+            Image(systemName: "1.square.fill")
+            Text("First")
+        }
+        
+    Text("Another Tab")
+        .tabItem {
+            Image(systemName: "2.square.fill")
+            Text("Second")
+        }
+        
+    Text("The Last Tab")
+        .tabItem {
+            Image(systemName: "3.square.fill")
+            Text("Third")
+        }
+}
+.font(.headline)
+
+```
+
+- - -
+
+# Spacer
+
+A flexible splace that expands along the major axis of its containing stack layout, or on both axes if not contained ina stack.
+
+A spacer creates an adaptive view with no content that expands as much as it can.
+
+- - -
+
+# Divider
+
+A visual element that can be used to seperate other content.
+
 
 
 
