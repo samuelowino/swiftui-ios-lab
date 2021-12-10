@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        List {
+        HStack {
             CardView()
             CardView()
             CardView()
@@ -23,8 +23,9 @@ struct CardView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(lineWidth: 3)
-            Text("Stanford CS193P")
+            Text("✈️")
                 .padding()
+                .font(.largeTitle)
         }
         .padding(.horizontal)
         .foregroundColor(.red)
