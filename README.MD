@@ -2389,6 +2389,17 @@ A spacer creates an adaptive view with no content that expands as much as it can
 
 A visual element that can be used to seperate other content.
 
+- - -
+
+# State and Data Flow
+
+## Binding 
+
+A property wrapper type that can read and write a value owned by a source of truth.
+
+Use a binding to create two way connection between a property that stores data and a view that displays and changes the data. A binding connects a property to a source of truth stored elsewhere, instead of storing data directly.
+
+The parent view declares a property to hold the state, using the @State property wrapper to indicate that this is the properties source of truth.
 
 
 
