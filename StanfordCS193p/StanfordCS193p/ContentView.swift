@@ -19,7 +19,7 @@ struct ContentView: View {
 
 struct CardView: View {
     
-    var isFaceUp: Bool
+    @State var isFaceUp: Bool
     
     var body: some View {
         
@@ -40,6 +40,9 @@ struct CardView: View {
         }
         .padding(.horizontal)
         .foregroundColor(.red)
+        .onTapGesture {
+            isFaceUp.toggle()
+        }
     }
 }
 
@@ -47,8 +50,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .preferredColorScheme(ColorScheme.dark)
-        
-        ContentView()
-            .preferredColorScheme(.light)
     }
 }
