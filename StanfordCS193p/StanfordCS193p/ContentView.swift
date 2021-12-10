@@ -9,6 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        List {
+            CardView()
+            CardView()
+            CardView()
+        }
+    }
+}
+
+struct CardView: View {
+    
+    var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(lineWidth: 3)
