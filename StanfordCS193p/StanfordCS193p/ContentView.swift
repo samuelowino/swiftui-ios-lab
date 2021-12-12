@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     var emojis: [String] = ["🛻","✈️","🚑","🛴","🛫","🛵","⛴","🚢","⛰","🏗"]
-    @State var emojiCount: Int = 3
+    @State var emojiCount: Int = 4
     var body: some View {
         VStack {
             HStack {
@@ -19,14 +19,17 @@ struct ContentView: View {
                 }
             }
             
+            Spacer()
+            
             HStack {
                 
-                addButton
+                removeButton
                 
                 Spacer()
                 
-                removeButton
+                addButton
             }
+            .font(.largeTitle)
             .padding(.horizontal)
         }
         .padding(.horizontal)
@@ -35,23 +38,21 @@ struct ContentView: View {
     
     var addButton: some View {
         Button(action: {
-            emojiCount += 1
-        }, label: {
-            VStack{
-                Text("Add")
-                Text("Card")
+            if emojis.count > emojiCount {
+                emojiCount += 1
             }
+        }, label: {
+            Image(systemName: "plus.circle")
         })
     }
     
     var removeButton: some View {
         Button(action: {
-            emojiCount -= 1
-        }, label: {
-            VStack{
-                Text("Remove")
-                Text("Card")
+            if emojiCount  > 1 {
+                emojiCount -= 1
             }
+        }, label: {
+            Image(systemName: "minus.circle")
         })
     }
 }
@@ -63,7 +64,7 @@ struct CardView: View {
     
     var body: some View {
         
-        let shape = Circle()
+        let shape = RoundedRectangle(cornerRadius: 20)
 
         ZStack {
             if isFaceUp {
@@ -77,7 +78,6 @@ struct CardView: View {
                 shape.fill()
             }
         }
-        .padding(.horizontal)
         .foregroundColor(.red)
         .onTapGesture {
             isFaceUp.toggle()
