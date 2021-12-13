@@ -2401,6 +2401,40 @@ Use a binding to create two way connection between a property that stores data a
 
 The parent view declares a property to hold the state, using the @State property wrapper to indicate that this is the properties source of truth.
 
+- - -
+
+# DispatchQueue
+
+An object that manages the execution of tasks serially or concurrently on your app's main thread or on a background thread.
+
+Dispatch queues are FIFO queues to which your application can submit tasks in the form of block objects. Dispatch queues execute tasks either serially or concurrently. Work submitted to dispatch queue executes on a pool of threads managed by the system. representing your app's main thread, the system makes no guarantees about which thread it uses to execute a task.
+
+You schedule work items synchronously or asynchronously. 
+When you schedule work a item synchronously, your code wait s until that item finishes execution. When you schedule a work item asynchronously, your code continues executing while work itsm runs elsewhere.
+
+> Note: **Attempting to asynchronously execute a work item on the main queue results in deadlock**
+
+## DispatchQueue.main : DispatchQueue
+
+> The dispatch queue associated with the main thread of the current process.
+
+## DispatchQueue.async(execture: DispatchWorkItem)
+
+> Schedule a work item for immediate execution, and returns immediately.
+
+## DispatchQueue.asynAfter(deadline: DispatchTime, execute: DispatchWorkItem)
+
+> Schedule a work item for execution at the specified time, and returns immediately.
+
+```
+DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+    withAnimation {
+        //todo add work code here.
+    }
+}
+```
+
+
 
 
 
