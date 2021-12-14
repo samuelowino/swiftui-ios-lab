@@ -11,7 +11,11 @@ struct ContentView: View {
     var body: some View {
         TabView {
             EmojiCardGameView()
+                .tag("Emoji Game")
             MapView()
+                .tag("Map")
+            SpriteKit()
+                .tag("SpriteKit")
         }.tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
