@@ -16,6 +16,8 @@ struct ContentView: View {
                 .tag("Map")
             SpriteKit()
                 .tag("SpriteKit")
+            ColorPickerView()
+                .tag("Color Picker")
         }.tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
