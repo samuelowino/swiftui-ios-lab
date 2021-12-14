@@ -18,6 +18,8 @@ struct ContentView: View {
                 .tag("SpriteKit")
             ColorPickerView()
                 .tag("Color Picker")
+            LazyVStackView()
+                .tag("LazyVStack")
         }.tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }

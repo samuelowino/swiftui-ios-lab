@@ -16,6 +16,7 @@
 		DC2934E12767206500C939CC /* EmojiCardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2934E02767206500C939CC /* EmojiCardGameView.swift */; };
 		DC33659127686AD900FEFB98 /* SpriteKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC33659027686AD900FEFB98 /* SpriteKit.swift */; };
 		DC3365932768727700FEFB98 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3365922768727700FEFB98 /* ColorPickerView.swift */; };
+		DC3365952768739000FEFB98 /* LazyVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3365942768739000FEFB98 /* LazyVStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DC2934E02767206500C939CC /* EmojiCardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCardGameView.swift; sourceTree = "<group>"; };
 		DC33659027686AD900FEFB98 /* SpriteKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKit.swift; sourceTree = "<group>"; };
 		DC3365922768727700FEFB98 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		DC3365942768739000FEFB98 /* LazyVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				DC2934E02767206500C939CC /* EmojiCardGameView.swift */,
 				DC33659027686AD900FEFB98 /* SpriteKit.swift */,
 				DC3365922768727700FEFB98 /* ColorPickerView.swift */,
+				DC3365942768739000FEFB98 /* LazyVStackView.swift */,
 			);
 			path = StanfordCS193p;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				DC3365932768727700FEFB98 /* ColorPickerView.swift in Sources */,
 				DC1F659A2763A4E600A2C750 /* StanfordCS193pApp.swift in Sources */,
 				DC2934DB276717F400C939CC /* EmojiMemoryGame.swift in Sources */,
+				DC3365952768739000FEFB98 /* LazyVStackView.swift in Sources */,
 				DC33659127686AD900FEFB98 /* SpriteKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
