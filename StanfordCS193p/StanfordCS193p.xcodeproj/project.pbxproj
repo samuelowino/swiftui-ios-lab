@@ -17,6 +17,7 @@
 		DC33659127686AD900FEFB98 /* SpriteKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC33659027686AD900FEFB98 /* SpriteKit.swift */; };
 		DC3365932768727700FEFB98 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3365922768727700FEFB98 /* ColorPickerView.swift */; };
 		DC3365952768739000FEFB98 /* LazyVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3365942768739000FEFB98 /* LazyVStackView.swift */; };
+		DCA723A22769D253001E43B2 /* ProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA723A12769D253001E43B2 /* ProgressIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		DC33659027686AD900FEFB98 /* SpriteKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKit.swift; sourceTree = "<group>"; };
 		DC3365922768727700FEFB98 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		DC3365942768739000FEFB98 /* LazyVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVStackView.swift; sourceTree = "<group>"; };
+		DCA723A12769D253001E43B2 /* ProgressIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				DC33659027686AD900FEFB98 /* SpriteKit.swift */,
 				DC3365922768727700FEFB98 /* ColorPickerView.swift */,
 				DC3365942768739000FEFB98 /* LazyVStackView.swift */,
+				DCA723A12769D253001E43B2 /* ProgressIndicatorView.swift */,
 			);
 			path = StanfordCS193p;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA723A22769D253001E43B2 /* ProgressIndicatorView.swift in Sources */,
 				DC2934E12767206500C939CC /* EmojiCardGameView.swift in Sources */,
 				DC1F659C2763A4E600A2C750 /* ContentView.swift in Sources */,
 				DC2934DF27671E9600C939CC /* MapView.swift in Sources */,

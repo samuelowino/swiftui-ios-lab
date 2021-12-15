@@ -2433,6 +2433,38 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
     }
 }
 ```
+- - -
+
+# Cocoapods
+
+## What is CocoaPods
+
+> Cocoapods manages library dependencies for your projects.
+
+The dependencies for your project are specified in a single text file called a **Podfile**. 
+Cocoapods will resolve dependencies between libraries, fetch the resulting source code, then link together in an XCode workspace to build your project.
+
+## Installation
+
+> Create a **Podfile**, add your dependencies;
+
+```
+    target 'MyApp' do
+        pod 'AFNetworking', '~> 3.0'
+        pod 'FBSDJCoreKit', '~> 4.9'
+    end
+    
+```
+
+> Run pod install in your project directory
+
+```
+$ pod install
+```
+> Open **App.xcworkspace** and build
+
+
+
 
 
 
