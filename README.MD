@@ -2463,6 +2463,13 @@ $ pod install
 ```
 > Open **App.xcworkspace** and build
 
+- - -
+
+# Concurrency 
+
+Swift has built-in support for writing asynchronous and parallel code ina structured way. Asynchronous code can be suspended and resumed later, although only one piece of the program executes at a time. 
+
+Suspending and resuming code in your p
 
 
 
