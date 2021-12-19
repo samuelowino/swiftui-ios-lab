@@ -8,8 +8,20 @@
 import Foundation
 import RealmSwift
 
-struct DatabaseConfig {
+class DatabaseConfig {
     
-    let realm = try! Realm()
+    var database: Realm
+    
+    func getDatabase() -> Realm {
+        if database.isEmpty {
+            database = try! Realm()
+        }
+        
+        return database
+    }
+    
+    init(){
+        database = try! Realm()
+    }
 
 }

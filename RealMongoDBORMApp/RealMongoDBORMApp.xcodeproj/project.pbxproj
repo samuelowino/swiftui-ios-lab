@@ -14,6 +14,9 @@
 		DC78CCB2276CF1F6003140F4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DC78CCB1276CF1F6003140F4 /* Realm */; };
 		DC78CCB4276CF1F6003140F4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC78CCB3276CF1F6003140F4 /* RealmSwift */; };
 		DC78CCB7276CF528003140F4 /* DatabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CCB6276CF527003140F4 /* DatabaseConfig.swift */; };
+		DC9C3500276F793600BD6218 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C34FF276F793600BD6218 /* Person.swift */; };
+		DC9C3502276F79CD00BD6218 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C3501276F79CD00BD6218 /* PersonViewModel.swift */; };
+		DC9C3504276F7A7400BD6218 /* PersonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C3503276F7A7400BD6218 /* PersonRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		DC78CCA3276CF032003140F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC78CCA6276CF032003140F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC78CCB6276CF527003140F4 /* DatabaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseConfig.swift; sourceTree = "<group>"; };
+		DC9C34FF276F793600BD6218 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DC9C3501276F79CD00BD6218 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		DC9C3503276F7A7400BD6218 /* PersonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				DC78CCB6276CF527003140F4 /* DatabaseConfig.swift */,
+				DC9C34FF276F793600BD6218 /* Person.swift */,
+				DC9C3501276F79CD00BD6218 /* PersonViewModel.swift */,
+				DC9C3503276F7A7400BD6218 /* PersonRepository.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -159,8 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9C3504276F7A7400BD6218 /* PersonRepository.swift in Sources */,
 				DC78CCB7276CF528003140F4 /* DatabaseConfig.swift in Sources */,
+				DC9C3502276F79CD00BD6218 /* PersonViewModel.swift in Sources */,
 				DC78CCA2276CF028003140F4 /* ContentView.swift in Sources */,
+				DC9C3500276F793600BD6218 /* Person.swift in Sources */,
 				DC78CCA0276CF028003140F4 /* RealMongoDBORMApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
