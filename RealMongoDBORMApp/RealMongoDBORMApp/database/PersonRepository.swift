@@ -32,7 +32,18 @@ struct PersonRepository {
         return people?.first
     }
     
-    func updatePerson(_ person: Person) -> Bool {
-        return false
+    func updatePerson(forUuid uuid: String, forName name: String, howOld age: String, birthdate dob: String) throws -> Bool {
+        try database?.write {
+            let people = database?.objects(Person.self)
+            for person in people! {
+                if person.uuid == uuid {
+                    person.name = name
+                    person.age = age
+                    person.dob = dob
+                    break
+                }
+            }
+        }
+        return true
     }
 }

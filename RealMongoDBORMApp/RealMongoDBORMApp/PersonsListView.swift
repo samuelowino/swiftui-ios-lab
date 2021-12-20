@@ -18,7 +18,9 @@ struct PersonsListView: View {
         
             ScrollView {
                 ForEach(viewModel.people) { person in
-                    Text(person.name)
+                    NavigationLink(destination: PersonFormView(isUpdateFunction: true, personToUpdate: person)) {
+                        Label(person.name, systemImage: "person.crop.circle")
+                    }
                 }
             }
         }.onAppear {

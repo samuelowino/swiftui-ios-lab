@@ -14,6 +14,7 @@ class PersonViewModel: ObservableObject {
     
     func loadPoeple(completionHandler: @escaping (Error?) -> ()) {
         do {
+            people.removeAll()
             let peopleResult = try repository.loadAllPeople()
             for result in peopleResult! {
                 people.append(result)
@@ -27,6 +28,17 @@ class PersonViewModel: ObservableObject {
     func addPerson(_ person: Person, completionHandler: @escaping (Error?) ->()) {
         do {
             try repository.savePerson(person)
+            completionHandler(nil)
+        } catch {
+            completionHandler(error)
+        }
+    }
+    
+    func updatePerson(_ data: Person,
+                      completionHandler: @escaping (Error?) ->()){
+        do {
+            let updated: Bool = try repository.updatePerson(forUuid: data.uuid, forName: data.name, howOld: data.age, birthdate: data.dob)
+            print("Person updated \(updated)")
             completionHandler(nil)
         } catch {
             completionHandler(error)

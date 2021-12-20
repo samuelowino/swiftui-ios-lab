@@ -10,17 +10,19 @@ import SwiftUI
 struct ContentView: View {
     @State private var addPerson: Bool = false
     var body: some View {
-        VStack {
-            if addPerson {
-                PersonFormView()
-            } else {
-                VStack {
-                    PersonsListView()
-                    
-                    Button {
-                        addPerson.toggle()
-                    } label: {
-                        Label("Add Person", systemImage: "person.circle")
+        NavigationView {
+            VStack {
+                if addPerson {
+                    PersonFormView(isUpdateFunction: false, personToUpdate: Person())
+                } else {
+                    VStack {
+                        PersonsListView()
+                        
+                        Button {
+                            addPerson.toggle()
+                        } label: {
+                            Label("Add Person", systemImage: "person.circle")
+                        }
                     }
                 }
             }

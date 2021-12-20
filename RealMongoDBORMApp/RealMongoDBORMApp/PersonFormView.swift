@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PersonFormView: View {
     
+    var isUpdateFunction: Bool
+    var personToUpdate: Person
     @State var name: String = ""
     @State var age: String = ""
     @State var dob: String = ""
@@ -18,51 +20,53 @@ struct PersonFormView: View {
     @StateObject var viewModel: PersonViewModel = PersonViewModel()
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("Add Person")
+        VStack {
+            Text("Add Person")
+            
+            Form {
+                Group {
+                    Text("Person Name:")
+                        .bold()
+                    TextField(isUpdateFunction ? personToUpdate.name : "Add person name", text: $name)
+                }
                 
-                Form {
-                    Group {
-                        Text("Person Name:")
-                            .bold()
-                        TextField("Add person name", text: $name)
-                    }
+                Group {
+                    Text("Age:")
+                        .bold()
                     
-                    Group {
-                        Text("Age:")
-                            .bold()
-                        
-                        TextField("Enter Age", text: $age)
-                    }
-                   
-                    Group {
-                        Text("Date Of Birth:")
-                            .bold()
-                        
-                        TextField("Enter Dob", text: $dob)
-                    }
+                    TextField(isUpdateFunction ? personToUpdate.age : "Enter Age", text: $age)
+                }
+               
+                Group {
+                    Text("Date Of Birth:")
+                        .bold()
                     
-                    if isSavingPerson {
-                        ProgressView("Saving Person")
-                    } else {
-                        Button {
+                    TextField(isUpdateFunction ? personToUpdate.dob : "Enter Dob", text: $dob)
+                }
+                
+                if isSavingPerson {
+                    ProgressView("Saving Person")
+                } else {
+                    Button {
+                        if isUpdateFunction {
+                            updatePerson()
+                        } else {
                             savePerson()
-                            isSavingPerson = true
-                        } label: {
-                            Text("Save")
                         }
+                        isSavingPerson = true
+                    } label: {
+                        Text(isUpdateFunction ? "Update" : "Save")
                     }
+                }
+                
+                if errorOccured {
+                    Text("Person saving failed, error coccured")
+                        .foregroundColor(.red)
+                } else if personSavedSuccesfully {
+                    Text("Person Saved Succssfully")
+                        .foregroundColor(.blue)
                     
-                    if errorOccured {
-                        Text("Person saving failed, error coccured")
-                            .foregroundColor(.red)
-                    } else if personSavedSuccesfully {
-                        Text("Person Saved Succssfully")
-                            .foregroundColor(.blue)
-                        
-                        NavigationLink("View People", destination: PersonsListView())
-                    }
+                    NavigationLink("View People", destination: PersonsListView())
                 }
             }
         }
@@ -70,6 +74,7 @@ struct PersonFormView: View {
     
     func savePerson(){
         let person = Person()
+        person.uuid = UUID().uuidString
         person.name = name
         person.age = age
         person.dob = dob
@@ -85,10 +90,28 @@ struct PersonFormView: View {
             isSavingPerson = false
         }
     }
+    
+    func updatePerson(){
+        let personData = Person()
+        personData.uuid = personToUpdate.uuid
+        personData.name = name
+        personData.age = age
+        personData.dob = dob
+        viewModel.updatePerson(personData) { error in
+            if let error = error {
+                print("Person update failed \(error)")
+                errorOccured = true
+            } else {
+                print("Person updated successfully!")
+                personSavedSuccesfully = true
+            }
+            isSavingPerson = false
+        }
+    }
 }
 
 struct PersonFormView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonFormView()
+        PersonFormView(isUpdateFunction: false, personToUpdate: Person())
     }
 }

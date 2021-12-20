@@ -13,4 +13,8 @@ class Person: Object, Identifiable {
     @objc dynamic var name: String = ""
     @objc dynamic var age: String = ""
     @objc dynamic var dob: String = ""
+    
+    override class func primaryKey() -> String? {
+            return "uuid"
+    }
 }

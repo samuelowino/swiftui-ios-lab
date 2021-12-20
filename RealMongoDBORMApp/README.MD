@@ -74,3 +74,25 @@ print("No info about drink temp: \(drinkTempNotSpecified.count)")
 
 ```
 
+## Update Live Objects
+
+Update objects by updating field values on an instance of the object within a transaction.
+
+```
+let realm = try! Realm()
+
+//Obtain the object
+let mapleLatte = realm.objects(CoffeeDrink.self).where {
+    $0.name == "Maple Latte"
+}.first!
+
+//Open a thread-safe transaction
+try! realm.write {
+    mapleLatte.name = "Maple Delight"
+    
+    mapleLatte.hotOrCold = "Hot"
+}
+
+```
+
+
