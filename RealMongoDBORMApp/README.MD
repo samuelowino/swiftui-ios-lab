@@ -9,3 +9,68 @@ Realm Database solves many common mobile programming headaches:
 * **Reactive UI:** Live objects always reflect the latest data stored in Realm Database. You can **subscribe** to changes, letting your UI consistently up to date.
 
 
+## Realm Database
+ > With the MongoDB Realm Swift SDK, you can access objects stored in a local instance of Realm Database.
+ 
+ ## Define an Object Schema
+ 
+ Use Swift to idiomatically define an object schema.
+ 
+ ```
+class CoffeeDrink: Object {
+    @Persisted var name = ""
+    @Persisted var hotOrCold: String?
+    @Persisted var rating = 0
+}
+ ```
+ 
+ ## Write an Object
+ 
+ Create a new object as you would instantiate any other object. Then pass it to Realm Database inside a **write transaction**.
+ 
+ ```
+let realm = try! Realm()
+ 
+try! realm.write {
+    let shop = CoffeeShop()
+    shop.name  = "Better Coffee"
+    
+    let drink = CoffeeDrink()
+    drink.name = "Maple Latte"
+    drink.rating = 7
+    
+    shop.drinks.append(drink)
+    realm.add(shop)
+}
+
+```
+
+## Query Realm Database 
+
+> Query for stored objects using Swift-idiomatic queries.
+
+```
+let realm = try! Realm()
+
+let drinks = realm.objects(CoffeeDrink.self)
+
+let highlyRatedDrinks = drinks.where {
+    $0.rating > 6
+}
+
+print("Highly-rated drinks: \(highlyRatedDrinks.count)")
+
+let mapleORCaramelLattes = drinks.where { drink in
+    drink.name = "Maple Latte" || drink.name == "Caramel Latte"
+}
+
+print("Number of maple or caramel lattes: \(mapleOrCaramelLattes.count)")
+
+let drinkTempNotSpecified = drinks.where { drink in
+    drink.hotOrCold == nil
+}
+
+print("No info about drink temp: \(drinkTempNotSpecified.count)")
+
+```
+

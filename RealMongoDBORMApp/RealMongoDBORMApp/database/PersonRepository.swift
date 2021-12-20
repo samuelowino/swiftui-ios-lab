@@ -17,17 +17,22 @@ struct PersonRepository {
         database = databaseConfig.getDatabase()
     }
     
-    func savePerson(_ person: Person) throws -> Bool {
-        database?.beginWrite()
-        database?.add(person)
-        try database?.commitWrite()
+    func savePerson(_ person: Person) throws {
+        try! database?.write {
+            database?.add(person)
+        }
+    }
+    
+    func loadAllPeople() throws -> Results<Person>? {
+        database?.objects(Person.self)
     }
     
     func loadPerson(_ uuid: String) -> Person? {
-        database?.object(ofType: Person.self, forPrimaryKey: )
+        let people = database?.objects(Person.self)
+        return people?.first
     }
     
     func updatePerson(_ person: Person) -> Bool {
-        
+        return false
     }
 }

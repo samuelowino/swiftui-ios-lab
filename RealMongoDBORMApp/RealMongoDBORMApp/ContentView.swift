@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var addPerson: Bool = false
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            if addPerson {
+                PersonFormView()
+            } else {
+                VStack {
+                    PersonsListView()
+                    
+                    Button {
+                        addPerson.toggle()
+                    } label: {
+                        Label("Add Person", systemImage: "person.circle")
+                    }
+                }
+            }
+        }
     }
 }
 

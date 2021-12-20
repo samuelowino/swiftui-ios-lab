@@ -17,6 +17,8 @@
 		DC9C3500276F793600BD6218 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C34FF276F793600BD6218 /* Person.swift */; };
 		DC9C3502276F79CD00BD6218 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C3501276F79CD00BD6218 /* PersonViewModel.swift */; };
 		DC9C3504276F7A7400BD6218 /* PersonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C3503276F7A7400BD6218 /* PersonRepository.swift */; };
+		DCCF525A27704B5D00E34DEE /* PersonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF525927704B5D00E34DEE /* PersonFormView.swift */; };
+		DCCF525C2770542100E34DEE /* PersonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCF525B2770542100E34DEE /* PersonsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		DC9C34FF276F793600BD6218 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		DC9C3501276F79CD00BD6218 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		DC9C3503276F7A7400BD6218 /* PersonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRepository.swift; sourceTree = "<group>"; };
+		DCCF525927704B5D00E34DEE /* PersonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFormView.swift; sourceTree = "<group>"; };
+		DCCF525B2770542100E34DEE /* PersonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				DC78CCA1276CF028003140F4 /* ContentView.swift */,
 				DC78CCA3276CF032003140F4 /* Assets.xcassets */,
 				DC78CCA5276CF032003140F4 /* Preview Content */,
+				DCCF525927704B5D00E34DEE /* PersonFormView.swift */,
+				DCCF525B2770542100E34DEE /* PersonsListView.swift */,
 			);
 			path = RealMongoDBORMApp;
 			sourceTree = "<group>";
@@ -168,6 +174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCCF525A27704B5D00E34DEE /* PersonFormView.swift in Sources */,
+				DCCF525C2770542100E34DEE /* PersonsListView.swift in Sources */,
 				DC9C3504276F7A7400BD6218 /* PersonRepository.swift in Sources */,
 				DC78CCB7276CF528003140F4 /* DatabaseConfig.swift in Sources */,
 				DC9C3502276F79CD00BD6218 /* PersonViewModel.swift in Sources */,
