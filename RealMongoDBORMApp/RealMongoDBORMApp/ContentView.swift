@@ -12,17 +12,18 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
+                Button {
+                    addPerson.toggle()
+                } label: {
+                    Label("Add Person", systemImage: "person.circle")
+                }
+                
                 if addPerson {
                     PersonFormView(isUpdateFunction: false, personToUpdate: Person())
                 } else {
                     VStack {
                         PersonsListView()
-                        
-                        Button {
-                            addPerson.toggle()
-                        } label: {
-                            Label("Add Person", systemImage: "person.circle")
-                        }
                     }
                 }
             }

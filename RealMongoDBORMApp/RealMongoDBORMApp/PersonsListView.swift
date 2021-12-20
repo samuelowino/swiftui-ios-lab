@@ -15,22 +15,50 @@ struct PersonsListView: View {
         VStack {
             Text("People's Directory")
                 .bold()
+            
+            NavigationLink(destination: PersonFormView(isUpdateFunction: false, personToUpdate: Person())) {
+                Label("Add Someone here", systemImage: "person.badge.plus")
+            }
         
             ScrollView {
                 ForEach(viewModel.people) { person in
-                    NavigationLink(destination: PersonFormView(isUpdateFunction: true, personToUpdate: person)) {
-                        Label(person.name, systemImage: "person.crop.circle")
+                    HStack {
+                        NavigationLink(destination: PersonFormView(isUpdateFunction: true, personToUpdate: person)) {
+                            Label(person.name, systemImage: "person.crop.circle")
+                        }
+                        
+                        Image(systemName: "minus.circle.fill")
+                            .onTapGesture {
+                                deletePerson(person.uuid)
+                            }
+                            .foregroundColor(.red)
                     }
                 }
             }
         }.onAppear {
-            viewModel.loadPoeple { error in
+            viewModel.loadPeople { error in
                 if let error = error {
                     print("Load items failed \(error)")
                 } else {
                     print("Load items successful")
                     for person in viewModel.people {
                         print("person \(person.name)")
+                    }
+                }
+            }
+        }
+    }
+    
+    func deletePerson(_ uuid: String){
+        viewModel.deletePerson(withUuid: uuid){ error in
+            if let error = error {
+                print("Delete failed, error \(error)")
+            } else {
+                viewModel.loadPeople { loadError in
+                    if let loadError = loadError {
+                        print("People reload failed \(loadError)")
+                    } else {
+                        print("People reload completed with success")
                     }
                 }
             }

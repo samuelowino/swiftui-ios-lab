@@ -12,7 +12,7 @@ class PersonViewModel: ObservableObject {
     @Published var people: [Person] = []
     private let repository: PersonRepository = PersonRepository()
     
-    func loadPoeple(completionHandler: @escaping (Error?) -> ()) {
+    func loadPeople(completionHandler: @escaping (Error?) -> ()) {
         do {
             people.removeAll()
             let peopleResult = try repository.loadAllPeople()
@@ -39,6 +39,15 @@ class PersonViewModel: ObservableObject {
         do {
             let updated: Bool = try repository.updatePerson(forUuid: data.uuid, forName: data.name, howOld: data.age, birthdate: data.dob)
             print("Person updated \(updated)")
+            completionHandler(nil)
+        } catch {
+            completionHandler(error)
+        }
+    }
+    
+    func deletePerson(withUuid uuid: String, completionHandler: @escaping (Error?) -> ()) {
+        do {
+            try repository.deletePerson(WithUuid: uuid)
             completionHandler(nil)
         } catch {
             completionHandler(error)

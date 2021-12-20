@@ -46,4 +46,16 @@ struct PersonRepository {
         }
         return true
     }
+    
+    func deletePerson(WithUuid uuid: String) throws {
+        try database?.write {
+            let people = database?.objects(Person.self)
+            for person in people! {
+                if person.uuid == uuid {
+                    database?.delete(person)
+                    break
+                }
+            }
+        }
+    }
 }
