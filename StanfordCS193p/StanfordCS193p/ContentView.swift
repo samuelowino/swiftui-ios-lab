@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
+            ExpandedListView()
+                .tag("Expanded List View")
             ProgressIndicatorView()
                 .tag("Progress Indicator")
             EmojiCardGameView()
