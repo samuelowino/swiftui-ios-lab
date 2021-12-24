@@ -20,6 +20,7 @@
 		DC8D229527718E090007B196 /* ExpandedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D229427718E090007B196 /* ExpandedListView.swift */; };
 		DC8D22ED2775A39B0007B196 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D22EC2775A39B0007B196 /* DatePickerView.swift */; };
 		DC8D22EF2775A6CE0007B196 /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */; };
+		DC8D22F12775A8E10007B196 /* iPadOSSideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D22F02775A8E10007B196 /* iPadOSSideBarView.swift */; };
 		DCA723A22769D253001E43B2 /* ProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA723A12769D253001E43B2 /* ProgressIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		DC8D229427718E090007B196 /* ExpandedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedListView.swift; sourceTree = "<group>"; };
 		DC8D22EC2775A39B0007B196 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
+		DC8D22F02775A8E10007B196 /* iPadOSSideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadOSSideBarView.swift; sourceTree = "<group>"; };
 		DCA723A12769D253001E43B2 /* ProgressIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				DC8D229427718E090007B196 /* ExpandedListView.swift */,
 				DC8D22EC2775A39B0007B196 /* DatePickerView.swift */,
 				DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */,
+				DC8D22F02775A8E10007B196 /* iPadOSSideBarView.swift */,
 			);
 			path = StanfordCS193p;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				DC8D229527718E090007B196 /* ExpandedListView.swift in Sources */,
 				DC3365952768739000FEFB98 /* LazyVStackView.swift in Sources */,
 				DC33659127686AD900FEFB98 /* SpriteKit.swift in Sources */,
+				DC8D22F12775A8E10007B196 /* iPadOSSideBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
