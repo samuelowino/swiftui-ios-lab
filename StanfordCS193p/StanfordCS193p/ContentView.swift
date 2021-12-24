@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
+            DisclosureGroupView()
+                .tag("Swift Disclosure Group")
             DatePickerView()
                 .tag("Date Picker View")
             ExpandedListView()
