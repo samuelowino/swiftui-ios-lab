@@ -17,6 +17,9 @@
 		DC33659127686AD900FEFB98 /* SpriteKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC33659027686AD900FEFB98 /* SpriteKit.swift */; };
 		DC3365932768727700FEFB98 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3365922768727700FEFB98 /* ColorPickerView.swift */; };
 		DC3365952768739000FEFB98 /* LazyVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3365942768739000FEFB98 /* LazyVStackView.swift */; };
+		DC56B1222779ADF000E7A78F /* MatchedGeometryEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B1212779ADF000E7A78F /* MatchedGeometryEffectView.swift */; };
+		DC56B1242779B34C00E7A78F /* GeometryEffectAnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B1232779B34C00E7A78F /* GeometryEffectAnimationsView.swift */; };
+		DC56B1262779B3AD00E7A78F /* AdvancedGemotryEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B1252779B3AD00E7A78F /* AdvancedGemotryEffectView.swift */; };
 		DC8D229527718E090007B196 /* ExpandedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D229427718E090007B196 /* ExpandedListView.swift */; };
 		DC8D22ED2775A39B0007B196 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D22EC2775A39B0007B196 /* DatePickerView.swift */; };
 		DC8D22EF2775A6CE0007B196 /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */; };
@@ -36,6 +39,9 @@
 		DC33659027686AD900FEFB98 /* SpriteKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKit.swift; sourceTree = "<group>"; };
 		DC3365922768727700FEFB98 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		DC3365942768739000FEFB98 /* LazyVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVStackView.swift; sourceTree = "<group>"; };
+		DC56B1212779ADF000E7A78F /* MatchedGeometryEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectView.swift; sourceTree = "<group>"; };
+		DC56B1232779B34C00E7A78F /* GeometryEffectAnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryEffectAnimationsView.swift; sourceTree = "<group>"; };
+		DC56B1252779B3AD00E7A78F /* AdvancedGemotryEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedGemotryEffectView.swift; sourceTree = "<group>"; };
 		DC8D229427718E090007B196 /* ExpandedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedListView.swift; sourceTree = "<group>"; };
 		DC8D22EC2775A39B0007B196 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 				DC8D22EC2775A39B0007B196 /* DatePickerView.swift */,
 				DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */,
 				DC8D22F02775A8E10007B196 /* iPadOSSideBarView.swift */,
+				DC56B1212779ADF000E7A78F /* MatchedGeometryEffectView.swift */,
+				DC56B1232779B34C00E7A78F /* GeometryEffectAnimationsView.swift */,
+				DC56B1252779B3AD00E7A78F /* AdvancedGemotryEffectView.swift */,
 			);
 			path = StanfordCS193p;
 			sourceTree = "<group>";
@@ -179,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCA723A22769D253001E43B2 /* ProgressIndicatorView.swift in Sources */,
+				DC56B1242779B34C00E7A78F /* GeometryEffectAnimationsView.swift in Sources */,
 				DC2934E12767206500C939CC /* EmojiCardGameView.swift in Sources */,
 				DC1F659C2763A4E600A2C750 /* ContentView.swift in Sources */,
 				DC8D22ED2775A39B0007B196 /* DatePickerView.swift in Sources */,
@@ -191,6 +201,8 @@
 				DC3365952768739000FEFB98 /* LazyVStackView.swift in Sources */,
 				DC33659127686AD900FEFB98 /* SpriteKit.swift in Sources */,
 				DC8D22F12775A8E10007B196 /* iPadOSSideBarView.swift in Sources */,
+				DC56B1222779ADF000E7A78F /* MatchedGeometryEffectView.swift in Sources */,
+				DC56B1262779B3AD00E7A78F /* AdvancedGemotryEffectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            iPadOSSideBarView()
-                .tag("iPad Side Menu")
+            GeometryEffectAnimationsView()
+                .tag("Matched Geometry Effect")
             DisclosureGroupView()
                 .tag("Swift Disclosure Group")
             DatePickerView()
