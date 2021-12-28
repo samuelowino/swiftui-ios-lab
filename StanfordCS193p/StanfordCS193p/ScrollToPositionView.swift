@@ -25,27 +25,27 @@ struct ScrollToPositionView: View {
     @State private var topStudentUuid: UUID = UUID()
     
     var body: some View {
-        ScrollView { //TODO: not working...
+        ScrollView { 
             ScrollViewReader { value in
                 Button("Jump to top Student"){
-                    value.scrollTo(topStudentUuid)
+                    value.scrollTo(topStudentUuid, anchor: .center)
                 }
-            }
-            
-            ForEach(students) { student in
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(.green)
-                    
-                    HStack{
-                        Text(student.name)
-                            .font(.headline)
-                        Spacer()
-                        Text("\(student.score)")
-                            .bold()
-                    }.foregroundColor(.white)
-                }.frame(height: 200)
                 
+                ForEach(students) { student in
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(.green)
+                        
+                        HStack{
+                            Text(student.name)
+                                .font(.headline)
+                            Spacer()
+                            Text("\(student.score)")
+                                .bold()
+                        }.foregroundColor(.white)
+                    }.frame(height: 200)
+                    
+                }
             }
         }.onAppear {
             topStudentUuid = determineTopStudent()
