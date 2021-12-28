@@ -22,6 +22,7 @@
 		DC56B1262779B3AD00E7A78F /* AdvancedGemotryEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B1252779B3AD00E7A78F /* AdvancedGemotryEffectView.swift */; };
 		DC8A9920277AD3B600320A41 /* ScrollToPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A991F277AD3B600320A41 /* ScrollToPositionView.swift */; };
 		DC8A9922277AD70500320A41 /* MoreViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A9921277AD70500320A41 /* MoreViews.swift */; };
+		DC8A9924277ADBF100320A41 /* FullScreenModeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A9923277ADBF100320A41 /* FullScreenModeViews.swift */; };
 		DC8D229527718E090007B196 /* ExpandedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D229427718E090007B196 /* ExpandedListView.swift */; };
 		DC8D22ED2775A39B0007B196 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D22EC2775A39B0007B196 /* DatePickerView.swift */; };
 		DC8D22EF2775A6CE0007B196 /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */; };
@@ -46,6 +47,7 @@
 		DC56B1252779B3AD00E7A78F /* AdvancedGemotryEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedGemotryEffectView.swift; sourceTree = "<group>"; };
 		DC8A991F277AD3B600320A41 /* ScrollToPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollToPositionView.swift; sourceTree = "<group>"; };
 		DC8A9921277AD70500320A41 /* MoreViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViews.swift; sourceTree = "<group>"; };
+		DC8A9923277ADBF100320A41 /* FullScreenModeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenModeViews.swift; sourceTree = "<group>"; };
 		DC8D229427718E090007B196 /* ExpandedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedListView.swift; sourceTree = "<group>"; };
 		DC8D22EC2775A39B0007B196 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				DC56B1252779B3AD00E7A78F /* AdvancedGemotryEffectView.swift */,
 				DC8A991F277AD3B600320A41 /* ScrollToPositionView.swift */,
 				DC8A9921277AD70500320A41 /* MoreViews.swift */,
+				DC8A9923277ADBF100320A41 /* FullScreenModeViews.swift */,
 			);
 			path = StanfordCS193p;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				DCA723A22769D253001E43B2 /* ProgressIndicatorView.swift in Sources */,
 				DC56B1242779B34C00E7A78F /* GeometryEffectAnimationsView.swift in Sources */,
 				DC2934E12767206500C939CC /* EmojiCardGameView.swift in Sources */,
+				DC8A9924277ADBF100320A41 /* FullScreenModeViews.swift in Sources */,
 				DC1F659C2763A4E600A2C750 /* ContentView.swift in Sources */,
 				DC8D22ED2775A39B0007B196 /* DatePickerView.swift in Sources */,
 				DC2934DF27671E9600C939CC /* MapView.swift in Sources */,

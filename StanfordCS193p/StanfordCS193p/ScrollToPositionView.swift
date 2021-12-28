@@ -25,7 +25,7 @@ struct ScrollToPositionView: View {
     @State private var topStudentUuid: UUID = UUID()
     
     var body: some View {
-        ScrollView { 
+        ScrollView {
             ScrollViewReader { value in
                 Button("Jump to top Student"){
                     value.scrollTo(topStudentUuid, anchor: .center)

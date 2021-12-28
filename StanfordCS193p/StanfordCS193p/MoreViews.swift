@@ -12,7 +12,10 @@ struct MoreViews: View {
         TabView {
             ScrollToPositionView()
                 .tag("Scroll Reader")
-        }
+            FullScreenModeViews()
+                .tag("Full Screen Mode View")
+        }.tabViewStyle(PageTabViewStyle())
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
 }
 
