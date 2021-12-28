@@ -20,6 +20,8 @@
 		DC56B1222779ADF000E7A78F /* MatchedGeometryEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B1212779ADF000E7A78F /* MatchedGeometryEffectView.swift */; };
 		DC56B1242779B34C00E7A78F /* GeometryEffectAnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B1232779B34C00E7A78F /* GeometryEffectAnimationsView.swift */; };
 		DC56B1262779B3AD00E7A78F /* AdvancedGemotryEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B1252779B3AD00E7A78F /* AdvancedGemotryEffectView.swift */; };
+		DC8A9920277AD3B600320A41 /* ScrollToPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A991F277AD3B600320A41 /* ScrollToPositionView.swift */; };
+		DC8A9922277AD70500320A41 /* MoreViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A9921277AD70500320A41 /* MoreViews.swift */; };
 		DC8D229527718E090007B196 /* ExpandedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D229427718E090007B196 /* ExpandedListView.swift */; };
 		DC8D22ED2775A39B0007B196 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D22EC2775A39B0007B196 /* DatePickerView.swift */; };
 		DC8D22EF2775A6CE0007B196 /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */; };
@@ -42,6 +44,8 @@
 		DC56B1212779ADF000E7A78F /* MatchedGeometryEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectView.swift; sourceTree = "<group>"; };
 		DC56B1232779B34C00E7A78F /* GeometryEffectAnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryEffectAnimationsView.swift; sourceTree = "<group>"; };
 		DC56B1252779B3AD00E7A78F /* AdvancedGemotryEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedGemotryEffectView.swift; sourceTree = "<group>"; };
+		DC8A991F277AD3B600320A41 /* ScrollToPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollToPositionView.swift; sourceTree = "<group>"; };
+		DC8A9921277AD70500320A41 /* MoreViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViews.swift; sourceTree = "<group>"; };
 		DC8D229427718E090007B196 /* ExpandedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedListView.swift; sourceTree = "<group>"; };
 		DC8D22EC2775A39B0007B196 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		DC8D22EE2775A6CD0007B196 /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				DC56B1212779ADF000E7A78F /* MatchedGeometryEffectView.swift */,
 				DC56B1232779B34C00E7A78F /* GeometryEffectAnimationsView.swift */,
 				DC56B1252779B3AD00E7A78F /* AdvancedGemotryEffectView.swift */,
+				DC8A991F277AD3B600320A41 /* ScrollToPositionView.swift */,
+				DC8A9921277AD70500320A41 /* MoreViews.swift */,
 			);
 			path = StanfordCS193p;
 			sourceTree = "<group>";
@@ -196,6 +202,7 @@
 				DC8D22EF2775A6CE0007B196 /* DisclosureGroupView.swift in Sources */,
 				DC3365932768727700FEFB98 /* ColorPickerView.swift in Sources */,
 				DC1F659A2763A4E600A2C750 /* StanfordCS193pApp.swift in Sources */,
+				DC8A9920277AD3B600320A41 /* ScrollToPositionView.swift in Sources */,
 				DC2934DB276717F400C939CC /* EmojiMemoryGame.swift in Sources */,
 				DC8D229527718E090007B196 /* ExpandedListView.swift in Sources */,
 				DC3365952768739000FEFB98 /* LazyVStackView.swift in Sources */,
@@ -203,6 +210,7 @@
 				DC8D22F12775A8E10007B196 /* iPadOSSideBarView.swift in Sources */,
 				DC56B1222779ADF000E7A78F /* MatchedGeometryEffectView.swift in Sources */,
 				DC56B1262779B3AD00E7A78F /* AdvancedGemotryEffectView.swift in Sources */,
+				DC8A9922277AD70500320A41 /* MoreViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

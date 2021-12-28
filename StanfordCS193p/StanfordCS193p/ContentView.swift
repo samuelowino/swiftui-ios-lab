@@ -9,29 +9,40 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            GeometryEffectAnimationsView()
-                .tag("Matched Geometry Effect")
-            DisclosureGroupView()
-                .tag("Swift Disclosure Group")
-            DatePickerView()
-                .tag("Date Picker View")
-            ExpandedListView()
-                .tag("Expanded List View")
-            ProgressIndicatorView()
-                .tag("Progress Indicator")
-            EmojiCardGameView()
-                .tag("Emoji Game")
-            MapView()
-                .tag("Map")
-            SpriteKit()
-                .tag("SpriteKit")
-            ColorPickerView()
-                .tag("Color Picker")
-            LazyVStackView()
-                .tag("LazyVStack")
-        }.tabViewStyle(PageTabViewStyle())
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        NavigationView {
+            VStack {
+                
+                NavigationLink(destination: MoreViews()) {
+                    Text("See more view ==>")
+                        .bold()
+                        .font(.headline)
+                }
+                
+                TabView {
+                    GeometryEffectAnimationsView()
+                        .tag("Matched Geometry Effect")
+                    DisclosureGroupView()
+                        .tag("Swift Disclosure Group")
+                    DatePickerView()
+                        .tag("Date Picker View")
+                    ExpandedListView()
+                        .tag("Expanded List View")
+                    ProgressIndicatorView()
+                        .tag("Progress Indicator")
+                    EmojiCardGameView()
+                        .tag("Emoji Game")
+                    MapView()
+                        .tag("Map")
+                    SpriteKit()
+                        .tag("SpriteKit")
+                    ColorPickerView()
+                        .tag("Color Picker")
+                    LazyVStackView()
+                        .tag("LazyVStack")
+                }.tabViewStyle(PageTabViewStyle())
+                    .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+            }
+        }
     }
 }
 
