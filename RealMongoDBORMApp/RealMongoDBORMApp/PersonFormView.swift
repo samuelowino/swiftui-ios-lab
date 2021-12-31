@@ -44,18 +44,20 @@ struct PersonFormView: View {
                     TextField(isUpdateFunction ? personToUpdate.dob : "Enter Dob", text: $dob)
                 }
                 
-                if isSavingPerson {
-                    ProgressView("Saving Person")
-                } else {
-                    Button {
-                        if isUpdateFunction {
-                            updatePerson()
-                        } else {
-                            savePerson()
+                if !personSavedSuccesfully {
+                    if isSavingPerson {
+                        ProgressView("Saving Person")
+                    } else {
+                        Button {
+                            if isUpdateFunction {
+                                updatePerson()
+                            } else {
+                                savePerson()
+                            }
+                            isSavingPerson = true
+                        } label: {
+                            Text(isUpdateFunction ? "Update" : "Save")
                         }
-                        isSavingPerson = true
-                    } label: {
-                        Text(isUpdateFunction ? "Update" : "Save")
                     }
                 }
                 
@@ -63,7 +65,7 @@ struct PersonFormView: View {
                     Text("Person saving failed, error coccured")
                         .foregroundColor(.red)
                 } else if personSavedSuccesfully {
-                    Text("Person Saved Succssfully")
+                    Text("Person Saved Successfully")
                         .foregroundColor(.blue)
                     
                     NavigationLink("View People", destination: PersonsListView())
@@ -87,7 +89,7 @@ struct PersonFormView: View {
                 print("Person saved successfully!")
                 personSavedSuccesfully = true
             }
-            isSavingPerson = false
+            isSavingPerson.toggle()
         }
     }
     

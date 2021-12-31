@@ -96,3 +96,14 @@ try! realm.write {
 ```
 
 
+## Realm Files
+> Realm databae persists data in files saved on device storage. 
+These files include:
+
+* **realm files**, suffixed with "realm", e.g *default.realm*
+> Contains object data.
+
+* **lock files**, suffixed with "lock", e.g *default.realm.lock*
+> Keep track of which version of data in realm are actively in use. This prevents realm from reclaiming storage space that is still used by a client application.
+
+
