@@ -23,14 +23,14 @@ and then nesting navigation view in a **NavigationLink** to set up a transition 
 
 
 ### Data Binding
-```
+```swift
 @EnvironmentObject annotation is used in views that are lower 
 down in the view hierarchy to receive data 
 from views that are higher up.
 
 ```
 
-```
+```swift
 The **environmentObject(_:) modifier can be applied so that 
 views further down in the view hierarchy can 
 read data objects passed down through the environment.
@@ -38,7 +38,7 @@ read data objects passed down through the environment.
 
 > Binding is a value and a way to change that value.
 
-```
+```swift
 A binding controls the storage for a value, 
 so you can pass data around to different views 
 that need to read or write it.
@@ -51,7 +51,7 @@ app's views; bindings aren't limited to just two views.
 
 > **@State** 
 
-```
+```swift
 Use the @State property wrapper to mark a value as state, 
 declare the property as private, and give it a a default value.
 
@@ -74,7 +74,7 @@ be correct when you reuse a view somewhere else in your app, or on a difference 
 
 ZStack overlays views on top of each other
 
-```
+```swift
 
 ZStack {
    Circle().fill(.green)
@@ -103,7 +103,7 @@ A type of object with a *publisher* that emits before the object has changed.
 
 By defaut an **ObservableObject** synthesizes an *objectWillChange* publisher that emits the changed value before any of its **@Published** properties changes.
 
-```
+```swift
 class Contact: ObservableObject {
     @Published var name: String
     @Published var age: Int
@@ -136,14 +136,14 @@ print(john.haveBirthday())
 
 A type that publishes a property marked with an attribute.
 
-```
+```swift
 @propertywrapper struct Published<Value>
 
 ```
 
 Publishing a property with the @Published attribute creates a publisher of this type. You access the publisher with the $ operator.
 
-```
+```swift
 class Weather {
 
     @Published var temperatur: Double 
@@ -177,7 +177,7 @@ weather.temperature = 25
 
 A property wrapper type for an observable object supplied by a parent or ancestor view.
 
-```
+```swift
 
 @frozen @propertywrapper 
 struct EnvironmentObject<ObjectType> where ObjectType : ObservableObject
@@ -197,7 +197,7 @@ Unlike **@ObservableObject** we don't pass our objects into other views by hand.
 
 A property wrapper type that instantiates an observable object.
 
-```
+```swift
 
 Declaration
 
@@ -208,7 +208,7 @@ struct StateObject<ObjectType> where ObjectType : ObservableObject
 
 Create a state object in a **View**, **App** or **Scene** by applying the **@StateObject** attribute to a property declaration and providing an initial value that conforms to the **ObservableObject** protocol:
 
-```
+```swift
 
 @StateObject var model = DataModel() 
 
@@ -224,7 +224,7 @@ class DataModel: ObservableObject {
 SwiftUI creates a new instance of the object only once for each instance of the struture that declares the object. 
 When published properties of the observable object change e.g. the "modelProperty" in the example, SwiftUI updates the parts of any view that depends on those properties:
 
-```
+```swift
 
 Text(model.modelProperty)
 
@@ -236,7 +236,7 @@ You can pass the state object into a property that has the **ObservableObject** 
 
 You can alternatively add the object to the environment of a view hierarchy by applying the environmentObject(_ :) modifier.
 
-```
+```swift
 
 ContentView()
     .environmentObject(model)
@@ -245,7 +245,7 @@ ContentView()
 
 If you create an environment object as shown in the code above, you can read the object inside ContentView or any of it's descendants using the **EnvironmentObject attribute**
 
-```
+```swift
 
 @EnvironmentObject var model: DataModel()
 
@@ -256,7 +256,7 @@ Use a binding when you want to create a two-way connection to one of the object'
 For example, you can let a Toggle control a Boolean value called isEnabled store in the model:
 
 
-```
+```swift
 
 Toggle("Checkout Enabled", isOn: $model.isEnabled)
 
@@ -270,7 +270,7 @@ Toggle("Checkout Enabled", isOn: $model.isEnabled)
 
 A view for presenting a stack of views that represents a visible path in a navigation hierarchy.
 
-```
+```swift
 
 Declaration
 
@@ -285,7 +285,7 @@ On **iPadOS** and **macOS**, the destination content appears in the text column.
 
 Use the **init(content:)** initializer to create a navigation view that directly associates navigation links and their destination views:
 
-```
+```swift
 
 NavigationView {
     List(model.notes) { note in 
@@ -306,7 +306,7 @@ Use other modifiers, like **navigationTitle()**, on views presented by navigatio
 
 A view that controls a navigation presentation
 
-```
+```swift
 
 Declaration
 
@@ -317,7 +317,7 @@ struct NavigationLink<Label, Destination> where Label: View, Destination : View
 Users click or tap a navigation link to present a view inside a NavigationView.
 You control the visual appearance of the link by providing view content in the link's trailing closure.
 
-```
+```swift
 
 NavigationLink(destination: FolderList(id: workFolder.id)) {
     Label("Work Folder", systemImage: "folder")
@@ -327,7 +327,7 @@ NavigationLink(destination: FolderList(id: workFolder.id)) {
 
 For link composed only of text, you can use one of the convinience initializers that takes a string and creates a **Text** view for you.
 
-```
+```swift
 
 NavigationLink("Work Folder", destination: FolderList(id: workFolder.id))
 
@@ -341,7 +341,7 @@ NavigationLink("Work Folder", destination: FolderList(id: workFolder.id))
 
 > A view that arranges its children in a vertical line.
 
-```
+```swift
 
 Declaration
 
@@ -353,7 +353,7 @@ Unlike **LazyVStack**, which only renders the views when your app needs to displ
 
 Use the regular VStack when you have a small number of child views or don't want the delayed rendering behaviour of the "lazy" version.
 
-```
+```swift
 
 //Example
 
@@ -371,7 +371,7 @@ var body: some View {
 
 > A view that arranges its children in a horizontal line.
 
-```
+```swift
 
 Declaration
 
@@ -381,7 +381,7 @@ Declaration
 
 Unlike **LazyHStack**, which only renders the views when your app needs to display them onscreen, an HStack renders the views all at once, regardless of whether they are on- or offscreen. 
 
-```
+```swift
 
 var body: some View {
     HStack(
@@ -408,7 +408,7 @@ var body: some View {
 The scroll view displays its contents within the scrollable content region. 
 ScrollView can scroll vertically, horizontally or both.
 
-```
+```swift
 
 var body: some View {
     ScrollView {
@@ -430,7 +430,7 @@ var body: some View {
 
 A specific point in time, independent of any calendar or time zone.
 
-```
+```swift
 
 Declaration
 
@@ -448,7 +448,7 @@ Use date values in conjuction with **DateFormatter** instances to create localiz
 
 A formatter that converts between dates and their textual representations.
 
-```
+```swift
 
 Declaration
 
@@ -463,7 +463,7 @@ Instances of DateFormatter creat string representations of **NSDate** objects, a
 When displaying a date to a user, you set the **dateStyle** and **timeStyle** properties of the dateFormatter according to your particular needs.
 For example, if you want to show the month, data and year without showing the time, you would set the **dateStyle** property to **DateFormatter.Style.long** property to **DateFormatter.Style.long** .
 
-```
+```swift
 
 let dateFormatter = DateFormatter()
 dateFormatter.dateStyle = .medium
@@ -479,7 +479,7 @@ dateFormatter.locale = Locale(indentifier: "en_US")
 
 If you want to define a format that cannot be achieved using the predefines styles, you can use the **setLocalizedDateFormatFromTemplate()** to specify a localized date format fromm a template.
 
-```
+```swift
 
 let dateFormatter = DateFormatter()
 let date = Date()
@@ -501,7 +501,7 @@ A definition of the relationships between calendar units (such as eras, years an
 
 A type that provides a collection of all of its values
 
-```
+```swift
 
 Declaration
 
@@ -511,7 +511,7 @@ protocol CaseIterable
 
 When using a **CaseIterable type**, you can access a collection of all the type's cases by using the type's **allCases property**.
 
-```
+```swift
 
 enum CompassDirection: CaseIterable {
     case north, south, east, west
@@ -541,7 +541,7 @@ A property wrapper that reads a value from a view's environment.
 Use the **Environment property** wrapper to read a value stored in a view's environment. Indicate the value to read using an **EnvironmentValues** key path in the property declaration.
 For example you an create a property that read the color scheme of the current view using the key path of the **colorScheme** property.
 
-```
+```swift
 
 @Environment(\.colorScheme) var colorScheme: ColorScheme
 
@@ -553,7 +553,7 @@ or
 
 You can condition a view's content on the associated value, which you can read from the declared property's **wrapperValue**. As with any property wrapper, you access the wrapped value by directly referrring to the property:
 
-```
+```swift
 
 if colorScheme == .dark { //checks the wrapped value
     DarkContentView()
@@ -576,7 +576,7 @@ A collection of environment values propagated through a view hierarchy.
 SwiftUI exposes a collection of values to your app's views in an environmentValues structures.
 To read a value from the structure, declare a property using the **Environement** property wrapper and specify the value's key path. 
 
-```
+```swift
 //You can read the current locale
 
 @Environment(\.locale) var locale: Locale
@@ -587,7 +587,7 @@ Use the property you declare to dynamically control a view's layout. SwiftUI aut
 
 You can set or override some values using the **environemtn()** view modifier:
 
-```
+```swift
 
 MyView()
     .environment(\.lineLimit, 2)
@@ -600,14 +600,14 @@ The value that you set affects the environment for the view that you modify- *in
 SwiftUI provides dedicated view modifiers for setting some values, whcih typically makes your code easier to read.
 For example, rather thatn setting the **lineLimit** value directly, as in the previous example, you should instead use the **lineLimit()** modifier:
 
-```
+```swift
 
 MyView()
     .lineLimit(2)
     
 ```
 
-```
+```swift
 
 MyVeiw()
     .popover(isPresented: $isPopped) {
@@ -621,7 +621,7 @@ MyVeiw()
 
 Create custom environment values by defining a type that conforms to the **EnvironmentKey** protocol, and then **extending** the environment values structure with a new property. Use your key to **get** and **set** the value, and provide a dedicated modifier for clients to use when setting the value:
 
-```
+```swift
 
 private struct MyEnvironmentKey: EnvironmentKey {
     static let defaultValue: String = "Default value"
@@ -650,7 +650,7 @@ The current value of the environment propery
 
 The wrapped value property provides primary access to the value's data. However, you don't access wrapped value directed. Instead, you read the property variable created with the environment property wrapper:
 
-```
+```swift
 
 @Environment(\.colorScheme) var colorScheme: ColorScheme
 
@@ -673,7 +673,7 @@ A property wrapper type that can read and write a value owned by a source of tru
 Use a binding  to create a two-way connection between a property that stores data, and a view that displays and changes the data. A binding connects a property to a source of truth stored elsewhere, instead of storing data directly. For example, a button that toggles between play and pause can create a binding to a property of its parent view using the **Binding** property wrapper.
 
 
-```
+```swift
 
 struct PlayButton: View {
     
@@ -696,7 +696,7 @@ struct PlayButton: View {
 
 A type that represents the structure and behaviour of an app.
 
-```
+```swift
 
 Declaration
 
@@ -706,7 +706,7 @@ protocol App
 
 Create an app by declaring a structure that conforms to the App protocol. Implement the required *body computed property* to define the app's content.
 
-```
+```swift
 
 @main
 struct MyApp: App {
@@ -730,7 +730,7 @@ Compose the app's body from instances that conform to the **Scene** protocol.
 Each scene contains the root view of a view hierachy and a has a life cycle managed by the system. 
 SwiftUI provides some concrete scene types to handle common scenarios, like displaying documents or **settings**. You can also create custom scenes.
 
-```
+```swift
 
 @main 
 struct MailApp: App {
@@ -749,7 +749,7 @@ struct MailApp: App {
 
 You can declare state in your app to share across all of its scenes. For example, you can use the StateObject attribute to initialize a data model, and then provide that model on a view input as an ObservedOject or through the environment as an EnvironmentObject to scenes in the app.
 
-```
+```swift
 
 @main
 struct Mail: App {
@@ -782,7 +782,7 @@ You use this key to define the launch screen that the system displays while your
 
 A part of an app's user interface with a life cycle managed by the system.
 
-```
+```swift
 
 Declaration
 
@@ -793,7 +793,7 @@ protocol Scene
 You create an **App** by combinig one or more instances that conform to the Scene protocol in the app's *body*. You can use the built-in scenes that SwiftUI provides, like **WindowGroup**, along with custom scenes that you compose from other scenes. To create a custom scene, declare a type that conforms to the Scene protocol. Implement the required **body** computed property and provide the content for your custom scene.
 
 
-```
+```swift
 struct MyScene: Scene {
     var body: some Scene {
         WindowGroup {
@@ -812,7 +812,7 @@ On other platforms, the same view hierarchy might consume the entire display whe
 
 Read the **scenePhase** environment value from within a scene or one of its views to check whether a scene is active or in some oher state. You can create a property that contains the scene phase, which is one of the values in the **ScenePhase** enumeration, using the **Environment** attribute.
 
-```
+```swift
 struct MyScene: Scene {
     @Environment(\.scenePhase) private var scencePhase
     
@@ -823,7 +823,7 @@ struct MyScene: Scene {
 
 The Scene protocol provides scene modifiers, defined as protocol methods with default implementations, that you use to configure a scene. For example, you can use the **onChange(ofLperform:)** modifier to trigger an action when value changes.
 
-```
+```swift
 //The following code empties the cache when all of the scenes 
 //in the window group have moved to the background.
 
@@ -853,7 +853,7 @@ A scene that presents a group of identically structured windows.
 
 Use a WindowGroup as a container for a view hierarchy presented by your app. The hierarchy that you declare as the group's content serves as a template for each window that the app creates from that group.
 
-```
+```swift
 
 @main
 struct Mail: App {
@@ -876,7 +876,7 @@ Every window created from the group maintains independent state. For example, fo
 
 A scene that enables support for opening,creating and saving documents.
 
-```
+```swift
 
 Declaration
 
@@ -890,7 +890,7 @@ Initialize a document group scene by passing in the document model and a view ca
 
 SwiftUI uses the model to add document support to your app. In macOS this includes document-based menu support, including the ability to open multiple documents. In iOS this includes a document browser that can navigate to the documents stored on the file system and multiwindow support.
 
-```
+```swift
 
 @main
 struct MyApp: App {
@@ -906,7 +906,7 @@ struct MyApp: App {
 If your app only needs to display but not modify a specific document type, you can use the file viewer document group scene. You supply the file type of the document, and a view that displays the document type that you provide:
 
 
-```
+```swift
 
 @main
 struct MyApp: App {
@@ -927,7 +927,7 @@ A scene that presents an interface for viewing and modifying an app's settings.
 
 Use a settings scene to have SwiftUI manage views with controls for your app's settings when you declare your app using the **App** protocol. When you use an **App** declaration for multiple platforms, compile the settings scene only in **macOS**.
 
-```
+```swift
 
 @main
 struct MyApp: App {
@@ -950,7 +950,7 @@ Passing a view as the argument to a settings scene in the **App** declaration ca
 
 The contents of your settings view are controls that modify bindings to **UserDefaults** values that SwiftUI manages using the **AppStorage** property wrapper:
 
-```
+```swift
 struct GeneralSettingsView: View {
     @AppStorage("showPreview") private var showPreview = true
     @AppStorage("fontSize") private var fontSize = 12.0
@@ -971,7 +971,7 @@ struct GeneralSettingsView: View {
 
 You can define your settings in a single view, or you can use a **TabView** to group settings into different collections:
 
-```
+```swift
 
 struct SettingsView: View {
     private enum Tabs: Hashable {
@@ -1013,7 +1013,7 @@ A scene which appears in response to receiving the specified categpry of remote 
 
 Declare a custom view type by defining a strcuture that conforms to the **View** protocol.
 
-```
+```swift
 
 struct MyCustomView: View {
 
@@ -1029,7 +1029,7 @@ After you fulfill the requirements, you can insert your custom view into a view 
 
 The **View** protocol's main requirement is that conforming types must define a **body computed property**:
 
-```
+```swift
 
 struct MyView: View {
     var body: some View {
@@ -1050,7 +1050,7 @@ Describe your view's appearance by adding content to the view's body property. Y
 
 For example, you can create a body that draws the string "Hello, World!" using a built-in **Text** view.
 
-```
+```swift
 
 struct MyView: View {
     var body: some View {
@@ -1062,7 +1062,7 @@ struct MyView: View {
 
 In addition to views for specific kinds of content, controls and indicators, like **Text**, **Toggle** and **ProgressView**, SwiftUI also provides primitive views that you can use to arrange other views. For example, you can vertically stack two **Text** views using a **VStack**.
 
-```
+```swift
 
 struct MyView: View {
     var body: some View {
@@ -1086,7 +1086,7 @@ A modifier is nothing more than a method called ona particular view. The method 
 
 SwiftUI extends the **View** protocol with a large set of methods for this purpose. All View protocol conformers - both primitive and custom views - have access to these methods that alter the behaviour of a view in some way.
 
-```
+```swift
 
 struct MyView: View {
     var body: some View {
@@ -1105,7 +1105,7 @@ struct MyView: View {
 
 To supply input to your view, add properties. 
 
-```
+```swift
 
 struct MyView: View {
     let helloFont: Font
@@ -1125,7 +1125,7 @@ struct MyView: View {
 
 After you define a view, you can incorporate it into other views, just like you do with primitive views. You add your view by declararing it at the point in the hierarchy at which you want it to appear.  For example, you could put MyView in your app's ContentView, which XCode creates automcatically as the root view of a new app:
 
-```
+```swift
 struct ContentView: View {
     var body: some View {
         MyView(helloFont: .title)
@@ -1155,7 +1155,7 @@ That includes primitive views like Text, Image and Button, as well as view that 
 
 ### Configure a View with a Modifier
 
-```
+```swift
 
 Text("Hello, world")
     .foregorundColor(.red) //Display red text
@@ -1168,7 +1168,7 @@ Modifiers return a view that wraps the original view and replaces it in the view
 
 You commonly chain modifiers, each wrapping the result of the previous one, by calling them one after the other. For example, you can wrap a text view in an invisible box with a given width using the **frame(width:height:alignment:)** modifier to influence  its layout and them use the **boder(:width:) modifier to draw an outline around that:
 
-```
+```swift
 
 Text("Title")
     .frame(width: 100)
@@ -1183,7 +1183,7 @@ The effects of a modifier propagate to child views that don't explicitly overrid
 
 For example, a **VStack** instance on its own acts only to vertically stack other views - it doesn't have any text to display. Therefore, applying a **font()** modifier to the stack has no effect on the stack. Yet the font modifier does apply to any of the stack's child views, some of which might display text. You can, however, locally override the stack's modifier by adding another specific child view:
 
-```
+```swift
 
 VStack {
     Text("Title")
@@ -1199,7 +1199,7 @@ VStack {
 
 While many view types rely on standard view modifiers for customization and control, some views do define modifiers that are specific to that view type. You can't use such a modifier on anything but the appropriate kind of view. For example, **Text** defines the **bold()** modifier as a convenience for adding a bold effect to the view's text. While you can use font() on any view because its part of the View protocol, you can use **bolder()** only on **Text** views. As a result, you can't use it on container such as VStack.
 
-```
+```swift
 VStack {
     Text("Hello World!")
 }
@@ -1209,7 +1209,7 @@ VStack {
 
 You also can't use it on a **Text** view after applying another general modifier becuase general modifiers return an **opaque type**. For example, the return value fromt he padding modifier isn't **Text**, but rather an opaque result type that can't take a bold modifier:
 
-```
+```swift
 Text("Hello, world!")
     .padding()
     .bold() // Fails because 'some View' doesn't have a 'bold' modifier,
@@ -1218,7 +1218,7 @@ Text("Hello, world!")
 
 Instead apply the bold modifier directly to the view and then add the padding.
 
-```
+```swift
 
 Text("Hello, world!")
     .bold() // Succeeds.
@@ -1230,7 +1230,7 @@ Text("Hello, world!")
 
 A type that represents part of your app's user intreface and provides modifiers that you use to configure views.
 
-```
+```swift
 Declaration
 
 protocol View
@@ -1241,7 +1241,7 @@ protocol View
 
 A view that displays one or more lines of read-only text.
 
-```
+```swift
 Declaration
 
 @frozen struct Text
@@ -1250,14 +1250,14 @@ Declaration
 
 A text view draws a string in your app's user interface using a **body** font that's appropriate for the current platform. You can choose a different standard font, like **title** or **cpation**, using the **font** view modifier.
 
-```
+```swift
 Text("Hamlet")
     .font(.title)
 ```
 
 If you need finer control over styling of the text, you can use the same modifier to configure a system font or choose a custom font. You can also apply view modifiers like **bold()** or **italic()** to further adjust the formatting.
 
-```
+```swift
 Text("by William Shakespeare")
     .font(.system(size:21, weight:.light, design:.serif)
     .italic()
@@ -1267,7 +1267,7 @@ A text view always uses exactly the amount of space it needs to display its rend
 
 Use modifiers like **lineLimit()**, **allowTightening()**, **minimumScaleFacor()**, and **truncationMode()** to configure the view handles space constraints. For example, combinging a fixed width and line limit of 1 results in truncation for text that doesn't fit in that space.
 
-```
+```swift
 Text("Brevity is the soul of wit.")
     .frame(width: 100)
     .lineLimit(1)
@@ -1277,7 +1277,7 @@ Text("Brevity is the soul of wit.")
 
 If you initialize a text view with a string literal, the view uses the **init(tableName:bundle:comment)** initializer, which interprets the string as a localization key and searches for the key in the table you specify or in the default table if you don't specify one.
 
-```
+```swift
 Text("pencil") //Searches the default table in the main bundle
 
 ```
@@ -1286,7 +1286,7 @@ Text("pencil") //Searches the default table in the main bundle
 
 A control that displays an editable text interface.
 
-```
+```swift
 struct TextField<Label> where Label : View
 
 ```
@@ -1297,7 +1297,7 @@ For non-string types, it updates the value when the user commits their edits, su
 
 The following example shows a text field to accept a username, and a Text view below it that shadows the continously updated value of username. The **Text** view changes color as the user begins and ends editing. When the user submits their completed entry to the text field, the onSubmit(of:) modifier calls an internal valicate(name:) method.
 
-```
+```swift
 @State private var username: String = ""
 @Focused private var emailFieldIsFocused: Bool = false
 
@@ -1328,7 +1328,7 @@ For example, a form on macOS, always places the label at the leading edge of the
 
 The following example shows a **Form** with two text fields, each of which provides a prompt to indicate that the field is required, and a view builder to provide a label:
 
-```
+```swift
 Form {
     TextField(text: $username, prompt: Text("Required")) {
         Text("Username")
@@ -1346,7 +1346,7 @@ SwiftUI provides a default text field style that reflects an appearance and beha
 
 Beyond this, you can customize the appearnce and interaction of the text fields using the **textFieldStyle()** modifier, passing in an instance of **TextFieldStyle**. 
 
-```
+```swift
 @State private var givenName: String = ""
 @State private var familyName: String = ""
 
@@ -1376,7 +1376,7 @@ var body: some View {
 
 A control into which a user securely enters private text.
 
-```
+```swift
 struct SecureField<Label> where Label : View
 
 ```
@@ -1388,7 +1388,7 @@ A SecureField uses a binding to a string value, and a closure that executes when
 The Field updates the bound string on every keytroke or other edit, so you can read its value at anytime from another control such as a Done button.
 
 
-```
+```swift
 @State private var username: String = ""
 @State private var password: String = ""
 
@@ -1420,7 +1420,7 @@ A text editor allows you to display and edit multiline,scrollable text in your a
 
 You create a text editor by adding a TextEditor instance to the body of your view, and initialize it by passing in a **Binding** to a string variable in your app:
 
-```
+```swift
 struct TextEditingView: View {
     @State private var fullText: String = ""
     
@@ -1444,7 +1444,7 @@ Tells the image view to adjust the image representation to match the size of the
 Corrects the behaviour where the image scaling is different for each axis. This preseves the image's origincal aspect ratio, using one of two strategies defined by the **ContentMode** enumeration. **ContentMode.fit** scales the image to fit the view size along one axis, possibly leaving empty space along the other axis. 
 **ContentMode.fill** scales the image to fill the entire view.
 
-```
+```swift
 
 Image("image-file-name")
     .resizable()
@@ -1460,7 +1460,7 @@ If you use **ContentMode.fill** when scaling an image, a portion of an image may
 
 To prevent this problem, add the **clipped(antialiased:)** modifier. This modifier simply cuts off excess image rendering at the bounding frame of the view. Optionally, you can add an antialiasing behaviour to apply smoothing to the edges of the clipping rectangle; this parameter defaults to **falsse**. 
 
-```
+```swift
 
 Image("image-file-name")
     .resizable()
@@ -1494,7 +1494,7 @@ A view that asynchronously loads and displays an image.
 
 This view uses the shared **URLSession** instance to load an image from the specified URL, and then display it.
 
-```
+```swift
 AsyncImage(url: URL(string: "https://example.com/"))
     .frame(width: 200, height: 200)
     
@@ -1505,7 +1505,7 @@ Until the image loads, the view displays a standard placeholder that fills the a
 You can specify a custom placeholder using the **init(url:scale:content:placeholder)**.
 With this initializer, you can also use the content parameter to manipulate the loaded image.
 
-```
+```swift
 
 AsyncImage(url: URL(string: "https://example.com/icon.png")) { image in 
     image.resizable()
@@ -1518,7 +1518,7 @@ AsyncImage(url: URL(string: "https://example.com/icon.png")) { image in
 
 To gain more control over the loading process, uses the **init(url:scale:transaction:content:)** initializer, which takes a content closure that receives an **AsyncImagePhase** to indicate the state of the loading operation. Return a view that's appropriate for the current phase:
 
-```
+```swift
 AsyncImage(url: URL(string: "https://example.com/")) { phase in 
     if let image = phase.image {
         image //Displays the loaded image
@@ -1535,7 +1535,7 @@ AsyncImage(url: URL(string: "https://example.com/")) { phase in
 
 A control that initiates an action
 
-```
+```swift
 
 struct Button<Label> where Label : View
 
@@ -1543,7 +1543,7 @@ struct Button<Label> where Label : View
 
 You create a button by providing an action and label. The action is either a method or closure property that does something when a user clicks or taps the button. The label is a view that describes the button's action - for example, by showing text, an icon or both:
 
-```
+```swift
 Button(action: signIn) {
     Text("Sign in")
 }
@@ -1552,7 +1552,7 @@ Button(action: signIn) {
 
 For the common case of text-only labels, you can use the convinience initializer that takes a title string or **LocalizedStringKey** as its first parameter, instead of trailing closure:
 
-```
+```swift
 Button("Sign in", action: signIn)
 
 ```
@@ -1568,7 +1568,7 @@ How the user activates the button varies by platform:
 
 Use buttons for any user interface element that initiate an action. Buttons automatically adpat their visual style to match the expectd style within these containers and contexts.
 
-```
+```swift
 List {
     //Calls that show all the current folders.
     ForEach(folders) {folder in 
@@ -1585,7 +1585,7 @@ List {
 
 Similarly, to create a context menu item that initiates an action, add a button to the **contextMenu()** modifier's content closure:
 
-```
+```swift
 .contextMenu {
     Button("Cut", action: cut)
     Button("Copy", action: copy)
@@ -1598,7 +1598,7 @@ Similarly, to create a context menu item that initiates an action, add a button 
 
 You can optionally initialize a button with a **ButtonRole** that characterizes the button's purpose. For example, you can create a **destructive** button for a deletion action:
 
-```
+```swift
 Button("Delete", role: .destructive, action: delete)
 
 ```
@@ -1607,7 +1607,7 @@ Button("Delete", role: .destructive, action: delete)
 
 You can customize a button's appearance using one of the standard button styles, like **bordered**, and apply the style with the **buttonStytle()** modifier.
 
-```
+```swift
 HStack {
     Button("Sign In", action: signIn)
     Button("Register", action: register)
@@ -1622,7 +1622,7 @@ A button that toggles the edit mode the current edit scope.
 
 An edit button toggles the editMode for content within a container that supports **EditMoe.active**. 
 
-```
+```swift
 
 @State private var fruits = [
     "Apple",
@@ -1659,7 +1659,7 @@ A control for navigation to a URL
 
 You create a link by providing a destination URL and title. The title tells the user the purpose of the link, which can be either a string, or a title key that returns a localized string used to contruct a label displayed to the user in your app;s UI.
 
-```
+```swift
 Link("View Our Terms of Service",
             destination: URL(string: "https://thelifeplanner.co/")!)
 
@@ -1669,7 +1669,7 @@ Link("View Our Terms of Service",
 
 A control for presenting a menu of actions.
 
-```
+```swift
 Menu("Actions") {
     Button("Duplicate", action: duplicate)
     Button("Rename", action: rename)
@@ -1692,7 +1692,7 @@ A control that toggles between on and off states.
 You create a toggle by providing an **isOn** binding and a label. Bind **isON** to a Boolean property that determines whether the toggle is on or off. 
 Set the label to a view that visually describes the purpose of switching between toggle states.
 
-```
+```swift
 @State private var vibrateOnRing = false
 
 var body: some View {
@@ -1705,7 +1705,7 @@ var body: some View {
 
 For the common case of text-only labels, you can use the convinience initializer that takes a title string (or localized string key) as its first parameter, instead of a trailing closure:
 
-```
+```swift
 @State private var vibrateOnRing = true
 
 var body: some View {
@@ -1718,7 +1718,7 @@ var body: some View {
 
 You can customize the appearance and interaction of toggles by creating styles that conform to the **ToggleStyle** protocol. To set a specific for all toggle instances within a view, use the **toggleStyle(:)** modifier:
 
-```
+```swift
 VStack {
     Toggle("Vibrate on Ring", isOn: $vibrateOnRing)
     Toggle("Vibrate on Silent", isOn: $vibrateOnSilent)
@@ -1732,7 +1732,7 @@ VStack {
 
 A conrtol for selecting a value from a bounded linear range of values
 
-```
+```swift
 
 @State private var speed = 50.0
 @State private var isEditing = false
@@ -1755,7 +1755,7 @@ var body: some View {
 
 You can also use a **step parameter** to provide incremental steps along the path of the slider. For example, if you have a slider with a range of 0 to 100, and you set the step value to 5, the slider's inrements would be 0,5,10 and so on. 
 
-```
+```swift
 @State private var speed = 50.0
 @State private var isEditing = false
 
@@ -1794,7 +1794,7 @@ Use a stepper control when you want the user to have granular control while incr
 * Operate strickly over a prescribed range
 * Step by specific amounts over a stepper's range of possible values.
 
-```
+```swift
 struct StepperView: View {
     @State private var value = 0
     let step = 5
@@ -1823,7 +1823,7 @@ You create a picker by providing a selection binding, a label and the content of
 
 Set the label to a view that visually describes the purpose of selecting content in the picker, and then provide the content for the picker to display.
 
-```
+```swift
 
 @State private var selectionFlavor = Flavor.chocolate //where flavor is an enum
 
@@ -1841,7 +1841,7 @@ Text("Selected flavor: \(selectedFlavor.rawValue)")
 
 To provide a selection values for the **Picker** without explicitly listing each option, you can create the picker with a **ForEach** construct, like this:
 
-```
+```swift
 
 Picker("Falvor", selection: $selectedFlavor) {
     ForEach(Flavor.allCases) { flavor in 
@@ -1861,7 +1861,7 @@ You can customize the appearance and interaction of pickers by creating styles t
 
 A control for selecting an absolute date
 
-```
+```swift
 Declaration
 
 struct DatePicker<Label> where Label : View 
@@ -1870,7 +1870,7 @@ struct DatePicker<Label> where Label : View
 
 Use a DatePicker when you want to provide a view that allows the user to select a calendar date, and optionally a time. The view binds to a **Date** instance.
 
-```
+```swift
 @State private var date = Date()
 
 var body: some View {
@@ -1887,7 +1887,7 @@ var body: some View {
 
 Use the **datePickerStyle(:) view modifier** to style date picker. 
 
-```
+```swift
 
 @State private var date = Date()
 
@@ -1908,7 +1908,7 @@ var body: some View {
 
 A control used to select a color from the system color picker UI
 
-```
+```swift
 
 struct ColorPicker<Label> where Label : View
 
@@ -1918,7 +1918,7 @@ The color picker provides a color well that shows the current selected color and
 
 By default color picker supports colors with opacity; to disable opacitiy support, set the **supportsOpacity** parameter to false. In this mode the color picker won't show controls for adjusting the opacity of the selected color, and strips out opacity from any color set programmatically or selected from the user's system favourites.
 
-```
+```swift
 
 struct FormattingControls: View {
     @State private var bgColor = Color.red
@@ -1938,7 +1938,7 @@ struct FormattingControls: View {
 
 A standard label for user interface items, consisting ot an icon with a title.
 
-```
+```swift
 Label {
     Text(person.fullname)
         .font(.body)
@@ -1962,7 +1962,7 @@ A view that shows the progress towards completion of a task
 
 Use a progressview to show that a task is making progress towards completion. A progress view can show both **determinate (percentage complete)** and **indeterminate(progressing or no)** types of progress.
 
-```
+```swift
 
 //Determinate ProgressView
 
@@ -1977,7 +1977,7 @@ VStack {
 
 To create an indetermiate progress view, use an initializer that doesn't take a progress value.
 
-```
+```swift
 
 var body: some View {
     ProgressView()
@@ -2084,7 +2084,7 @@ Spacers expand to fill any available space and push content apart from other vie
  
  Implementing repeating views or groups of views can be as simple as wrapping then in **HStack** or **VStack** inside a **ScrollView**.
  
- ```
+ ```swift
  
  ScrollView(.horizontal) {
     ProfileView()
@@ -2100,7 +2100,7 @@ Spacers expand to fill any available space and push content apart from other vie
 
 Use **ForEach** to repeat views for the data in your app. 
 
-```
+```swift
 
 ScrollView(.horizontal) {
     HStack {
@@ -2133,7 +2133,7 @@ Lazy stacks load and render their subviews on-demand, providing significant perf
  
  Group data with **Section** views and pass in a header or footer view with the header and footer properties. 
  
- ```
+ ```swift
  
 var body: some View {
     ScrollView {
@@ -2195,7 +2195,7 @@ A type that collects multiple instances of a content type- like views, scenes or
 
 Use a group to collect multiple views into a single instance, without affecting the layout of those views. 
 
-```
+```swift
 Group {
     Text("SwiftUI")
     Text("Combine")
@@ -2210,7 +2210,7 @@ A styled view, with an optional label, that visually collects a logical grouping
 
 Use a group box when youo want to visually distinguish a portion of your user interface with an optional title for the boxed content.
 
-```
+```swift
 
 var body: some View {
         GroupBox(label:
@@ -2257,7 +2257,7 @@ A container that presents rows of data arranged ina single column, optionally pr
 
 To make members of a list selectable, provide a binding to a selection variable. Binding to a single instance of the list data's **Identifiable.ID** type creates a single selection list. Binding to a **Set** creates a list that supports multiple selections.
 
-```
+```swift
 
 struct Ocena: Identifiable, Hashable {
     let name: String
@@ -2305,7 +2305,7 @@ A structure that computes views on demand from an underlying collection of ident
 
 Either the collection's elements must conform to **Identifiable** or you need to provide an id parameter to the ForEach initializer.
 
-```
+```swift
 
 var body: some View {
     ForEach(namedFonts) { namedFont in 
@@ -2324,7 +2324,7 @@ A view for presenting a stack of views that represents a visible path in navigat
 
 Use a navigationView to create a navigation-based app in which the user can traverse a collection of views. Users navigate to a destination view by selecting a **NavigationLink** that you provide. 
 
-```
+```swift
 
 NavigationView {
     List(mode.notes) { note in
@@ -2349,7 +2349,7 @@ A view that switches between multiple child views using interactive user interca
 
 To create a user interface with tabs, place views in a TabView and apply the **TabItem** modifier to the contents of each tab.
 
-```
+```swift
 
 TabView {
     Text("The First Tab")
@@ -2426,7 +2426,7 @@ When you schedule work a item synchronously, your code wait s until that item fi
 
 > Schedule a work item for execution at the specified time, and returns immediately.
 
-```
+```swift
 DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
     withAnimation {
         //todo add work code here.
@@ -2448,7 +2448,7 @@ Cocoapods will resolve dependencies between libraries, fetch the resulting sourc
 
 > Create a **Podfile**, add your dependencies;
 
-```
+```podfile
     target 'MyApp' do
         pod 'AFNetworking', '~> 3.0'
         pod 'FBSDJCoreKit', '~> 4.9'
@@ -2458,7 +2458,7 @@ Cocoapods will resolve dependencies between libraries, fetch the resulting sourc
 
 > Run pod install in your project directory
 
-```
+```shell
 $ pod install
 ```
 > Open **App.xcworkspace** and build
