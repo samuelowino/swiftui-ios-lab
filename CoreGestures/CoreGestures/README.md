@@ -22,6 +22,7 @@ Create custom gestures from individual gestures using the following modifiers;
 
 ### 5. Gesture Support
 
+## Basic Gestures
 ## Brief:
 
 Gesture modifiers handle all of the logic needed to process user-input events such as touches, and recognize when those events match a known gesture pattern, such as a long press or rotation.
@@ -108,6 +109,31 @@ struct CounterView: View {
 To recognize when a gesture successfully completes and to retrieve the gesture's final value, use the **onEnded()** function to update your app's state in the callback. 
 
 
+- - -
+
+## TapGesture
+
+> A gesture that recognizes one or more taps
+
+```swift
+struct TapGestureView: View {
+    @State var tapped = false
+    
+    var tap: some Gesture {
+        TapGesture(count: 1)
+            .onEnded { _ in 
+                self.tapped = !self.tapped
+        }
+    }
+    
+    var body: some View {
+        Circle()
+            .fill(self.tapped ? Color.blue : Color.red)
+            .frame(width: 100, height: 100, alignment: .center)
+            .gesture(tap)
+    }
+}
+```
 
 
 
