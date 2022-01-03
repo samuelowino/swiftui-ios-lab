@@ -13,33 +13,39 @@ struct IgnitionDriveView: View {
     @GestureState private var reverseGestureState = false
     @State private var showDriveAlert = true
     @State private var showOutOfGasAlert = false
-    @State private var distanceCovered: Float = 1.0
+    @State var distanceCovered: Float = 1.0
     
     var body: some View {
         
         let circleShape = Circle()
-        let driveGesture = LongPressGesture(minimumDuration: 1)
+        let driveGesture = LongPressGesture(minimumDuration: 1000)
             .updating($drivingGestureState) { (currentState, gestureState, transaction) in
+                gestureState = currentState
+            }.onChanged { _ in
                 if distanceCovered < 1000 {
-                    distanceCovered += 1
+                    self.distanceCovered += 10
                 } else {
                     showOutOfGasAlert = true
                 }
-                gestureState = currentState
+            }.onEnded { _ in
+                print("drive gesture ended")
             }
         
-        let reverseGesture = LongPressGesture(minimumDuration: 1)
+        let reverseGesture = LongPressGesture(minimumDuration: 1000)
             .updating($reverseGestureState) { (currentState, gestureState, transaction) in
                 gestureState = currentState
+            }.onChanged { _ in
                 if distanceCovered > 0 {
-                    distanceCovered -= 1
+                    self.distanceCovered -= 10
                 }
+            }.onEnded { _ in
+                print("reverse gesture ended")
             }
         
         VStack(alignment: .leading) {
             Text("Distance Covered in Km: \(distanceCovered)")
                 .font(.headline)
-            ProgressView(value: distanceCovered)
+            ProgressView(value: distanceCovered > 0 ? distanceCovered : 0, total: 1000)
                 .frame(height: 40)
             
             HStack {
@@ -47,7 +53,7 @@ struct IgnitionDriveView: View {
                     circleShape.strokeBorder(style: StrokeStyle(lineWidth: 2))
 
                     circleShape
-                        .fill(.white)
+                        .fill(drivingGestureState ? .white : .red)
                         .frame(width: 100, height: 100, alignment: .center)
                     
                     Text("D")
@@ -64,7 +70,7 @@ struct IgnitionDriveView: View {
                     circleShape.strokeBorder(style: StrokeStyle(lineWidth: 2))
 
                     circleShape
-                        .fill(.white)
+                        .fill(reverseGestureState ? .white : .red)
                         .frame(width: 100, height: 100, alignment: .center)
                     
                     Text("R")

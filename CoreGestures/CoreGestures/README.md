@@ -51,7 +51,10 @@ Gesture modifiers offer three ways to receive updates:
 ### 2. onChanged(...)
 ### 3. onEnded(...)
 
-To update a view as a gesture changes, add a GestureState property to your view and update it in the **updating(body)** callback. 
+To update a view as a gesture changes, add a **@GestureState** property to your view and update it in the **updating(body)** callback. 
+SwiftUI invokes the updating callback as soon as it recognizes the gesture and whenever the value of the gesture changes.
+
+SwiftUI doesn't invoke the updating callback when the user ends or cancels a gesture. Instead the gesture state property automatically resets its state back to its initial value
 
 ```swift
 struct CounterView: View {
@@ -70,6 +73,39 @@ struct CounterView: View {
     }
 }
 ```
+
+## Update Permanent State During a Gesture
+To track changes to a gesture that shouldn't reset once the gesture ends, use the **onChanged()** callback. 
+
+```swift
+struct CounterView: View {
+    @GestureState var isDetectingLongPress = false
+    @State var totalNumberOfTaps = 0
+    
+    var body: some View {
+        let press = LongPressGesture(minimumDuration: 1)
+            .updating($isDetectingLongPress) { currentState, gestureState, transaction in
+            gestureState = currentState
+        }.onChanged { _ in 
+            self.totalNumberOfTaps += 1
+        }
+        
+        return VStack {
+            Text("\(totalNumberOfTaps)")
+                .font(.largeTitle)
+            
+            Circle()
+                .fill(isDetectingLongPress ? Color.yess : Color.green)
+                .frame(width: 100, height: 100)
+                .gesture(press)
+        }
+    }
+}
+```
+
+## Update permanent state when a gesture is ended
+
+To recognize when a gesture successfully completes and to retrieve the gesture's final value, use the **onEnded()** function to update your app's state in the callback. 
 
 
 
