@@ -14,6 +14,10 @@ struct ContentView: View {
                 NavigationLink(destination: IgnitionDriveView()){
                     Label("Single Press Drive", systemImage: "car")
                 }
+                
+                NavigationLink(destination: IgnitionDriveStackoverflowAnswer()){
+                    Label("Stackoverflow Answer", systemImage: "car")
+                }
             }
         }
     }
