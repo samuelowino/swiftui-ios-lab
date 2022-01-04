@@ -110,6 +110,7 @@ To recognize when a gesture successfully completes and to retrieve the gesture's
 
 
 - - -
+# Basic Gestures
 
 ## TapGesture
 
@@ -168,6 +169,43 @@ struct LongPressGestureView: View {
 ```
 
 A **GestureState** is a property wrapper type that updates a property while the user performs a gesture and resets the property back to its initial state when the gesture ends.
+- - -
+
+## DragGesture 
+
+> A dragging motion that invokes an action as the drag-event sequence changes.
+
+```swift
+struct DragGestureView: View {
+    
+    @State var isDragging = false
+    
+    var drag: some Gesture {
+        DragGesture()
+            .onChanged { _ in self.isDragging = true }
+            .onEnded { _ in self.isDragging = false }
+    }
+    
+    var body: some View {
+        Circle()
+            .fill(self.isDragging ? Color.red : Color.blue)
+            .frame(width: 100, height: 100, alignment: .center)
+            .gesture(drag)
+    }
+}
+```
+
+### init(minimumDistance: coordinateSpace)
+
+Creates a dragging gesture with the minimum dragging distance before the gesture succeeds and the coordinate space of the gesture's location.
+
+```swift
+init(minimumDistance: CGFloat = 10, coordinateSpace: CoordinateSpace = .local)
+```
+
+**minimumDistance** - The minimum dragging distance for the gesture to succeed
+**coordinateSpace** - The coordinate space of the dragging gesture's location.
+
 
 
 

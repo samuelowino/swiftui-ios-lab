@@ -22,6 +22,10 @@ struct ContentView: View {
                 NavigationLink(destination: LongPressGestureDocsSample()){
                     Label("Apple Docs Sample", systemImage: "book")
                 }
+                
+                NavigationLink(destination: DragGestureViewBasic()){
+                    Label("Drag Gesture Basic", systemImage: "hand.draw")
+                }
             }
         }
     }

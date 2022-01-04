@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC52D4A927841F99006063B4 /* IgnitionDriveStackoverflowAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52D4A827841F99006063B4 /* IgnitionDriveStackoverflowAnswer.swift */; };
 		DC52D4AB278426D6006063B4 /* LongPressGestureDocsSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52D4AA278426D6006063B4 /* LongPressGestureDocsSample.swift */; };
+		DC52D4AD27842A85006063B4 /* DragGestureViewBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52D4AC27842A85006063B4 /* DragGestureViewBasic.swift */; };
 		DC852FAD277F005200CF8751 /* IgnitionDriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC852FAC277F005200CF8751 /* IgnitionDriveView.swift */; };
 		DCDFD699277EF46D00E31C08 /* CoreGesturesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDFD698277EF46D00E31C08 /* CoreGesturesApp.swift */; };
 		DCDFD69B277EF46D00E31C08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDFD69A277EF46D00E31C08 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		DC52D4A827841F99006063B4 /* IgnitionDriveStackoverflowAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnitionDriveStackoverflowAnswer.swift; sourceTree = "<group>"; };
 		DC52D4AA278426D6006063B4 /* LongPressGestureDocsSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGestureDocsSample.swift; sourceTree = "<group>"; };
+		DC52D4AC27842A85006063B4 /* DragGestureViewBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureViewBasic.swift; sourceTree = "<group>"; };
 		DC852FAC277F005200CF8751 /* IgnitionDriveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnitionDriveView.swift; sourceTree = "<group>"; };
 		DCDFD695277EF46D00E31C08 /* CoreGestures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreGestures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCDFD698277EF46D00E31C08 /* CoreGesturesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGesturesApp.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 				DC852FAC277F005200CF8751 /* IgnitionDriveView.swift */,
 				DC52D4A827841F99006063B4 /* IgnitionDriveStackoverflowAnswer.swift */,
 				DC52D4AA278426D6006063B4 /* LongPressGestureDocsSample.swift */,
+				DC52D4AC27842A85006063B4 /* DragGestureViewBasic.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC852FAD277F005200CF8751 /* IgnitionDriveView.swift in Sources */,
+				DC52D4AD27842A85006063B4 /* DragGestureViewBasic.swift in Sources */,
 				DC52D4AB278426D6006063B4 /* LongPressGestureDocsSample.swift in Sources */,
 				DCDFD69B277EF46D00E31C08 /* ContentView.swift in Sources */,
 				DC52D4A927841F99006063B4 /* IgnitionDriveStackoverflowAnswer.swift in Sources */,
