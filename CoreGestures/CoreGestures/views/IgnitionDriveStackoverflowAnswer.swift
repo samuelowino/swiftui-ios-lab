@@ -11,6 +11,7 @@ struct IgnitionDriveStackoverflowAnswer: View {
     @State private var timer: Timer?
     @State var isLongPressD = false
     @State var isLongPressR = false
+    @GestureState var driveGestureState = false
     
     @State private var showDriveAlert = true
     @State private var showOutOfGasAlert = false
@@ -39,7 +40,12 @@ struct IgnitionDriveStackoverflowAnswer: View {
             HStack {
                 ZStack {
                     circleShape(isPressed: $isLongPressD)
-                    .simultaneousGesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
+                    .simultaneousGesture(LongPressGesture(minimumDuration: 0.2)
+                                            .updating($driveGestureState) { currentState, gestureState, transaction in
+                            gestureState = currentState
+                        transaction.animation = Animation.easeIn(duration: 2.0)
+                        }
+                        .onEnded { _ in
                         isLongPressD = true
                         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
                             if distanceCovered < 1000 {

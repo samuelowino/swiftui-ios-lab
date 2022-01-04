@@ -16,7 +16,11 @@ struct ContentView: View {
                 }
                 
                 NavigationLink(destination: IgnitionDriveStackoverflowAnswer()){
-                    Label("Stackoverflow Answer", systemImage: "car")
+                    Label("Stackoverflow Answer", systemImage: "bolt")
+                }
+                
+                NavigationLink(destination: LongPressGestureDocsSample()){
+                    Label("Apple Docs Sample", systemImage: "book")
                 }
             }
         }
