@@ -206,6 +206,47 @@ init(minimumDistance: CGFloat = 10, coordinateSpace: CoordinateSpace = .local)
 **minimumDistance** - The minimum dragging distance for the gesture to succeed
 **coordinateSpace** - The coordinate space of the dragging gesture's location.
 
+## MagnificationGesture
+
+> A gesture that recognizes a maginification motion and tracks the amount of magnification.
+
+```swift
+struct MagnificationGestureView: View {
+    @GestureState var magnifyBy = 1.0
+    
+    var magnification: some Gesture {
+        MagnificationGesture()
+            .updating($magnifyBy) { currentState, gestureStaate, transaction 
+                gestureState = currentState
+        }
+    }
+    
+    var body: some View {
+        Circle()
+            .frame(width: 100, height: 100)
+            .scaleEffect(magnifyBy)
+            .gesture(magnification)
+    }
+}
+```
+
+### scaleEffect(value:anchor)
+
+Scales the view's rendered output by the given amount in both the horizontal and vertical directions, relative to an achor point.
+
+```swift
+func scaleEffect(_ s: CGFloat, anchor: UnitPoint = .center) -> some View
+```
+
+**s : Parameter**
+The amount to scale the view in both the horizontal and vertical directions
+
+**anchor : Parameter**
+The anchor point with a default of **center** that indicates the starting position of the scale operation.
+
+
+
+
 
 
 

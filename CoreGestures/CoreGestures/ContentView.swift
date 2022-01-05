@@ -11,6 +11,14 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                HStack{
+                    Spacer()
+                    Text("SwiftUI Core Gestures")
+                        .bold()
+                        .font(.title)
+                        .foregroundColor(Color("AccentColor"))
+                    Spacer()
+                }
                 NavigationLink(destination: IgnitionDriveView()){
                     Label("Single Press Drive", systemImage: "car")
                 }
@@ -24,7 +32,11 @@ struct ContentView: View {
                 }
                 
                 NavigationLink(destination: DragGestureViewBasic()){
-                    Label("Drag Gesture Basic", systemImage: "hand.draw")
+                    Label("Drag Gesture", systemImage: "hand.draw")
+                }
+                
+                NavigationLink(destination: MagnifyGestureView()){
+                    Label("Magnify Gesture", systemImage: "hand.point.up.braille")
                 }
             }
         }
