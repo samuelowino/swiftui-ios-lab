@@ -11,14 +11,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack{
-                    Spacer()
-                    Text("SwiftUI Core Gestures")
-                        .bold()
-                        .font(.title)
-                        .foregroundColor(Color("AccentColor"))
-                    Spacer()
-                }
+                Text("SwiftUI Core Gestures")
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(.green)
+                                
                 NavigationLink(destination: IgnitionDriveView()){
                     Label("Single Press Drive", systemImage: "car")
                 }
@@ -37,6 +34,10 @@ struct ContentView: View {
                 
                 NavigationLink(destination: MagnifyGestureView()){
                     Label("Magnify Gesture", systemImage: "hand.point.up.braille")
+                }
+                
+                NavigationLink(destination: RotationGestureView()){
+                    Label("Rotation Gesture Gesture", systemImage: "hand.point.up.braille")
                 }
             }
         }

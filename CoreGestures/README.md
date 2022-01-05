@@ -206,6 +206,8 @@ init(minimumDistance: CGFloat = 10, coordinateSpace: CoordinateSpace = .local)
 **minimumDistance** - The minimum dragging distance for the gesture to succeed
 **coordinateSpace** - The coordinate space of the dragging gesture's location.
 
+- - -
+
 ## MagnificationGesture
 
 > A gesture that recognizes a maginification motion and tracks the amount of magnification.
@@ -243,6 +245,34 @@ The amount to scale the view in both the horizontal and vertical directions
 
 **anchor : Parameter**
 The anchor point with a default of **center** that indicates the starting position of the scale operation.
+
+- - -
+
+## RotationGesture
+> A gesture that recognizes a rotation motion and tracks the angle of the rotation.
+
+```swift
+struct RotationGestureView: View {
+    @State var angle = Angle(degress: 0.0)
+    
+    var rotation: some Gesture {
+        RotationGesture()
+            .onChanged { angle in
+                self.angle = angle
+        }
+    }
+    
+    var body: some View {
+        Rectangle()
+            .frame(width: 200, height: 200, alignment: .center)
+            .rotationEffect(self.angle)
+            .gesture(rotation)
+    }
+}
+```
+
+
+
 
 
 
