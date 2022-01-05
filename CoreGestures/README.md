@@ -271,7 +271,40 @@ struct RotationGestureView: View {
 }
 ```
 
+- - -
 
+# Combined Gestures
+
+There are three gesture composition types;
+
+** 1. Simultaneous gestures**
+** 2. Sequenced gestures**
+** 3. Exclusive gestures**
+
+## SequenceGesture
+
+> A gesture that's a sequence of two gestures.
+
+When you sequence one gesture after another, SwiftUI recognizes the first gesture before it recognizes the second. 
+
+```swift
+LongPressGesture(minimumDuration: 0.5)
+    .sequenced(before: DragGesture())
+    .updating($dragState) { value, state, transaction in
+        
+    }
+    .onEnded { value in 
+        
+    }
+```
+
+## SimultaneousGesture
+A gesture containing two gestures that can happen at the same time with neither of them preceeding the other.
+
+
+
+
+ 
 
 
 
