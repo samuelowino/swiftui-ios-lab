@@ -13,6 +13,7 @@
 		DC0308AB2786F4B300F7C641 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0308AA2786F4B300F7C641 /* Preview Assets.xcassets */; };
 		DC0308B22786F54800F7C641 /* HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0308B12786F54800F7C641 /* HexagonParameters.swift */; };
 		DC0308B62786FB2A00F7C641 /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0308B52786FB2A00F7C641 /* BadgeBackground.swift */; };
+		DC26DF97278837F2003D95E8 /* LinearGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26DF96278837F2003D95E8 /* LinearGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		DC0308AA2786F4B300F7C641 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC0308B12786F54800F7C641 /* HexagonParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonParameters.swift; sourceTree = "<group>"; };
 		DC0308B52786FB2A00F7C641 /* BadgeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
+		DC26DF96278837F2003D95E8 /* LinearGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				DC0308A92786F4B300F7C641 /* Preview Content */,
 				DC0308B12786F54800F7C641 /* HexagonParameters.swift */,
 				DC0308B52786FB2A00F7C641 /* BadgeBackground.swift */,
+				DC26DF96278837F2003D95E8 /* LinearGradientView.swift */,
 			);
 			path = DrawingAndAnimations;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC26DF97278837F2003D95E8 /* LinearGradientView.swift in Sources */,
 				DC0308B22786F54800F7C641 /* HexagonParameters.swift in Sources */,
 				DC0308A62786F4AA00F7C641 /* ContentView.swift in Sources */,
 				DC0308A42786F4AA00F7C641 /* DrawingAndAnimationsApp.swift in Sources */,
