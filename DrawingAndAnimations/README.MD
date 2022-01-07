@@ -57,5 +57,20 @@ struct ContentView: View {
 }
 ```
 
+## aspectRatio(aspectRatio:CGFloat?: contentModel)
+
+Constrains this view's dimentions to the specified aspect ratio
+
+A view that constrains this view's dimensions to the aspect ratio of the given size using contentMode as its scaling algorithm.
+
+```swift
+Ellipse()
+    .fill(Color.green)
+    .aspectRatio(0.75, contentMode: .fit)
+    .frame(width: 200, height: 200)
+    .border(Color(white: 0.75))
+```
+
+
 
 
