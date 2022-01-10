@@ -12,6 +12,7 @@
 		DC26DFBB2789EBE1003D95E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC26DFBA2789EBE1003D95E8 /* Assets.xcassets */; };
 		DC26DFBE2789EBE1003D95E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC26DFBD2789EBE1003D95E8 /* Preview Assets.xcassets */; };
 		DC26DFC52789EBF8003D95E8 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26DFC42789EBF8003D95E8 /* Gauge.swift */; };
+		DC26DFC7278A0CB3003D95E8 /*  View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26DFC6278A0CB3003D95E8 /*  View+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		DC26DFBA2789EBE1003D95E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC26DFBD2789EBE1003D95E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC26DFC42789EBF8003D95E8 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
+		DC26DFC6278A0CB3003D95E8 /*  View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " View+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				DC26DFBA2789EBE1003D95E8 /* Assets.xcassets */,
 				DC26DFBC2789EBE1003D95E8 /* Preview Content */,
 				DC26DFC42789EBF8003D95E8 /* Gauge.swift */,
+				DC26DFC6278A0CB3003D95E8 /*  View+.swift */,
 			);
 			path = DotSwiftSoundVisualizer;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC26DFB92789EBD2003D95E8 /* ContentView.swift in Sources */,
+				DC26DFC7278A0CB3003D95E8 /*  View+.swift in Sources */,
 				DC26DFB72789EBD2003D95E8 /* DotSwiftSoundVisualizerApp.swift in Sources */,
 				DC26DFC52789EBF8003D95E8 /* Gauge.swift in Sources */,
 			);

@@ -72,5 +72,39 @@ Ellipse()
 ```
 
 
+## trim(from:to:)
+Trims this shape by a fraction amount based on its representation as a path.
+
+A shape draw by capturing a portion of this shape's path.
+
+```swift 
+func trim(from startFraction: CGFloat = 0, to endFraction: CGFloat = 1) -> some Shape
+```
+
+## AngularGradient
+
+An angular gradient.
+
+An angular gradient is also known as a "conic" gradient. This gradient applies the color function as the angle changes, relative to a center point and defined start and end angles. 
+
+if endAngle - startAngle > 2pi, the gradient only draws the last complete turn.
+
+
+## RadialGradient
+
+> A radial gradient
+
+The gradient applies the color function as the distance from a center point, scalled to fit within the defined start and end radii. The gradient maps the unit space center point into the bounding rectangle of each shape filled with the gradient.
+
+When using a radial gradient as a shape style, you can also use **radialGradient(colors: center:startRadius:endRadius)**.
+
+
+
+
+
+
+
+
+
 
 

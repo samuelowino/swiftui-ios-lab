@@ -9,6 +9,14 @@ import SwiftUI
 
 struct Gauge: View {
     
+    var body: some View {
+       Gauge()
+            .maskContent(using:
+                            AngularGradient(gradient: Gradient(colors: [.green, .blue]), center: .bottomLeading, angle: Angle(degrees: -90)))
+    }
+}
+
+struct GaugeHolder: View {
     var circleThickness: CGFloat = 40
     var trim: ClosedRange<CGFloat> = 0...0.65
     
