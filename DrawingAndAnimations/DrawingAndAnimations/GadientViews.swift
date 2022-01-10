@@ -35,10 +35,17 @@ struct GadientViews: View {
                         AngularGradient(colors: [.gray, .white,.black], center: .center, angle: Angle(degrees: 45))
                     )
                     .frame(width: 200, height: 200, alignment: .center)
-                
+
                 Divider()
 
                 Spacer()
+                
+//                ZStack {
+//                   Circle().fill(.green)
+//                   Circle().fill(.yellow).scaleEffect(0.8)
+//                   Circle().fill(.orange).scaleEffect(0.6)
+//                   Circle().fill(.red).scaleEffect(0.4)
+//                }
 
             }
         }

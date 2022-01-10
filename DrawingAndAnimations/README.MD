@@ -8,6 +8,11 @@
 @frozen struct GeometryReader<Content> where Content : View 
 ```
 
+> Note
+You use GeometryReader to dynamically draw, position, and size views instead of hard-coding numbers that might not be correct when you reuse a view somewhere else in your app, or on a different-sized display.
+
+GeometryReader dynamically reports size and position information about the parent view and the device, and updates whenever the size changes; for example, when the user rotates their iPhone.
+
 ## xScale 
 > A scaling factor that multiplies the width of a node and its children.
 
@@ -97,6 +102,18 @@ if endAngle - startAngle > 2pi, the gradient only draws the last complete turn.
 The gradient applies the color function as the distance from a center point, scalled to fit within the defined start and end radii. The gradient maps the unit space center point into the bounding rectangle of each shape filled with the gradient.
 
 When using a radial gradient as a shape style, you can also use **radialGradient(colors: center:startRadius:endRadius)**.
+
+## rotationEffect(angle:anchor)
+
+> Rotates this view's rendered output around the specified point.
+
+```swift
+func rotationEffect(_ angle: Angle, anchor: UnitPoint = .center) -> some View
+```
+
+## scaleEffect(scaleAmount: CGFloat, anchor: UnitPoint = . center) -> some View
+
+> Scale this view's rendered output by the given amount in both horizonal and vertical directions, relative to an anchor point.
 
 
 

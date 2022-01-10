@@ -16,6 +16,8 @@
 		DC26DF97278837F2003D95E8 /* LinearGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26DF96278837F2003D95E8 /* LinearGradientView.swift */; };
 		DC26DF9927883E9E003D95E8 /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26DF9827883E9E003D95E8 /* BadgeSymbol.swift */; };
 		DCCC79A8278C298100A48732 /* GadientViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCC79A7278C298100A48732 /* GadientViews.swift */; };
+		DCCC79AA278C30B200A48732 /* RotatedBadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCC79A9278C30B200A48732 /* RotatedBadgeSymbol.swift */; };
+		DCCC79AC278C31CB00A48732 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCC79AB278C31CB00A48732 /* BadgeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		DC26DF96278837F2003D95E8 /* LinearGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradientView.swift; sourceTree = "<group>"; };
 		DC26DF9827883E9E003D95E8 /* BadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSymbol.swift; sourceTree = "<group>"; };
 		DCCC79A7278C298100A48732 /* GadientViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GadientViews.swift; sourceTree = "<group>"; };
+		DCCC79A9278C30B200A48732 /* RotatedBadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatedBadgeSymbol.swift; sourceTree = "<group>"; };
+		DCCC79AB278C31CB00A48732 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				DC26DF96278837F2003D95E8 /* LinearGradientView.swift */,
 				DC26DF9827883E9E003D95E8 /* BadgeSymbol.swift */,
 				DCCC79A7278C298100A48732 /* GadientViews.swift */,
+				DCCC79A9278C30B200A48732 /* RotatedBadgeSymbol.swift */,
+				DCCC79AB278C31CB00A48732 /* BadgeView.swift */,
 			);
 			path = DrawingAndAnimations;
 			sourceTree = "<group>";
@@ -158,7 +164,9 @@
 				DC0308A42786F4AA00F7C641 /* DrawingAndAnimationsApp.swift in Sources */,
 				DC0308B62786FB2A00F7C641 /* BadgeBackground.swift in Sources */,
 				DCCC79A8278C298100A48732 /* GadientViews.swift in Sources */,
+				DCCC79AC278C31CB00A48732 /* BadgeView.swift in Sources */,
 				DC26DF9927883E9E003D95E8 /* BadgeSymbol.swift in Sources */,
+				DCCC79AA278C30B200A48732 /* RotatedBadgeSymbol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
