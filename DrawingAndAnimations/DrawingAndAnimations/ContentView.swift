@@ -15,10 +15,10 @@ struct ContentView: View {
                     .font(.title)
                 
                 List {
-                    NavigationLink(destination: BadgeBackground()) {
+                    NavigationLink(destination: BadgeView()) {
                         Label("Badge Art", systemImage: "bolt.fill")
                     }
-                    NavigationLink(destination: LinearGradientView()) {
+                    NavigationLink(destination: GradientViews()) {
                         Label("Gradient Colors", systemImage: "bolt.fill")
                     }
                 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GadientViews: View {
+struct GradientViews: View {
     var body: some View {
         ScrollView {
             VStack {
@@ -54,6 +54,6 @@ struct GadientViews: View {
 
 struct GadientViews_Previews: PreviewProvider {
     static var previews: some View {
-        GadientViews()
+        GradientViews()
     }
 }
