@@ -115,8 +115,62 @@ func rotationEffect(_ angle: Angle, anchor: UnitPoint = .center) -> some View
 
 > Scale this view's rendered output by the given amount in both horizonal and vertical directions, relative to an anchor point.
 
+- - -
 
+## Path
 
+> The Outline of a 2D Shape
+
+The Path API provides the following methods:
+
+**
+1. addArch 
+2. addEllipse
+3. addCurve
+4. addines
+5. addQuadCurve
+6. addRect
+7. addRelativeArc
+8. addRoundedRect
+**
+
+## addLine(to: CGPoint(x:,y:))
+
+Appends a straight line segment from the current point to the specified point.
+
+```swift
+Path { path in
+    path.move(to: CGPoint(x: 30, y: 10))
+    path.addLine(to: CGPoint(x: 30, y: 30))
+    path.addLine(to: CGPoint(x: 300, y: 30))
+    path.addLine(to: CGPoint(x: 300, y: 10))
+}
+```
+
+## addArch
+
+> Adds an arch of a circle to the path, specified with a radius and angles
+
+```swift
+mutating func addArch(center: CGPoint, 
+                        radius: CGFloat, 
+                        startAngel: Angle, 
+                        endAngle: Angle, 
+                        clockwise: Bool,
+                        tranform: CGAfflineTransform = .identity)
+```
+
+```swift
+Path { path in
+    path.move(to: CGPoint(x: 100, y: 0))
+    path.addArc(center: CGPoint(x: 100, y: 0), radius: 100.0, startAngle: Angle(degrees: 110), endAngle: Angle(degrees: 0), clockwise: true)
+}.fill(.angularGradient(colors: [.red,.green,.blue,.orange,.pink], center: .topLeading, startAngle: Angle(degrees:0), endAngle: Angle(degrees: 90)))
+    .frame(width: 300, height: 300)
+```
+
+## addEllipse(in:transform:)
+
+> Add an ellipse to the path
 
 
 

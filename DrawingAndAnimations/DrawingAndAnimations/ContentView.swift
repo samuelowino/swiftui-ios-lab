@@ -21,6 +21,10 @@ struct ContentView: View {
                     NavigationLink(destination: GradientViews()) {
                         Label("Gradient Colors", systemImage: "bolt.fill")
                     }
+                    
+                    NavigationLink(destination: DrawingPaths()) {
+                        Label("Drawing Paths", systemImage: "bolt.fill")
+                    }
                 }
                 
                 Spacer()
