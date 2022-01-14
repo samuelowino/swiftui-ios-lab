@@ -169,9 +169,7 @@ Path { path in
 ```
 
 ## addEllipse(in:transform:)
-
 > Add an ellipse to the path
-
 
 
 
