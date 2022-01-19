@@ -25,6 +25,10 @@ struct ContentView: View {
                     NavigationLink(destination: DrawingPaths()) {
                         Label("Drawing Paths", systemImage: "bolt.fill")
                     }
+                    
+                    NavigationLink(destination: CanvasView()) {
+                        Label("Canvas", systemImage: "bolt.fill")
+                    }
                 }
                 
                 Spacer()

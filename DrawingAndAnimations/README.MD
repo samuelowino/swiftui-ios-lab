@@ -171,6 +171,30 @@ Path { path in
 ## addEllipse(in:transform:)
 > Add an ellipse to the path
 
+- - -
+
+# Canvas
+
+A view type that supports immediate mode drawing
+
+Use a canvas to draw rich and dynamic 2D graphics inside a SwiftUI view. 
+The canvas passes a **GraphicsContext** to the closure that you use to perform immediate mode drawing operations.
+The canvas also passes a **CGSize** value that you can use to customize what you draw. 
+
+```swift
+Canvas { context, size in
+    context.stroke(
+        Path(ellipseIn: CGRect(origin: .zero, size: size)),
+        with: .color(.green),
+        lineWidth: 4)
+    )
+}
+.frame(width: 400, height: 400)
+.border(Color.blue)
+```
+
+
+
 
 
 
