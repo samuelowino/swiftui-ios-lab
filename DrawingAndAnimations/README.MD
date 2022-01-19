@@ -193,6 +193,35 @@ Canvas { context, size in
 .border(Color.blue)
 ```
 
+# TimelineView
+
+> A view that updates according to a schedule that you provide
+
+```swift
+struct TimelineView<Schedule, Content> where Schedule : TimelineSchedule
+```
+
+A timeline view acts as a container with no appearance of its own. Instead, it *redraws* the content it contains at scheduled points in time. 
+For example, you can udate the face of an analog time once per second:
+
+``swift
+TimelineView(.periodic(from: startDate, by: 1)) { context in
+    AnalogTimerView(date: context.date)
+}
+```
+
+The closure that creates the content receives an input of type **TimelineView.Context** that you can use to customize the content's appearance.
+The context includes the date that triggered the update.
+
+You can define a custom schedule by creating a type that conforms to the **TimelineSchedule** protocol, or use one of the built-in schedule types:
+
+* Use an **everyMinute** schedule to update at the beginnning of each minute.
+* Use a **periodic(from:by)** schedule to update periodically with custom start time and interval between updates.
+* Use an **explicit()** schedule when you need a finite number, or irregular set of updates.
+
+ 
+
+
 
 
 

@@ -17,6 +17,7 @@
 		DC26DF9927883E9E003D95E8 /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26DF9827883E9E003D95E8 /* BadgeSymbol.swift */; };
 		DC2DAEDB2797F05E0063EB21 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2DAEDA2797F05E0063EB21 /* CanvasView.swift */; };
 		DC2DAEDD2797F3F40063EB21 /* CanvasParticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2DAEDC2797F3F40063EB21 /* CanvasParticlesView.swift */; };
+		DC2DAEDF2797FD890063EB21 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2DAEDE2797FD890063EB21 /* TimeLineView.swift */; };
 		DC3B0A4D27915E8D00291CD3 /* DrawingPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B0A4C27915E8D00291CD3 /* DrawingPaths.swift */; };
 		DCCC79A8278C298100A48732 /* GradientViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCC79A7278C298100A48732 /* GradientViews.swift */; };
 		DCCC79AA278C30B200A48732 /* RotatedBadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCC79A9278C30B200A48732 /* RotatedBadgeSymbol.swift */; };
@@ -35,6 +36,7 @@
 		DC26DF9827883E9E003D95E8 /* BadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSymbol.swift; sourceTree = "<group>"; };
 		DC2DAEDA2797F05E0063EB21 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		DC2DAEDC2797F3F40063EB21 /* CanvasParticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasParticlesView.swift; sourceTree = "<group>"; };
+		DC2DAEDE2797FD890063EB21 /* TimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
 		DC3B0A4C27915E8D00291CD3 /* DrawingPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPaths.swift; sourceTree = "<group>"; };
 		DCCC79A7278C298100A48732 /* GradientViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViews.swift; sourceTree = "<group>"; };
 		DCCC79A9278C30B200A48732 /* RotatedBadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatedBadgeSymbol.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				DC3B0A4C27915E8D00291CD3 /* DrawingPaths.swift */,
 				DC2DAEDA2797F05E0063EB21 /* CanvasView.swift */,
 				DC2DAEDC2797F3F40063EB21 /* CanvasParticlesView.swift */,
+				DC2DAEDE2797FD890063EB21 /* TimeLineView.swift */,
 			);
 			path = DrawingAndAnimations;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				DC0308A42786F4AA00F7C641 /* DrawingAndAnimationsApp.swift in Sources */,
 				DC0308B62786FB2A00F7C641 /* BadgeBackground.swift in Sources */,
 				DC2DAEDD2797F3F40063EB21 /* CanvasParticlesView.swift in Sources */,
+				DC2DAEDF2797FD890063EB21 /* TimeLineView.swift in Sources */,
 				DCCC79A8278C298100A48732 /* GradientViews.swift in Sources */,
 				DCCC79AC278C31CB00A48732 /* BadgeView.swift in Sources */,
 				DC2DAEDB2797F05E0063EB21 /* CanvasView.swift in Sources */,
