@@ -204,7 +204,7 @@ struct TimelineView<Schedule, Content> where Schedule : TimelineSchedule
 A timeline view acts as a container with no appearance of its own. Instead, it *redraws* the content it contains at scheduled points in time. 
 For example, you can udate the face of an analog time once per second:
 
-``swift
+```swift
 TimelineView(.periodic(from: startDate, by: 1)) { context in
     AnalogTimerView(date: context.date)
 }
