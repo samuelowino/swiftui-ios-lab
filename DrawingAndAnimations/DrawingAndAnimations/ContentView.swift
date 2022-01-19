@@ -33,6 +33,10 @@ struct ContentView: View {
                     NavigationLink(destination: CanvasParticlesView()) {
                         Label("Canvas: Particle System", systemImage: "bolt.fill")
                     }
+                    
+                    NavigationLink(destination: TimeLineView()) {
+                        Label("Timeline View", systemImage: "bolt.fill")
+                    }
                 }
                 
                 Spacer()
