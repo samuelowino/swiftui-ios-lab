@@ -1,7 +1,7 @@
 
 # Drawing and Animations | SwiftUI
 
-## GeometryReader
+# GeometryReader
 > A container view that defines its content as a function of its own size and coordinate space.
 
 ```swift
@@ -34,7 +34,7 @@ The gradient applies the color function along an axis, as defined by its start a
 static func linearGradient(_ gradient: Gradient, startPoint: UnitPoint, endPoint: UnitPoint) -> LinearGradient
 ```
 
-## UnitPoint
+# UnitPoint
 
 > A dynamic data structure for representing a point in a view.
 
@@ -86,6 +86,8 @@ A shape draw by capturing a portion of this shape's path.
 func trim(from startFraction: CGFloat = 0, to endFraction: CGFloat = 1) -> some Shape
 ```
 
+# Gradients
+
 ## AngularGradient
 
 An angular gradient.
@@ -117,7 +119,7 @@ func rotationEffect(_ angle: Angle, anchor: UnitPoint = .center) -> some View
 
 - - -
 
-## Path
+# Path
 
 > The Outline of a 2D Shape
 
@@ -192,6 +194,7 @@ Canvas { context, size in
 .frame(width: 400, height: 400)
 .border(Color.blue)
 ```
+- - -
 
 # TimelineView
 
@@ -219,7 +222,80 @@ You can define a custom schedule by creating a type that conforms to the **Timel
 * Use a **periodic(from:by)** schedule to update periodically with custom start time and interval between updates.
 * Use an **explicit()** schedule when you need a finite number, or irregular set of updates.
 
- 
+- - -
+
+# Shape
+
+> A 2D shape that you can use when drawing a view
+
+Shapes without an explicit fill or stroke get a default fill based on the foreground color.
+
+You can define shapes in terms of an implicit frame of reference, such as the natural size of the view taht contains it.
+Alternatively, you can define shapes in terms of absolute coordinates.
+
+## Defining a Shape's Path
+
+**1. func path(in: CGRect) -> Path**
+
+Describes this shape as a path within a rectangular frame of reference.
+
+```swift
+func path(in rect: CGRect) -> Path
+```
+
+** Return value **
+
+> A path that describes this shape
+
+** Parameters
+
+> The frame of reference for describing this shape.
+
+**2. func trim(from:to)**
+
+> Trims this shape by a fraction amount based on its representation as a path.
+
+```swift
+func trim(from startFraction: CGFloat = 0, to endFraction: CGFloat = 1) -> some Shape
+```
+
+A shape built by capturing a portiong of this shape's path.
+
+
+## Transforming a Shape
+
+> Applies an **affine tranformation** to this shape.
+
+```swift
+func tranform(_ tranform: CGAffineTransform) -> TranformedShape<Self>
+```
+
+Returns a transformed shape based on tis matrix values.
+
+** CGAffinTranform **
+
+An affine tranformation matrix for use in drawing 2D graphics
+
+An affine tranformation matrix is used to rotate,scale, translate or skew the objects you draw in a graphics context
+
+https://en.wikipedia.org/wiki/Affine_transformation
+
+Affine tranformations are represented by a 3 by 3 matrix.
+
+> x' = ax + cy + tx
+> y' = bx + dy + ty
+
+```swift
+let circleShape: Shape = Circle()
+circleShape.path(in: CGRect(x: 1, y: 1, width: 100, height: 100))
+    .trim(from: 0.0, to: 0.7)
+    .transform(CGAffineTransform(rotationAngle: 12))
+``` 
+
+
+
+
+
 
 
 

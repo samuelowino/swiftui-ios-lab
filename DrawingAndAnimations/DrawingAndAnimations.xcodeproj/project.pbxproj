@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC0270F8279AC58B00DBAE70 /* MorePathsExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0270F7279AC58B00DBAE70 /* MorePathsExercise.swift */; };
 		DC0308A42786F4AA00F7C641 /* DrawingAndAnimationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0308A32786F4AA00F7C641 /* DrawingAndAnimationsApp.swift */; };
 		DC0308A62786F4AA00F7C641 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0308A52786F4AA00F7C641 /* ContentView.swift */; };
 		DC0308A82786F4B300F7C641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0308A72786F4B300F7C641 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC0270F7279AC58B00DBAE70 /* MorePathsExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePathsExercise.swift; sourceTree = "<group>"; };
 		DC0308A02786F4AA00F7C641 /* DrawingAndAnimations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingAndAnimations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0308A32786F4AA00F7C641 /* DrawingAndAnimationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingAndAnimationsApp.swift; sourceTree = "<group>"; };
 		DC0308A52786F4AA00F7C641 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				DC2DAEDA2797F05E0063EB21 /* CanvasView.swift */,
 				DC2DAEDC2797F3F40063EB21 /* CanvasParticlesView.swift */,
 				DC2DAEDE2797FD890063EB21 /* TimeLineView.swift */,
+				DC0270F7279AC58B00DBAE70 /* MorePathsExercise.swift */,
 			);
 			path = DrawingAndAnimations;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				DC2DAEDB2797F05E0063EB21 /* CanvasView.swift in Sources */,
 				DC26DF9927883E9E003D95E8 /* BadgeSymbol.swift in Sources */,
 				DCCC79AA278C30B200A48732 /* RotatedBadgeSymbol.swift in Sources */,
+				DC0270F8279AC58B00DBAE70 /* MorePathsExercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
