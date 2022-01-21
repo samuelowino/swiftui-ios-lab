@@ -37,6 +37,10 @@ struct ContentView: View {
                     NavigationLink(destination: TimeLineView()) {
                         Label("Timeline View", systemImage: "bolt.fill")
                     }
+                    
+                    NavigationLink(destination: MorePathsExercise()) {
+                        Label("Path, Shapes & Tranform", systemImage: "bolt.fill")
+                    }
                 }
                 
                 Spacer()
