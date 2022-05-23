@@ -12,23 +12,25 @@ struct DefaultTelescopePicker: View {
     @State var selectedTelescope: String = "Select a telescope"
     
     var body: some View {
-        VStack {
-            Text("Telescope Types:")
-                .font(.title)
-            
-            Picker("Telescopes", selection: $selectedTelescope){
-                Text("X-ray telescopes")
-                Text("Ultraviolet telescopes")
-                Text("Optical telescopes")
-                Text("Infrared telescopes")
-                Text("Submillimetre telescopes")
-                Text("Radio telescopes")
-            }
-            .pickerStyle(DefaultPickerStyle())
-            .font(.headline)
-            
-            Spacer()
+        Form {
+            VStack {
+                Text("Telescope Types:")
+                    .font(.title)
+                
+                Picker("Telescopes", selection: $selectedTelescope){
+                    Text("X-ray telescopes")
+                    Text("Ultraviolet telescopes")
+                    Text("Optical telescopes")
+                    Text("Infrared telescopes")
+                    Text("Submillimetre telescopes")
+                    Text("Radio telescopes")
+                }
+                .pickerStyle(DefaultPickerStyle())
+                .font(.headline)
+                
+                Spacer()
 
+            }
         }
     }
 }

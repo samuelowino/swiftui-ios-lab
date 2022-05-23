@@ -13,20 +13,22 @@ struct WheelTelescopePicker: View {
     
     var body: some View {
         VStack {
-            VStack {
-                Text("Telescope Types:")
-                    .font(.title)
-                
-                Picker("Telescopes", selection: $selectedTelescope){
-                    Text("X-ray telescopes")
-                    Text("Ultraviolet telescopes")
-                    Text("Optical telescopes")
-                    Text("Infrared telescopes")
-                    Text("Submillimetre telescopes")
-                    Text("Radio telescopes")
+            Form {
+                VStack {
+                    Text("Telescope Types:")
+                        .font(.title)
+                    
+                    Picker("Telescopes", selection: $selectedTelescope){
+                        Text("X-ray telescopes")
+                        Text("Ultraviolet telescopes")
+                        Text("Optical telescopes")
+                        Text("Infrared telescopes")
+                        Text("Submillimetre telescopes")
+                        Text("Radio telescopes")
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .font(.headline)
                 }
-                .pickerStyle(WheelPickerStyle())
-                .font(.headline)
             }
             
             Spacer()
