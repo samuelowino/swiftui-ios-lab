@@ -8,16 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-        
-    @State var value: Int = 1
-    
-    let step: Int = 1
-    let range = 1...60
     
     var body: some View {
-        Stepper(value: $value, in: range , step: step){
-            Text("Minutes \(value)")
-        }
+       SplashScreenView()
     }
 }
 

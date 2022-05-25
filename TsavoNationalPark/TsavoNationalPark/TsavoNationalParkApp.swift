@@ -20,6 +20,7 @@ struct TsavoNationalParkApp: App {
             if newScenePhase == ScenePhase.background {
                 //empty cache
                 //perform some network calls
+                print("App is in the background")
             }
         }
     }

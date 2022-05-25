@@ -179,6 +179,65 @@ struct WeaponSelectorSheet: View {
 }
 ```
 
+- - -
 
+# Lesson 2: SwiftUI ViewModifiers
 
+A view modifier is a modifier that you apply to a view such as **Text** or **Label** or another modifier such a chained **font()** or **foreground()** producing a different version of the original modifier.
 
+> Protocol
+
+```swift
+protocol ViewModifier
+```
+
+### Basic Usage
+
+```swift
+Text("Hello World!")
+    .bold()
+    .font(.title)
+    .foregoround(.yellow)
+```
+
+### Creating a Custom View Modifiers
+
+1. Create a struct that conforms to the **ViewModifier Protocol**
+
+```swift
+struct PrimaryTitleTextModifier: ViewModifier {}
+```
+
+2. Compose properties and return them as a **view**
+
+```swift
+struct PrimaryTitleModifier: ViewModifier {
+    var body: some View {
+        content
+            .font(.title)
+            .padding()
+            .overlay {
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(lineWidth: 6)
+            }
+            .foreground(Color("color-primary-text"))
+    }
+}
+```
+
+3. Define an **extension** to **View** that itself integrates the new modifier
+
+```swift
+extension View {
+    func applyPrimaryTitleStyle() -> some View {
+        modifier(PrimaryTitleModifier)
+    }
+}
+```
+
+4. Apply the property to any view like so...
+
+```swift
+Text("Tsavo National Park")
+    .applyPrimaryTitleStyle()
+```
