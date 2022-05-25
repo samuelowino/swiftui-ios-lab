@@ -113,4 +113,72 @@ struct PlayerProfileScene: Scene {
 
 ```
 
->Next: ScenePhase, Environment Presentation Mode
+### <u>@Environment.PresentationMode</u>
+This indicates whether a view has been presented by another view
+
+> **Depreacated as of iOS 15.5**
+> Apple recommends using isPresented and dismiss environment objects instead
+
+```swift
+struct ProfileDetailsView: View {
+
+    @Environment(\.presentationMode) private var presentationMode
+
+    var body: some View {
+        Button("< Exit") {
+            presentationMode.wrappedValue.dismiss() //Close this view
+        }
+    }
+}
+
+```
+
+### <u>@Environment.isPresented</u>
+
+A Boolean value that indicated whether the view is currently presented.
+
+>Immutable.
+
+```swift
+var isPresented: Bool { get }
+
+// Value can be read from the @Environmment property wrapper
+
+@Environment(\.isPresented) private var isPresented
+```
+
+This behaves differently from **onAppear()** which swift ui can call multiple times such as on back navigation.
+
+### <u>@Environment.dismiss</u>
+
+Use property wrapper value to get a handle on the currenct **DismissAction** instance on the currenct view.
+
+Calling the instance performs the dismiss() action
+
+> Immutable
+
+```swift
+var dismiss: DismissAction { get }
+```
+
+```swift
+struct WeaponSelectorSheet: View {
+
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        VStack{
+            Label("Select weapon")
+            ...
+
+            Button("Save and Resume Game"){
+                dismiss()
+            }
+        }
+    }
+}
+```
+
+
+
+
