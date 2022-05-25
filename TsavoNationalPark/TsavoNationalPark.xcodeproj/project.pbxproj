@@ -13,6 +13,7 @@
 		DC1FED6E283C454400164ABF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1FED6D283C454400164ABF /* Preview Assets.xcassets */; };
 		DC8100B4283DC89000E1B604 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8100B3283DC89000E1B604 /* SplashScreenView.swift */; };
 		DCF969F1283DCF44005863BB /* CustomViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF969F0283DCF44005863BB /* CustomViewModifiers.swift */; };
+		DCF969F3283DD1FC005863BB /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF969F2283DD1FC005863BB /* View+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		DC1FED6D283C454400164ABF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC8100B3283DC89000E1B604 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		DCF969F0283DCF44005863BB /* CustomViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewModifiers.swift; sourceTree = "<group>"; };
+		DCF969F2283DD1FC005863BB /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +57,13 @@
 		DC1FED65283C453700164ABF /* TsavoNationalPark */ = {
 			isa = PBXGroup;
 			children = (
-				DCF969EF283DCEF5005863BB /* Styles */,
+				DCF969F5283DD27D005863BB /* ui */,
+				DCF969F4283DD205005863BB /* extensions */,
+				DCF969EF283DCEF5005863BB /* styles */,
 				DC1FED66283C453700164ABF /* TsavoNationalParkApp.swift */,
 				DC1FED68283C453700164ABF /* ContentView.swift */,
 				DC1FED6A283C454400164ABF /* Assets.xcassets */,
 				DC1FED6C283C454400164ABF /* Preview Content */,
-				DC8100B3283DC89000E1B604 /* SplashScreenView.swift */,
 			);
 			path = TsavoNationalPark;
 			sourceTree = "<group>";
@@ -73,12 +76,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DCF969EF283DCEF5005863BB /* Styles */ = {
+		DCF969EF283DCEF5005863BB /* styles */ = {
 			isa = PBXGroup;
 			children = (
 				DCF969F0283DCF44005863BB /* CustomViewModifiers.swift */,
 			);
-			path = Styles;
+			path = styles;
+			sourceTree = "<group>";
+		};
+		DCF969F4283DD205005863BB /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DCF969F2283DD1FC005863BB /* View+.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		DCF969F5283DD27D005863BB /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				DC8100B3283DC89000E1B604 /* SplashScreenView.swift */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +173,7 @@
 				DCF969F1283DCF44005863BB /* CustomViewModifiers.swift in Sources */,
 				DC1FED69283C453700164ABF /* ContentView.swift in Sources */,
 				DC1FED67283C453700164ABF /* TsavoNationalParkApp.swift in Sources */,
+				DCF969F3283DD1FC005863BB /* View+.swift in Sources */,
 				DC8100B4283DC89000E1B604 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

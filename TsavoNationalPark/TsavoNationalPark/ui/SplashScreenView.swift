@@ -10,8 +10,7 @@ import SwiftUI
 struct SplashScreenView: View {
     var body: some View {
         Text("Tsavo National Park")
-            .font(.title)
-            .foregroundColor(.green)
+            .primaryTitleStyle()
     }
 }
 

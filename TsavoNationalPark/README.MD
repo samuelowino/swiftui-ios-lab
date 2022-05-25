@@ -211,8 +211,8 @@ struct PrimaryTitleTextModifier: ViewModifier {}
 2. Compose properties and return them as a **view**
 
 ```swift
-struct PrimaryTitleModifier: ViewModifier {
-    var body: some View {
+struct PrimaryTitleStyle: ViewModifier {
+    func body(content: Content) -> some View {
         content
             .font(.title)
             .padding()
@@ -220,7 +220,20 @@ struct PrimaryTitleModifier: ViewModifier {
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(lineWidth: 6)
             }
-            .foreground(Color("color-primary-text"))
+            .foregroundColor(.black)
+    }
+}
+
+struct SecondaryTitleStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.title3)
+            .padding()
+            .overlay {
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(lineWidth: 6)
+            }
+            .foregroundColor(.gray)
     }
 }
 ```
@@ -230,7 +243,7 @@ struct PrimaryTitleModifier: ViewModifier {
 ```swift
 extension View {
     func applyPrimaryTitleStyle() -> some View {
-        modifier(PrimaryTitleModifier)
+        modifier(PrimaryTitleStyle)
     }
 }
 ```
