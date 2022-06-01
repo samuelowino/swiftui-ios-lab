@@ -254,3 +254,77 @@ extension View {
 Text("Tsavo National Park")
     .applyPrimaryTitleStyle()
 ```
+
+# Lesson 3: SwiftUI Text
+
+A view that displays one or more lines of read only text
+
+SwiftUI draws the text with a **body** font by default, you can apply a different font like **title** using the **font()** modifier.
+
+```swift
+Text("F1 Hamilton")
+    .font(.caption)
+```
+
+### Use a system font or a custom font
+
+You can use the **font()** modifier to set a system or custom font.
+
+```swift
+Text("A man liveth")
+    .font(.system(size: 14, weight: .light, design: .serif))
+```
+
+![Swift Logo](fonts.png)
+
+### Line limit
+
+Sets the maximum number of lines that the text can occupy on the view.
+
+```swift
+Text("Sweet are the uses of adversity which, like the toad, ugly and venomous, wears yet a precious jewel in his head")
+    .lineLimit(1)
+```
+
+### Multiline Text Allignment(alignment:)
+
+Sets the alignment of multiple text in this view.
+
+```swift
+Text("William Shakespeare was an English playwright, poet and actor. He is widely regarded as the greatest writer in the English language and the world's greatest dramatist. He is often called England's national poet and the \"Bard of Avon\" ")
+    .multilineTextAlignment(.center)
+```
+
+![Swift Logo](multiline-text.png)
+
+### Line Spacing
+
+Sets the amount of space between lines of text in this view.
+
+```swift
+func lineSpacing(_ lineSpacing: CGFloat) -> some View 
+```
+**lineSpacing** is the distance between the top of one line of text and the bottom of another.
+
+```swift 
+Text("FROM off a hill whose concave womb reworded
+A plaintful story from a sistering vale,
+My spirits to attend this double voice accorded,
+And down I laid to list the sad-tuned tale;
+Ere long espied a fickle maid full pale,
+Tearing of papers, breaking rings a-twain,
+Storming her world with sorrow's wind and rain.
+
+Upon her head a platted hive of straw,
+Which fortified her visage from the sun,
+Whereon the thought might think sometime it saw
+The carcass of beauty spent and done:
+Time had not scythed all that youth begun,
+Nor youth all quit; but, spite of heaven's fell rage,
+Some beauty peep'd through lattice of sear'd age.")
+    .lineSpacing(20)
+```
+
+![Swift Logo](10linespaces.png)
+
+![Swift Logo](20linespaces.png)

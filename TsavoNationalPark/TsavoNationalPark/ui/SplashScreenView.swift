@@ -9,8 +9,18 @@ import SwiftUI
 
 struct SplashScreenView: View {
     var body: some View {
-        Text("Tsavo National Park")
-            .primaryTitleStyle()
+        VStack(alignment: .center) {
+            Text("Tsavo National Park")
+                .primaryTitleStyle()
+            Text("Official App")
+                .primaryFontStyle()
+            
+            NavigationLink(destination: DashboardView()){
+                Text("Continue")
+                    .font(.title2)
+                    .foregroundColor(.blue)
+            }.padding()
+        }
     }
 }
 

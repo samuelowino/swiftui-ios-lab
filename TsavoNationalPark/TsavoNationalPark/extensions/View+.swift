@@ -12,4 +12,8 @@ extension View {
     func primaryTitleStyle() -> some View {
         modifier(PrimaryTitleStyle())
     }
+    
+    func primaryFontStyle() -> some View {
+        modifier(PrimaryFontStyle())
+    }
 }

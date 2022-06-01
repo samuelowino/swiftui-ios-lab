@@ -34,3 +34,10 @@ struct SecondaryTitleStyle: ViewModifier {
             .foregroundColor(.gray)
     }
 }
+
+struct PrimaryFontStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 12, weight: .light, design: .monospaced))
+    }
+}
