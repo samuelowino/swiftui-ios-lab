@@ -27,10 +27,18 @@ struct ContentView: View {
                     
                     Divider()
                     
-                    NavigationLink(destination: SegmentedTelescopePicker()) {
-                        Label("Telescopes Segmented Picker", systemImage: "bolt.fill")
+                    Group {
+                        
+                        NavigationLink(destination: SegmentedTelescopePicker()) {
+                            Label("Telescopes Segmented Picker", systemImage: "bolt.fill")
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        NavigationLink(destination: MonthsSegmentedPicker()) {
+                            Label("Months Picker", systemImage: "bolt.fill")
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
-                    .buttonStyle(PlainButtonStyle())
                     
                     Divider()
                     

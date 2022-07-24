@@ -16,6 +16,7 @@
 		DC1FED55283B21B100164ABF /* MenuTelescopePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FED54283B21B100164ABF /* MenuTelescopePicker.swift */; };
 		DC1FED57283B26A800164ABF /* SegmentedTelescopePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FED56283B26A800164ABF /* SegmentedTelescopePicker.swift */; };
 		DC1FED59283B2E0100164ABF /* WheelTelescopePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FED58283B2E0100164ABF /* WheelTelescopePicker.swift */; };
+		DC502E87288D644B001A5796 /* MonthsSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC502E86288D644B001A5796 /* MonthsSegmentedPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DC1FED54283B21B100164ABF /* MenuTelescopePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTelescopePicker.swift; sourceTree = "<group>"; };
 		DC1FED56283B26A800164ABF /* SegmentedTelescopePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTelescopePicker.swift; sourceTree = "<group>"; };
 		DC1FED58283B2E0100164ABF /* WheelTelescopePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelTelescopePicker.swift; sourceTree = "<group>"; };
+		DC502E86288D644B001A5796 /* MonthsSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsSegmentedPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				DC1FED54283B21B100164ABF /* MenuTelescopePicker.swift */,
 				DC1FED56283B26A800164ABF /* SegmentedTelescopePicker.swift */,
 				DC1FED58283B2E0100164ABF /* WheelTelescopePicker.swift */,
+				DC502E86288D644B001A5796 /* MonthsSegmentedPicker.swift */,
 			);
 			path = Pickers;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC1FED57283B26A800164ABF /* SegmentedTelescopePicker.swift in Sources */,
+				DC502E87288D644B001A5796 /* MonthsSegmentedPicker.swift in Sources */,
 				DC1FED51283B1F5200164ABF /* DefaultTelescopePicker.swift in Sources */,
 				DC1FED45283B1A0A00164ABF /* ContentView.swift in Sources */,
 				DC1FED59283B2E0100164ABF /* WheelTelescopePicker.swift in Sources */,
