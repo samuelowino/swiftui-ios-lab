@@ -28,6 +28,12 @@ The **App protocol** provides a default implementation of **main()** method that
 
 ## Scene Protocol
 
+> App Samples
+>  - Document reading and writing app
+>  - macOS Settings support app
+>  - WatchOS Sample with Notifications Scene
+>  - Responding to Scene Phase Changes 
+
 A part of the app's user interface with a life cycle managed by the system.
 Creating an app requires that you combine or more instance that conform to the **Scene protocol** in the app's body. Swift provides several built in scenses:
 
