@@ -15,6 +15,7 @@ struct TsavoNationalParkApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(SignupViewModel())
         }
         .onChange(of: scenePhase){ newScenePhase in
             if newScenePhase == ScenePhase.background {

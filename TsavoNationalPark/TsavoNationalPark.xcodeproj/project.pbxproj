@@ -11,11 +11,10 @@
 		DC1FED69283C453700164ABF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FED68283C453700164ABF /* ContentView.swift */; };
 		DC1FED6B283C454400164ABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1FED6A283C454400164ABF /* Assets.xcassets */; };
 		DC1FED6E283C454400164ABF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1FED6D283C454400164ABF /* Preview Assets.xcassets */; };
-		DC625D272847714600A666E0 /* LessonTwoMutlilineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC625D262847714600A666E0 /* LessonTwoMutlilineText.swift */; };
-		DC625D292847752B00A666E0 /* LessonThreeLineSpacingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC625D282847752B00A666E0 /* LessonThreeLineSpacingView.swift */; };
 		DC8100B4283DC89000E1B604 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8100B3283DC89000E1B604 /* SplashScreenView.swift */; };
 		DCBA7270284769BB008C8CE8 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA726F284769BB008C8CE8 /* DashboardView.swift */; };
-		DCBA727228476A0B008C8CE8 /* LessonOneText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA727128476A0B008C8CE8 /* LessonOneText.swift */; };
+		DCCB31A428BC961A0085F34A /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB31A328BC961A0085F34A /* SignupViewModel.swift */; };
+		DCCB31A628BC96980085F34A /* SignupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB31A528BC96980085F34A /* SignupForm.swift */; };
 		DCF969F1283DCF44005863BB /* CustomViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF969F0283DCF44005863BB /* CustomViewModifiers.swift */; };
 		DCF969F3283DD1FC005863BB /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF969F2283DD1FC005863BB /* View+.swift */; };
 /* End PBXBuildFile section */
@@ -26,11 +25,10 @@
 		DC1FED68283C453700164ABF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC1FED6A283C454400164ABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC1FED6D283C454400164ABF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DC625D262847714600A666E0 /* LessonTwoMutlilineText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTwoMutlilineText.swift; sourceTree = "<group>"; };
-		DC625D282847752B00A666E0 /* LessonThreeLineSpacingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonThreeLineSpacingView.swift; sourceTree = "<group>"; };
 		DC8100B3283DC89000E1B604 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		DCBA726F284769BB008C8CE8 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		DCBA727128476A0B008C8CE8 /* LessonOneText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonOneText.swift; sourceTree = "<group>"; };
+		DCCB31A328BC961A0085F34A /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		DCCB31A528BC96980085F34A /* SignupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupForm.swift; sourceTree = "<group>"; };
 		DCF969F0283DCF44005863BB /* CustomViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewModifiers.swift; sourceTree = "<group>"; };
 		DCF969F2283DD1FC005863BB /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +63,7 @@
 		DC1FED65283C453700164ABF /* TsavoNationalPark */ = {
 			isa = PBXGroup;
 			children = (
+				DCCB31A228BC95FD0085F34A /* viewModel */,
 				DCF969F5283DD27D005863BB /* ui */,
 				DCF969F4283DD205005863BB /* extensions */,
 				DCF969EF283DCEF5005863BB /* styles */,
@@ -82,6 +81,14 @@
 				DC1FED6D283C454400164ABF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DCCB31A228BC95FD0085F34A /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DCCB31A328BC961A0085F34A /* SignupViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		DCF969EF283DCEF5005863BB /* styles */ = {
@@ -105,9 +112,7 @@
 			children = (
 				DC8100B3283DC89000E1B604 /* SplashScreenView.swift */,
 				DCBA726F284769BB008C8CE8 /* DashboardView.swift */,
-				DCBA727128476A0B008C8CE8 /* LessonOneText.swift */,
-				DC625D262847714600A666E0 /* LessonTwoMutlilineText.swift */,
-				DC625D282847752B00A666E0 /* LessonThreeLineSpacingView.swift */,
+				DCCB31A528BC96980085F34A /* SignupForm.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -186,11 +191,10 @@
 				DCBA7270284769BB008C8CE8 /* DashboardView.swift in Sources */,
 				DC1FED69283C453700164ABF /* ContentView.swift in Sources */,
 				DC1FED67283C453700164ABF /* TsavoNationalParkApp.swift in Sources */,
-				DC625D292847752B00A666E0 /* LessonThreeLineSpacingView.swift in Sources */,
 				DCF969F3283DD1FC005863BB /* View+.swift in Sources */,
-				DC625D272847714600A666E0 /* LessonTwoMutlilineText.swift in Sources */,
+				DCCB31A628BC96980085F34A /* SignupForm.swift in Sources */,
+				DCCB31A428BC961A0085F34A /* SignupViewModel.swift in Sources */,
 				DC8100B4283DC89000E1B604 /* SplashScreenView.swift in Sources */,
-				DCBA727228476A0B008C8CE8 /* LessonOneText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

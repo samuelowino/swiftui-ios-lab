@@ -15,7 +15,7 @@ struct SplashScreenView: View {
             Text("Official App")
                 .primaryFontStyle()
             
-            NavigationLink(destination: DashboardView()){
+            NavigationLink(destination: SignupForm()){
                 Text("Continue")
                     .font(.title2)
                     .foregroundColor(.blue)

@@ -67,9 +67,115 @@ public enum ScenePhase : Comparable {
 }
 ```
 
-You can trigger actions when the scene phase changes.
+You can trigger actions when the scene phase changes. 
+
+- - -
+
+## App Stucture and Behaviour
+
+You define your app's structure declaratively.
+
+- Create a type that conforms to the **App** protocol and use it to list the Scenes.
+
+- To manage data models in your app, declare them using **StateObject** property wrapper.
+
+- Make **StateObjects** available to the app's scenes and views either as direct inputs or through **Environment**.
+
+- Whenyou want to perform some work based on **lifecycle** events use the **onChange(of: perform:)** modifier.
+
+## StateObject
+
+A property wrapper type that instantiates an observable object.
+
+> Create a StateObject in a View, App or Scene by applying the **@StateObject** attribute to a property declaration and providing an initial value that conforms to the **ObservableObject** protocol.
+
+When the published properties of an observable object changes SwiftUI updates any view that depends on those properties.
+
+You can pass the state object via a property declaration that has the **@StateObject** attribute or you can add the object to the environment of the view hierarchy view **environmentObject()** modifier.
+
+```swift
+class SignupViewModel: ObservableObject {
+    @Published var username: String = "hackerman"
+    @Published var password: String = "password123"
+}
+
+struct WhatsApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environmentObject(SignupViewModel())
+        }
+    }
+}
+```
+The object can be read by any child by using **EnvironmentObject**
+
+```swift
+class SignupViewModel: ObservableObject {
+    @Published var username: String = "hackerman"
+    @Published var password: String = "password123"
+}
+
+@main
+struct TsavoNationalParkApp: App {
+    
+    var body: some Scene {
+        WindowGroup {
+            //Pass ObservableObject to Environment here
+            ContentView()
+                .environmentObject(SignupViewModel())
+        }
+    }
+}
+
+struct SignupForm: View {
+    
+    @EnvironmentObject var viewModel: SignupViewModel
+    
+    var body: some View {
+        VStack {
+            Text("Sign Up")
+                .font(.title)
+                .padding()
+            
+            Text("Already filled with values from EnvironmentObject SignupViewModel")
+                .font(.caption)
+                .padding()
+            
+            TextField("Username ", text: $viewModel.username)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            TextField("Password", text: $viewModel.password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            Spacer()
+        }
+        .padding()
+    }
+}
+```
+- - -
+
+```swift
+
+class SignupViewModel: ObservableObject {
+    @Published var username: String = "hackerman"
+    @Published var password: String = "password123"
+}
+
+struct SignupView: View {
+
+    @StateObject var viewModel = SignupViewModel()
+
+    var body: some View {
+        TextField("Username ", text: $viewModel.username)
+        TextField("Password", $viewModel.password)
+    }
+}
+```
 
 
-
-
+![Screen Sample ](/screen-1.png)
 
