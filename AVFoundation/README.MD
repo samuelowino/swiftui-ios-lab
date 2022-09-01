@@ -280,3 +280,54 @@ After you call **capturePhoto(with settings, delegate)** your delegate object ca
 
 **5. Capture complete**
 
+- - -
+
+# Audio Capture
+
+## AVCaptureAudioFileOutput
+
+A capture output that records audio and saves the recorded audio to a file. Use **startRecording(to,outputFileType, recordingDelegate)**.
+
+```swift
+#if OS = macOS
+func startRecording(
+    to outputFileURL: URL,
+    outputFileType fileType: AVFileType,
+    recordingDelegate delegate: AVCaptureFileOutputRecordingDelegate
+)
+
+#endif
+
+//not available in iOS
+```
+
+## AVCaptureAudioDataOutput
+
+A capture output that records audio and provides access to audio sample buffers as they are recorded.
+
+```swift
+func startRecording(file url: URL, delegate: AVCaptureAudioDataOutputSampleBufferDelegate, thread: DispatchQueue){
+        let audioCaptureOutput = AVCaptureAudioDataOutput()
+        audioCaptureOutput.setSampleBufferDelegate(delegate, queue: thread)
+    }
+```
+
+## AVAssetWriter
+
+An object that writes media data to a container file. An AssetWrite is a **single-use object** that writes to one output file. Create multiple asset writers if you want to write to multiple output files.
+
+**Create a writer**
+
+```swift
+convenience init(
+    url outputURL: URL,
+    fileType outputFileType: AVFileType) throws
+
+let writer = AVAssetWriter(url: file, fileType: AVFileType.mp3)
+```
+
+
+
+
+
+
