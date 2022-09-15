@@ -326,6 +326,92 @@ convenience init(
 let writer = AVAssetWriter(url: file, fileType: AVFileType.mp3)
 ```
 
+- - -
+
+# Loading Media Data Synchronously
+
+AVFoundation uses **AVAsset** to model *timed audiovisual media*. AVAsset defers loading the media until the data is required. 
+
+> You must load media data asynchronously to avoid blocking the main thread.
+
+## Load properties asynchronously
+
+The framework builds it's asynchronouse property loading capabilities around two key types: **AVAsyncProperty** and **AVAsynchronouseKeyValueLoading**. 
+
+* **AVAsyncProperty** - An Asynchronous property that constrains it's type and value.
+
+```swift
+class AVAsyncProperty<Root, Value> : AVPartialAsyncProperty<Root>
+```
+
+* **AVAsynchronouseKeyValueLoading** - A protocol that defines the interface to load media data synchronously.
+
+```swift
+protocol AVAsynchronouseKeyValueLoading
+```
+
+Call the **AVAsynchronouseKeyValueLoading.load()** method to retrieve the values of the media properties, or to determine the loaded status of a property by calling the **status(of:)** method.
+
+**AVAsset**, **AVAssetTrack** and **AVMetadataItem** adopt the **AVAsynchronouseKeyValueLoading** protocol, which provides them the asynchronouse **load()** method.
+
+```swift
+public func load<T>(_ property: AVAsyncProperty<Self, T>) async throws -> T
+```
+
+Call this method in an asynchronouse context
+
+```swift
+let videoDuration = try await asset.load(AVAsyncProperty.duration)
+
+let metadata = try await asset.load(AVAsyncProperty.metadata)
+```
+
+To load multiple properties at the same time, use a variation of the load() method and tuples.
+
+```swift
+let (duration, metadata) = try await asset.load(.duration, .metadata)
+```
+
+## Determin a property status
+
+**AVAsynchronousKeyValueLoading** also provides a **status(of:)** method that returns the status of a property identifier. It returns an **AVAscyncProperty.Status** value which can be: **AVAscyncProperty.Status.notYetLoaded**, **AVAscyncProperty.Status.loading**, **AVAscyncProperty.Status.loaded(metadata)**, **AVAscyncProperty.Status.failed(error)**.
+
+```swift
+switch asset.status(of: .metadata) {
+    case .notYeLoaded:
+
+    case .loading:
+
+    case .loaded(let metadata):
+
+    case failed(let error):
+}
+```
+
+## Filter Property collections
+
+Some properties provide arrays of values such as an asset's track and/or it's metadata.
+
+```swift
+let audioTracks = try await asset.loadTracks(withMediaType: .audio)
+
+var allDescriptions = [CMFormatDescription]()
+
+for track in audioTracks {
+    allDescriptions.append(contentsOf: try await track.load(.formatDescriptions))
+}
+
+let sampleRates = Set(allDescriptions).map { formatDescription in 
+    Float(formatDescription.audioStreamBasicDescription?.mSampleRate ?? 0)
+}.sorted(by: {
+    $0 < $1
+})
+```
+
+
+
+
+
 
 
 
