@@ -328,7 +328,7 @@ let writer = AVAssetWriter(url: file, fileType: AVFileType.mp3)
 
 - - -
 
-# Loading Media Data Synchronously
+# Loading Media Data Asynchronously
 
 AVFoundation uses **AVAsset** to model *timed audiovisual media*. AVAsset defers loading the media until the data is required. 
 
