@@ -561,8 +561,41 @@ AVAudioPlayer.isPlaying: Bool { get }
 
 A Boolean value that indicates whether the player is currencly playing any audio.
 
+- - -
 
+## 4. AVAudioPlayerDelegate
 
+A **protocol** that defines methods to respond to audio playback events and decoding errors.
+
+```swift
+protocol AVAudioPlayerDelegate
+```
+
+> All of the methods under this protocol are optional
+
+```swift
+class AudioPlaybackDelegate: NSObject, AVAudioPlayerDelegate {
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        print("▶️audioPlayerDidFinishPlaying with success flag \(flag)")
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        print("▶️audioPlayerDecodeErrorDidOccur")
+        if let error = error {
+            print("\(error)")
+        }
+    }
+    
+    func audioPlayerBeginInterruption(_ player: AVAudioPlayer) {
+        print("▶️audioPlayerBeginInterruption")
+    }
+    
+    func audioPlayerEndInterruption(_ player: AVAudioPlayer, withOptions flags: Int) {
+        print("▶️audioPlayerBeginInterruption")
+    }
+}
+```
 
 
 
