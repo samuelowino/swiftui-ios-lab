@@ -596,8 +596,93 @@ class AudioPlaybackDelegate: NSObject, AVAudioPlayerDelegate {
     }
 }
 ```
+- - -
+## 5. AVAudioRecorder
+
+> An object that records audio data to a file.
+
+```swift
+class AVAudioRecorder
+```
+
+You can use an audio recorder to perform the following functions:
+
+* Record audio from a system's active input device
+* Record for a specified duration or until the user stops recording
+* Pause and resume recording
+* Access recording-level metering data
+
+**Creating an audio recorder**
+
+The system supports the following settings for creating an audio recorder.
+
+| Key                   | PossibleValues            |
+|-----------------------|---------------------------|
+| AVFormatIDKey         | kAudioFormatLinearPCM     |
+| AVFormatIDKey         | kAudioFormatMPEG4AAC      |
+| AVFormatIDKey         | kAudioFormatAppleLossless |
+| AVFormatIDKey         | kAudioFormatAppleIMA4     |
+| AVFormatIDKey         | kAudioFormatiLBC          |
+| AVFormatIDKey         | kAudioFormatULaw          |
+| | |
+| AVSampleRateKey       | 8 kHz to 192 kHz          |
+| | |
+| AVNumberOfChannelsKey | 1 to 64                   |
 
 
+**kAudioFormatMPEG4AAC**
+> A key that specified an MPEG-4 AAC codec. AAC stands for **Advanced Audio Coding**. AAC is the successor of MP3. MPEG4 AAC achieves a higher sound quality than MP3 encoders at the same bit rate.
+
+**kAudioFormatLinearPCM**
+> A key that specifies linear PCM, a non compressed audio data format with one frame per packet. PCM stands for **Pulse Code Manipulation**. This format allows sampling the incoming audio from the mic.
+
+**kAudioFormatAppleLossless**
+> This will record the audio with apple losseless codec and provides losseless data compression. All currenct apple devices can play apple losseless audio.
+
+**kAudioFormatAppleIMA4**
+> A key that specifies use of Apple's implementation of the **IMA 4:1 ADPCM codec**. This uses pulse control manipulation as well.
+
+```swift
+//IMA decoding table
+int ima_step_table[89] = { 
+  7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 
+  19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 
+  50, 55, 60, 66, 73, 80, 88, 97, 107, 118, 
+  130, 143, 157, 173, 190, 209, 230, 253, 279, 307,
+  337, 371, 408, 449, 494, 544, 598, 658, 724, 796,
+  876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 
+  2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358,
+  5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 
+  15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767 
+};
+```
+**kAudioFormatiLBC**
+> **Internet Low Bitrate Codec** is a narrow band speech codec. ILBC handles lost frames through sound quiality degradation.
+
+**kAudioFormatULaw**
+> Apple's implementation of **μLaw 2:1** used in 8-bit PCM (Pulse Control Manipulation). μLaw 2:1 uses **companding** which reduces the dynamic range of an audio signal.
+
+**AVSampleRateKey**
+> A floating point value that represents the sample rate in hertz.
+
+![Sound Signal Processing, Sampling](/640px-Signal_Sampling.svg.png)
+
+**AVEncoderAudioQualityKey**
+> Specify the sample rate  audio quality for encoding and conversion. Can be **min,low,medium,high or max**
+
+```swift
+//Create settings
+let settings = [
+    AVFormatIDKey : Int(kAudioFormatAppleIMA4),
+    AVSampleRateKey : 48_000,
+    AVNumberOfChannelsKey : 1,
+    AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
+]
+
+
+let recordingFileUrl= URl(string: "file://path/to/file")
+let audioRecorder = AVAudioRecorder(url: recordingFileUrl, settings: [String, Any])
+```
 
 
 
