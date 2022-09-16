@@ -408,6 +408,178 @@ let sampleRates = Set(allDescriptions).map { formatDescription in
 })
 ```
 
+- - -
+
+# AVFAudio
+
+> Play, record and process audio; configure your app's system audio behaviour.
+
+## Components
+
+* **System Audio** - *AVAudioSession*, *AVAudioRoutingArbiter*
+* **Basic Playback and Recording** - *AVAudioPlayer*, *AVAudioRecorder*, *AVMIDIPlayer*
+* **Advanced Audio Processing** - *AudioEngine*
+
+## System Audio
+- - -
+## 1. AVAudioSession
+
+> An object that communicates to the system how you intend to use audio in your app.
+
+```swift
+class AVAudioSession : NSObject
+```
+
+An audio session acts as an intermediary between your app and the operating system - and, in turn, the underlying audio hardware. Use audio session to communicate the nature of your audio with the operating system and hardware without detailing specific behaviour.
+
+To configure your app's audio session, you set the audio session category. 
+
+> There are six possible audio session categories:
+
+**AVAudioSession.Category._**
+
+* **ambient** - The category for an app where sound playback in **nonprimary**, that is- your app also works with the sound turned off. When you use this category, audio from other apps also mixes with your audio.
+
+* **multiRoute** - The category for routing distinct streams of data to different output devices at the same time. The category can be used for input, output or both.
+
+* **playAndRecord** - The category used for recording (input) and playback (output) such as for a VoIP(Voice Over IP) app.
+
+* **record** - The category for recording audio while also silencing playback audio. The user must grant permission for audio recording.
+
+* **playback** - The category for playing sound.
+
+* **soloambient (default category)** - The default audio session category.
+
+Use **AVAudioSession** object to configure an audio session for your app.
+
+```swift
+let audioSession = AVAudioSession.sharedInstance()
+
+do {
+    try audioSession.setCategory(.record)
+} catch {
+    print("Failed to set audio session category: cause \(error)")
+}
+```
+ - - -
+
+ ## 2. AVAudioRoutingArbiter
+
+ > An object for configuring macOS apps to participate in automatic audio switching.
+
+ ```swift
+func startVoiceCall(){
+    let arbiter = AVAudioRoutineArbiter.shared
+    arbiter.begin(category: .playAndRecordVoice) { deviceChanged, error in
+        //run voice call here
+    }
+}
+
+func endCall(){
+    AVAudioRoutingArbiter.shared.leave()
+}
+ ```
+
+ - - -
+
+## 3. AVAudioPlayer
+
+> An object that plays audio data from a file or a buffer.
+
+```swift
+class AVAudioPlayer : NSObject
+```
+You can use the audio player to achieve the following:
+
+* Play audio of any duration from a file or buffer
+* Control the volume, rate and looping behaviour.
+* Access playback-level metering data
+* Play multiple sounds simultaneously by synchronizing the playback of multiple players.
+
+**Create a Media Player**
+
+```swift
+let soundFile = URL("path/to/audio.m4a")
+let audioPlayer = try AVAudioPlayer(contentsOf: soundFile) 
+
+// or include fileTypeHints
+
+let audioPlayer = try AVAudioPlayer(contentsOf: soundFile, fileTypeHint: "public.data")
+
+//or init with in memory audio/sound data
+
+let inMemoryAudioData = Data()
+let audioPlayer = try AVAudioPlayer(data: inMemoryAudioData)
+
+//or init with sound data and file type hints
+
+let audioPlayer = try AVAudioPlayer(data: inMemoryAudioData, fileTypeHints: "public.data")
+```
+
+> Read More ℹ️
+
+> Apple UTI File Type Hints: https://en.wikipedia.org/wiki/Uniform_Type_Identifier
+
+**Controlling Playback**
+
+```swift
+func AVAudioPlayer.prepareToPlay() -> Bool
+```
+
+Prepares the player for audio playback.
+
+Returns true if the system successfully prepares the audio player, otherwise false.
+
+> The system calls this method while using the method **play()**, but calling it in advance minimizes the delay between calling **play()** and the start of sound output.
+
+```swift
+func AVAudioPlayer.play() -> Bool
+```
+
+Plays audio asynchronously. 
+
+Returns true if audio play started successfully otherwise false. This method implicitly calls, **AVAudioPlayer.prepareToPlay()** if the audio player is unprepared for audio playback.
+
+```swift
+func AVAudioPlayer.play(atTime time: TimeInterval) -> Bool
+```
+Play audio asynchronously starting at the specified point in the audio device's timeline.
+
+```swift
+func AVAudioPlayer.pause()
+```
+Pause audio playback. Calling pause does not deallocate hardware resources, it pauses ready to resume.
+
+```swift
+func AVAudioPlayer.stop()
+```
+Stops playback and undoes the setup the system requires for playback.
+
+```swift
+AVAudioPlayer.isPlaying: Bool { get }
+```
+
+A Boolean value that indicates whether the player is currencly playing any audio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
