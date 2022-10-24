@@ -31,3 +31,18 @@ Use the **requestReview(in:)** method to indicate when it makes sense within the
 ```swift
 @MainActor class func requestReview(in windowScene: UIWindowScene)
 ```
+
+## Manually requesting a review
+
+Use a deep link to the App Store to allow the user to initiate an app review as a result of a button click. The deep link contains a query parameter **action=write-review**, embedded on the link.
+
+```swift
+static func requestReviewOnAppStore(){
+    //Replace 'App Store ID' with an actually app store app ID
+    guard let writeReviewUrl = URL(string: "https://apps.apple.com/app/id<#App ID#>?action=write-review") else {
+            fatalError("Invalid App Store URL")
+    }
+
+    UIApplication.shared.open(witeReviewUrl, options: [:], completionHandler: nil)
+}
+```
