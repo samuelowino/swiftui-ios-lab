@@ -46,3 +46,72 @@ static func requestReviewOnAppStore(){
     UIApplication.shared.open(witeReviewUrl, options: [:], completionHandler: nil)
 }
 ```
+
+- - -
+
+# In-App Purchase
+
+The in-app purchase API uses Swifft concurrency to provide simple in-app purchase workflows.
+
+You can use this API to:
+
+* **Load app store product information**
+* **Display in-app purchase in your store**
+* **Manage access to content and subscriptions**
+* **Receive app store signed transaction information**
+
+The in-app purchase API offers the following information:
+
+* **Transaction information that's Apple signed in JWS (JSON Web Signature) format.**
+* **Transactions and subscription status information that's simple to parse on the client.**
+* **An *entitlements API* (current entitlements) that simplifies determining entitlements.**
+
+To support a store in your app, implement the following functionality:
+
+* Listen to transaction state changes while your app is running.
+* Request the products to display on your app.
+* Enable users to purchase your in-app products.
+* Iterate through the user's in-app purchases and unlock purchased content and services.
+* Validate signed transaction and signed subscription status information.
+
+> To use in-app purchase you must first configure the purchase content in your app store connect.
+
+# Product
+
+> Information about a product configure in App Store Connect.
+
+```swift
+struct Product
+```
+
+Use **Product** to perform all product related tasks.
+
+**Get a Product instance**
+
+```swift
+static func Product.products<Indentifiers>(for identifiers: Indentifiers) async throws -> [Product] where Identifiers : Collection, Identifiers.Element == String
+```
+
+**identifiers** - A collection of unique in-app purchase identifiers that are configured in app store connect. StoreKit will ignore duplicates.
+
+```swift
+let productIdentifiers: [String] = ["com.myapp.productA","com.myapp.productB"]
+let myProducts: [Product] = try await Product.products(for: productIdentifiers)
+```
+
+**Intiate a purchase**
+When user initiates a purchase call **Product.purchase(options:)**
+
+```swift
+func Product.purchase() async throws -> Product.PurchaseResult
+```
+
+
+
+
+
+
+
+
+
+
