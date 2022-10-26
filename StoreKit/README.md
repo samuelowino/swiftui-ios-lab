@@ -100,11 +100,33 @@ let myProducts: [Product] = try await Product.products(for: productIdentifiers)
 ```
 
 **Intiate a purchase**
+
 When user initiates a purchase call **Product.purchase(options:)**
 
 ```swift
 func Product.purchase() async throws -> Product.PurchaseResult
 ```
+
+# Transaction
+
+> Information that represents the customers purchase of a product in your app. 
+
+```swift
+struct Transaction
+```
+
+A transaction represents a successful in-app purchase.
+
+Use **Transaction** top perform the following transaction related tasks.
+
+* Get user's transaction history, latest transaction and current entitlements to unlock content and services in your app.
+* Access transaction properties
+* Finish a transaction after the app delivers the purchased content or services.
+* Access the JWS (JSON Web Signature) and supporting values to verify the transaction.
+* Listen for new transactions while the app is running
+* Beging a refund request within your app.
+
+
 
 
 
