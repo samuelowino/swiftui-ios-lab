@@ -35,7 +35,7 @@ The **App protocol** provides a default implementation of **main()** method that
 >  - Responding to Scene Phase Changes 
 
 A part of the app's user interface with a life cycle managed by the system.
-Creating an app requires that you combine or more instance that conform to the **Scene protocol** in the app's body. Swift provides several built in scenses:
+Creating an app requires that you combine one or more instances that conform to the **Scene protocol** in the app's body. Swift provides several built in scenses:
 
 * **WindowGroup** - A group that identifies a combination of multiple identical windows
 
@@ -43,7 +43,7 @@ Creating an app requires that you combine or more instance that conform to the *
 
 * **Settings** A scene that represents an interface for viewing and modifying app settings
 
-* **WKNotificationScene (WatchOS 7.0+)** A scene that appears in response to receiving set of local or remote notifiations
+* **WKNotificationScene (WatchOS 7.0+)** A scene that appears in response to receiving a set of local or remote notifiations
 
 > A scene acts as a container for a view hierarchy that you want to display to the user. The system decides when and how to display the scene hierarchy in the user interface in a way that's platform appropriate and dependent on the current state of the app.
 
@@ -68,6 +68,28 @@ public enum ScenePhase : Comparable {
 ```
 
 You can trigger actions when the scene phase changes. 
+
+```swift
+struct AppScene: Scene {
+    @Environment(\.scenePhase) private var scenePhase
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }. onChange(of: scenePhase) { newScenePhase in
+             if newScenePhase == .background {
+                print("Scene phase is in background mode...")
+            } else if newScenePhase == .inactive {
+                print("Scene phase is in 'inactive' state...")
+            } else if newScenePhase == .active {
+                print("Scene phase is in 'active' state...")
+            } else {
+                print("Unknow scene phase state 🛑")
+            }
+        }
+    }
+}
+```
 
 - - -
 
