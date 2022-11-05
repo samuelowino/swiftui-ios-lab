@@ -6,20 +6,21 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
 
 class FruitsViewModel: ObservableObject {
         
     @Published var fruits: [Fruit] = []
+    @State var cancellable = Set<AnyCancellable>()
     
     func loadSomeFruits()  {
         let publisher = FruitsPublisher()
-        let subscriber = FruitsSubcriber()
-        publisher.subscribe(subscriber)
-        let cancellable = publisher.sink(receiveCompletion: { completion in
+        publisher.sink(receiveCompletion: { completion in
             print("completed with errors i think..\(completion)")
         }, receiveValue: { fruits in
             print("Received some fruits bruh!")
             self.fruits.append(contentsOf: fruits)
-        })
+        }).store(in: &cancellable)
     }
 }
