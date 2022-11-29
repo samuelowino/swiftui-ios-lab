@@ -63,6 +63,51 @@ let userNamePublisher = NotificationCenter.default.publisher(for: NotificationDa
 
 ```
 
+## NotificationCenter
+A notification dispatch mechanism that allows the broadcast of information to registered observers.
+
+```swift
+class NotificationCenter: NSObject
+```
+
+Objects register with NotificationCenter to receive notifications **(NSNotification object)**, using the **addObserver()** methods. When an object adds iteself as an observer it specifies which notifications it wants to receive. Each running app has a **default notification center** and you can create custom notification centers.
+
+## Receiving notification as Combine Publisher
+### publisher(for: object)
+Returns a publisher that emits events when broadcasting notifications.
+
+```swift
+class SomeObject {
+    var propertyA: String
+}
+
+let someObject = SomeObject()
+
+let publisher = NotificationCenter.default.publisher(for: someObject)
+```
+
+## Combine Subject
+A combine subject is a publisher that exposes a method for  outside callers to publish elements.
+
+```swift
+protocol Subject<Output, Failure> : AnyObject, Publisher
+```
+
+You can use a Subject to inject values into a stream by using it's **send** method.
+
+## PassthroughSubject
+
+```swift
+final class PassthroughSubject<Output, Failure> where Failure : Error
+```
+
+A subject that broadcasts elements to downstream subscribers. A Passthroughsubject drops values if there are not subscribers attached or it's current demand is zero.
+
+
+
+
+
+
 
 # References
 1. https://developer.apple.com/videos/play/wwdc2019/721
