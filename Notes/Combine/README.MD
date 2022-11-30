@@ -101,9 +101,15 @@ You can use a Subject to inject values into a stream by using it's **send** meth
 final class PassthroughSubject<Output, Failure> where Failure : Error
 ```
 
-A subject that broadcasts elements to downstream subscribers. A Passthroughsubject drops values if there are not subscribers attached or it's current demand is zero.
+A subject that broadcasts elements to downstream subscribers. A PassthroughSubject drops values if there are not subscribers attached or it's current demand is zero.
 
 
+
+## SwiftUI onReceive(:perform)
+
+Adds an action to perform when this view detects data emitted by the publisher.
+
+> **Parameter: publisher that the view subscribes to and action to perform when event is emitted to the subscriber.**
 
 
 
