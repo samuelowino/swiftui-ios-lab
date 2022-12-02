@@ -21,12 +21,36 @@ struct ContentView: View {
                 VStack {
                     NavigationLink(destination: ToyShapesChart()){
                         HStack {
-                            Text("1. Toy Shapes BarChart")
+                            Text("Toy Shapes BarChart")
                                 .bold()
                             Spacer()
                             Image(systemName: "chevron.right")
                         }
                     }
+                    .font(.title2)
+                    .padding()
+                    
+                    NavigationLink(destination: FoodTruckSingleBarChart()){
+                        HStack {
+                            Text("Food Truck Single BarChart")
+                                .bold()
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                    .font(.title2)
+                    .padding()
+                    
+                    NavigationLink(destination: WeeklySalesBarChart()){
+                        HStack {
+                            Text("Weekly Sales BarChart")
+                                .bold()
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                    .font(.title2)
+                    .padding()
                     
                     Spacer()
                 }

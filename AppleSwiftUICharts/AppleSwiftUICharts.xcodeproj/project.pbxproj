@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC12F6482939DE4800F89214 /* FoodTruckSingleBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC12F6472939DE4800F89214 /* FoodTruckSingleBarChart.swift */; };
+		DC12F64A2939DE7600F89214 /* PancakeSales.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC12F6492939DE7600F89214 /* PancakeSales.swift */; };
+		DC12F64C2939E1BF00F89214 /* WeeklySalesBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC12F64B2939E1BF00F89214 /* WeeklySalesBarChart.swift */; };
+		DC12F64E2939E1DB00F89214 /* SalesSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC12F64D2939E1DB00F89214 /* SalesSummary.swift */; };
 		DCB81E2F2938A8240030E137 /* AppleSwiftUIChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB81E2E2938A8240030E137 /* AppleSwiftUIChartsApp.swift */; };
 		DCB81E312938A8240030E137 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB81E302938A8240030E137 /* ContentView.swift */; };
 		DCB81E332938A8270030E137 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCB81E322938A8270030E137 /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC12F6472939DE4800F89214 /* FoodTruckSingleBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckSingleBarChart.swift; sourceTree = "<group>"; };
+		DC12F6492939DE7600F89214 /* PancakeSales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeSales.swift; sourceTree = "<group>"; };
+		DC12F64B2939E1BF00F89214 /* WeeklySalesBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySalesBarChart.swift; sourceTree = "<group>"; };
+		DC12F64D2939E1DB00F89214 /* SalesSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesSummary.swift; sourceTree = "<group>"; };
 		DCB81E2B2938A8240030E137 /* AppleSwiftUICharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleSwiftUICharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB81E2E2938A8240030E137 /* AppleSwiftUIChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSwiftUIChartsApp.swift; sourceTree = "<group>"; };
 		DCB81E302938A8240030E137 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				DCB81E3D2938AA730030E137 /* ToyShapesChart.swift */,
+				DC12F6472939DE4800F89214 /* FoodTruckSingleBarChart.swift */,
+				DC12F64B2939E1BF00F89214 /* WeeklySalesBarChart.swift */,
 			);
 			path = charts;
 			sourceTree = "<group>";
@@ -85,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				DCB81E402938AAD40030E137 /* ToyShape.swift */,
+				DC12F6492939DE7600F89214 /* PancakeSales.swift */,
+				DC12F64D2939E1DB00F89214 /* SalesSummary.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -159,10 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC12F64C2939E1BF00F89214 /* WeeklySalesBarChart.swift in Sources */,
 				DCB81E312938A8240030E137 /* ContentView.swift in Sources */,
 				DCB81E3E2938AA730030E137 /* ToyShapesChart.swift in Sources */,
+				DC12F64E2939E1DB00F89214 /* SalesSummary.swift in Sources */,
+				DC12F6482939DE4800F89214 /* FoodTruckSingleBarChart.swift in Sources */,
 				DCB81E412938AAD40030E137 /* ToyShape.swift in Sources */,
 				DCB81E2F2938A8240030E137 /* AppleSwiftUIChartsApp.swift in Sources */,
+				DC12F64A2939DE7600F89214 /* PancakeSales.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

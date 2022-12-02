@@ -15,9 +15,6 @@ struct ToyShapesChart: View {
     
     var body: some View {
         VStack {
-            Label("Toy🪁 Shapes Analysis 📊", systemImage: "")
-                .font(.title)
-            
             Chart {
                 ForEach(data){ shape in
                     BarMark(
@@ -29,6 +26,7 @@ struct ToyShapesChart: View {
             }
             .padding()
         }
+        .navigationTitle("Toy🪁 Shapes Analysis 📊")
     }
 }
 
