@@ -19,6 +19,9 @@ struct WeeklySalesBarChart: View {
                 .foregroundStyle(by: .value("City", series.city))
             }
         }
+        .chartForegroundStyleScale([
+            "Capertino": .orange, "San Fransisco": .green
+        ])
         .padding()
         .navigationTitle("Weekly Sales")
     }

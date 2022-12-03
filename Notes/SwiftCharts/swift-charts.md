@@ -67,4 +67,26 @@ var data: [ToyShape] = [
 
 <img src="../../toycharts-sample-screenshot.png" height="400">
 
+# Customize your chart
+
+You can customize the chart to include custom colors by adding **chartForegroundStyleScale() modifier**
+
+``` swift
+Chart(seriesData) { series in
+        ForEach(series.sales){ element in
+            BarMark(
+                x: .value("Day", element.weekday, unit: .day),
+                y: .value("Sales", element.sales)
+            )
+            .foregroundStyle(by: .value("City", series.city))
+        }
+    }
+    .chartForegroundStyleScale([
+        "Capertino": .orange, "San Fransisco": .green
+    ])
+```
+
+<img src="../../custom_chart_colors.png" height="400">
+
+
 
