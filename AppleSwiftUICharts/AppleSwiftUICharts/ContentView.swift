@@ -52,6 +52,17 @@ struct ContentView: View {
                     .font(.title2)
                     .padding()
                     
+                    NavigationLink(destination: CompanyProfitsChart()){
+                        HStack {
+                            Text("Company Profits BarChart")
+                                .bold()
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                    .font(.title2)
+                    .padding()
+                    
                     Spacer()
                 }
                 .padding()
