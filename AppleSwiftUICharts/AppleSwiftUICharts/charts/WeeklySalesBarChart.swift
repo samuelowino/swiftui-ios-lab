@@ -17,6 +17,7 @@ struct WeeklySalesBarChart: View {
                     y: .value("Sales", element.sales)
                 )
                 .foregroundStyle(by: .value("City", series.city))
+                .cornerRadius(8)
             }
         }
         .chartForegroundStyleScale([

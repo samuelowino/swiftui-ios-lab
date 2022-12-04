@@ -211,3 +211,28 @@ Chart {
 You indicate which series a LineMark belongs to by specifying it's **series** input parameter.
 
 Use a **RuleMark** to produce a horizontal line segment that displays a constant threshold value across the width of the chart.
+
+- - -
+
+# ChartContent
+
+A type that represents the type of content you draw on a chart.
+
+```swift
+protocol ChartContent
+```
+
+You build a chart by adding instances that conform to the **ChartContent protocol** to the chart's content closure.
+
+```swift
+Chart {
+    ChartContent()
+    
+    ChartContent()
+    
+    ChartContent()
+
+    ...
+}
+```
+

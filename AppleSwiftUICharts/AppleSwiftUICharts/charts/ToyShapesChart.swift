@@ -21,6 +21,7 @@ struct ToyShapesChart: View {
                         x: PlottableValue.value(xAxisLabel, shape.type),
                         y: PlottableValue.value(yAxisLabel, shape.count)
                     )
+                    .cornerRadius(8)
                 }
                 
             }
