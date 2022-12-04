@@ -74,6 +74,17 @@ struct ContentView: View {
                     .font(.title2)
                     .padding()
                     
+                    NavigationLink(destination: FoodStackedAreaMarkChart()){
+                        HStack {
+                            Text("Cereals Stacked AreaChart")
+                                .bold()
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                    .font(.title2)
+                    .padding()
+                    
                     Spacer()
                 }
                 .padding()
