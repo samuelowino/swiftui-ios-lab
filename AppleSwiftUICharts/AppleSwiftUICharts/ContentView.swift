@@ -11,12 +11,6 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-            Text("SwiftUI Charts Practice Samples 📊📈💹")
-                .multilineTextAlignment(.center)
-                .font(.title)
-                .bold()
-                .padding()
-            
             NavigationView {
                 VStack {
                     NavigationLink(destination: ToyShapesChart()){
@@ -96,11 +90,23 @@ struct ContentView: View {
                     .font(.title2)
                     .padding()
                     
+                    NavigationLink(destination: ApolloStageBurnChart()){
+                        HStack {
+                            Text("Apollo AcentData Point Chart")
+                                .bold()
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                    .font(.title2)
+                    .padding()
+                    
                     Spacer()
                 }
                 .padding()
             }
         }
+        .navigationTitle("SwiftUI Charts Practice Samples 📊📈💹")
     }
 }
 

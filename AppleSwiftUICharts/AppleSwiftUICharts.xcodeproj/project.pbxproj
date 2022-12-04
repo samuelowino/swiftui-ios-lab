@@ -25,6 +25,8 @@
 		DCCBB003293CB340004D1EEB /* FoodChartCenterStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBB002293CB340004D1EEB /* FoodChartCenterStack.swift */; };
 		DCCBB005293CF1CA004D1EEB /* HoursOfSunshineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBB004293CF1CA004D1EEB /* HoursOfSunshineChart.swift */; };
 		DCCBB007293CF204004D1EEB /* SunshineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBB006293CF204004D1EEB /* SunshineData.swift */; };
+		DCCBB009293CFB6F004D1EEB /* ApolloStageBurnChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBB008293CFB6F004D1EEB /* ApolloStageBurnChart.swift */; };
+		DCCBB00B293CFB91004D1EEB /* ApolloStageBurnData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBB00A293CFB91004D1EEB /* ApolloStageBurnData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		DCCBB002293CB340004D1EEB /* FoodChartCenterStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodChartCenterStack.swift; sourceTree = "<group>"; };
 		DCCBB004293CF1CA004D1EEB /* HoursOfSunshineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursOfSunshineChart.swift; sourceTree = "<group>"; };
 		DCCBB006293CF204004D1EEB /* SunshineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunshineData.swift; sourceTree = "<group>"; };
+		DCCBB008293CFB6F004D1EEB /* ApolloStageBurnChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloStageBurnChart.swift; sourceTree = "<group>"; };
+		DCCBB00A293CFB91004D1EEB /* ApolloStageBurnData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloStageBurnData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				DCCBB000293CAF50004D1EEB /* FoodStackedAreaMarkChart.swift */,
 				DCCBB002293CB340004D1EEB /* FoodChartCenterStack.swift */,
 				DCCBB004293CF1CA004D1EEB /* HoursOfSunshineChart.swift */,
+				DCCBB008293CFB6F004D1EEB /* ApolloStageBurnChart.swift */,
 			);
 			path = charts;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				DC73A5C3293B277C00D08646 /* CompanyProfits.swift */,
 				DCCBAFFE293CA88F004D1EEB /* FoodData.swift */,
 				DCCBB006293CF204004D1EEB /* SunshineData.swift */,
+				DCCBB00A293CFB91004D1EEB /* ApolloStageBurnData.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -199,11 +205,13 @@
 				DCCBB001293CAF50004D1EEB /* FoodStackedAreaMarkChart.swift in Sources */,
 				DC12F64C2939E1BF00F89214 /* WeeklySalesBarChart.swift in Sources */,
 				DC73A5C4293B277C00D08646 /* CompanyProfits.swift in Sources */,
+				DCCBB009293CFB6F004D1EEB /* ApolloStageBurnChart.swift in Sources */,
 				DCCBB007293CF204004D1EEB /* SunshineData.swift in Sources */,
 				DCB81E312938A8240030E137 /* ContentView.swift in Sources */,
 				DCCBAFFF293CA88F004D1EEB /* FoodData.swift in Sources */,
 				DCB81E3E2938AA730030E137 /* ToyShapesChart.swift in Sources */,
 				DC12F64E2939E1DB00F89214 /* SalesSummary.swift in Sources */,
+				DCCBB00B293CFB91004D1EEB /* ApolloStageBurnData.swift in Sources */,
 				DC12F6482939DE4800F89214 /* FoodTruckSingleBarChart.swift in Sources */,
 				DCCBB005293CF1CA004D1EEB /* HoursOfSunshineChart.swift in Sources */,
 				DC73A5C2293B274900D08646 /* CompanyProfitsChart.swift in Sources */,
