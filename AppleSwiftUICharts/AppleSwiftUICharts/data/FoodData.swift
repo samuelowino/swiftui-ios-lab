@@ -54,7 +54,7 @@ let cerealsPrices: [FoodPrice] = [
     .init(name: "Green Grams", cost: 100, year: 2006),
     .init(name: "Pease", cost: 330, year: 2006),
     
-    .init(name: "Rice", cost: 450, year: 2007),
+    .init(name: "Rice", cost: 500, year: 2007),
     .init(name: "Green Grams", cost: 150, year: 2007),
     .init(name: "Pease", cost: 490, year: 2007),
 ]

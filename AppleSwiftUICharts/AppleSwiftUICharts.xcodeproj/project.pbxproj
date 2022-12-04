@@ -22,6 +22,7 @@
 		DCCBAFFD293CA85A004D1EEB /* FoodAreaMarkChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBAFFC293CA85A004D1EEB /* FoodAreaMarkChart.swift */; };
 		DCCBAFFF293CA88F004D1EEB /* FoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBAFFE293CA88F004D1EEB /* FoodData.swift */; };
 		DCCBB001293CAF50004D1EEB /* FoodStackedAreaMarkChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBB000293CAF50004D1EEB /* FoodStackedAreaMarkChart.swift */; };
+		DCCBB003293CB340004D1EEB /* FoodChartCenterStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBB002293CB340004D1EEB /* FoodChartCenterStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		DCCBAFFC293CA85A004D1EEB /* FoodAreaMarkChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAreaMarkChart.swift; sourceTree = "<group>"; };
 		DCCBAFFE293CA88F004D1EEB /* FoodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodData.swift; sourceTree = "<group>"; };
 		DCCBB000293CAF50004D1EEB /* FoodStackedAreaMarkChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodStackedAreaMarkChart.swift; sourceTree = "<group>"; };
+		DCCBB002293CB340004D1EEB /* FoodChartCenterStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodChartCenterStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				DC73A5C1293B274900D08646 /* CompanyProfitsChart.swift */,
 				DCCBAFFC293CA85A004D1EEB /* FoodAreaMarkChart.swift */,
 				DCCBB000293CAF50004D1EEB /* FoodStackedAreaMarkChart.swift */,
+				DCCBB002293CB340004D1EEB /* FoodChartCenterStack.swift */,
 			);
 			path = charts;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCCBB003293CB340004D1EEB /* FoodChartCenterStack.swift in Sources */,
 				DCCBB001293CAF50004D1EEB /* FoodStackedAreaMarkChart.swift in Sources */,
 				DC12F64C2939E1BF00F89214 /* WeeklySalesBarChart.swift in Sources */,
 				DC73A5C4293B277C00D08646 /* CompanyProfits.swift in Sources */,
