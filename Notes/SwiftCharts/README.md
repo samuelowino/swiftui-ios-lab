@@ -439,6 +439,8 @@ Chart(sunshineData) { element in
 
 ![Sunshine Chart](../../sunshine_chart.png)
 
+- - - 
+
 ## PointMark
 
 Chart content that represent data using points.
@@ -528,3 +530,33 @@ Chart(stageBurnData) { element in
 
 ![Apollo Burn Duration During Accent](../../apollo_burn_data.png)
 
+- - -
+
+## RectangleMark
+
+Chart content that represents data using rectangles.
+
+- - -
+
+## RuleMark
+
+Chart content that represents data using a single horizontal or vertical rule.
+
+```swift
+Chart {
+    RuleMark(
+        y: .value("Threshold", 51)
+    )
+    .foregroundStyle(.red)
+}
+```
+
+![RuleMark on bar chart, denoting threshold](../../LineSegmentMarkSwift.LineSegmentMarkBarChartWithHorizontalLineSegmentMark~dark@2x.png)
+
+- - -
+
+## BarMark
+
+Chart content that represents data using Bars.
+
+- - -
