@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DCDBC6CC2B90559900A9B45E /* ModernNavigationLab Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DCDBC6CB2B90559900A9B45E /* ModernNavigationLab Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DCDBC6D12B90559900A9B45E /* ModernNavigationLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBC6D02B90559900A9B45E /* ModernNavigationLabApp.swift */; };
+		DCDBC6D32B90559900A9B45E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBC6D22B90559900A9B45E /* ContentView.swift */; };
+		DCDBC6D52B90559B00A9B45E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCDBC6D42B90559B00A9B45E /* Assets.xcassets */; };
+		DCDBC6D82B90559B00A9B45E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCDBC6D72B90559B00A9B45E /* Preview Assets.xcassets */; };
+		DCDBC6E22B90559B00A9B45E /* ModernNavigationLab_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBC6E12B90559B00A9B45E /* ModernNavigationLab_Watch_AppTests.swift */; };
+		DCDBC6EC2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBC6EB2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITests.swift */; };
+		DCDBC6EE2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDBC6ED2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCDBC6CD2B90559900A9B45E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCDBC6BF2B90559900A9B45E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCDBC6CA2B90559900A9B45E;
+			remoteInfo = "ModernNavigationLab Watch App";
+		};
+		DCDBC6DE2B90559B00A9B45E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCDBC6BF2B90559900A9B45E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCDBC6CA2B90559900A9B45E;
+			remoteInfo = "ModernNavigationLab Watch App";
+		};
+		DCDBC6E82B90559B00A9B45E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCDBC6BF2B90559900A9B45E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCDBC6CA2B90559900A9B45E;
+			remoteInfo = "ModernNavigationLab Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DCDBC6F42B90559B00A9B45E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DCDBC6CC2B90559900A9B45E /* ModernNavigationLab Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DCDBC6C52B90559900A9B45E /* ModernNavigationLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModernNavigationLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDBC6CB2B90559900A9B45E /* ModernNavigationLab Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ModernNavigationLab Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDBC6D02B90559900A9B45E /* ModernNavigationLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernNavigationLabApp.swift; sourceTree = "<group>"; };
+		DCDBC6D22B90559900A9B45E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DCDBC6D42B90559B00A9B45E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCDBC6D72B90559B00A9B45E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DCDBC6DD2B90559B00A9B45E /* ModernNavigationLab Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ModernNavigationLab Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDBC6E12B90559B00A9B45E /* ModernNavigationLab_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernNavigationLab_Watch_AppTests.swift; sourceTree = "<group>"; };
+		DCDBC6E72B90559B00A9B45E /* ModernNavigationLab Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ModernNavigationLab Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDBC6EB2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernNavigationLab_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		DCDBC6ED2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernNavigationLab_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCDBC6C82B90559900A9B45E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDBC6DA2B90559B00A9B45E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDBC6E42B90559B00A9B45E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCDBC6BE2B90559900A9B45E = {
+			isa = PBXGroup;
+			children = (
+				DCDBC6CF2B90559900A9B45E /* ModernNavigationLab Watch App */,
+				DCDBC6E02B90559B00A9B45E /* ModernNavigationLab Watch AppTests */,
+				DCDBC6EA2B90559B00A9B45E /* ModernNavigationLab Watch AppUITests */,
+				DCDBC6C62B90559900A9B45E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCDBC6C62B90559900A9B45E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCDBC6C52B90559900A9B45E /* ModernNavigationLab.app */,
+				DCDBC6CB2B90559900A9B45E /* ModernNavigationLab Watch App.app */,
+				DCDBC6DD2B90559B00A9B45E /* ModernNavigationLab Watch AppTests.xctest */,
+				DCDBC6E72B90559B00A9B45E /* ModernNavigationLab Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCDBC6CF2B90559900A9B45E /* ModernNavigationLab Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				DCDBC6D02B90559900A9B45E /* ModernNavigationLabApp.swift */,
+				DCDBC6D22B90559900A9B45E /* ContentView.swift */,
+				DCDBC6D42B90559B00A9B45E /* Assets.xcassets */,
+				DCDBC6D62B90559B00A9B45E /* Preview Content */,
+			);
+			path = "ModernNavigationLab Watch App";
+			sourceTree = "<group>";
+		};
+		DCDBC6D62B90559B00A9B45E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DCDBC6D72B90559B00A9B45E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DCDBC6E02B90559B00A9B45E /* ModernNavigationLab Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCDBC6E12B90559B00A9B45E /* ModernNavigationLab_Watch_AppTests.swift */,
+			);
+			path = "ModernNavigationLab Watch AppTests";
+			sourceTree = "<group>";
+		};
+		DCDBC6EA2B90559B00A9B45E /* ModernNavigationLab Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DCDBC6EB2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITests.swift */,
+				DCDBC6ED2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "ModernNavigationLab Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCDBC6C42B90559900A9B45E /* ModernNavigationLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDBC6F52B90559B00A9B45E /* Build configuration list for PBXNativeTarget "ModernNavigationLab" */;
+			buildPhases = (
+				DCDBC6C32B90559900A9B45E /* Resources */,
+				DCDBC6F42B90559B00A9B45E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCDBC6CE2B90559900A9B45E /* PBXTargetDependency */,
+			);
+			name = ModernNavigationLab;
+			productName = ModernNavigationLab;
+			productReference = DCDBC6C52B90559900A9B45E /* ModernNavigationLab.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		DCDBC6CA2B90559900A9B45E /* ModernNavigationLab Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDBC6F12B90559B00A9B45E /* Build configuration list for PBXNativeTarget "ModernNavigationLab Watch App" */;
+			buildPhases = (
+				DCDBC6C72B90559900A9B45E /* Sources */,
+				DCDBC6C82B90559900A9B45E /* Frameworks */,
+				DCDBC6C92B90559900A9B45E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ModernNavigationLab Watch App";
+			productName = "ModernNavigationLab Watch App";
+			productReference = DCDBC6CB2B90559900A9B45E /* ModernNavigationLab Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCDBC6DC2B90559B00A9B45E /* ModernNavigationLab Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDBC6F82B90559B00A9B45E /* Build configuration list for PBXNativeTarget "ModernNavigationLab Watch AppTests" */;
+			buildPhases = (
+				DCDBC6D92B90559B00A9B45E /* Sources */,
+				DCDBC6DA2B90559B00A9B45E /* Frameworks */,
+				DCDBC6DB2B90559B00A9B45E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCDBC6DF2B90559B00A9B45E /* PBXTargetDependency */,
+			);
+			name = "ModernNavigationLab Watch AppTests";
+			productName = "ModernNavigationLab Watch AppTests";
+			productReference = DCDBC6DD2B90559B00A9B45E /* ModernNavigationLab Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DCDBC6E62B90559B00A9B45E /* ModernNavigationLab Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDBC6FB2B90559B00A9B45E /* Build configuration list for PBXNativeTarget "ModernNavigationLab Watch AppUITests" */;
+			buildPhases = (
+				DCDBC6E32B90559B00A9B45E /* Sources */,
+				DCDBC6E42B90559B00A9B45E /* Frameworks */,
+				DCDBC6E52B90559B00A9B45E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCDBC6E92B90559B00A9B45E /* PBXTargetDependency */,
+			);
+			name = "ModernNavigationLab Watch AppUITests";
+			productName = "ModernNavigationLab Watch AppUITests";
+			productReference = DCDBC6E72B90559B00A9B45E /* ModernNavigationLab Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCDBC6BF2B90559900A9B45E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					DCDBC6C42B90559900A9B45E = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					DCDBC6CA2B90559900A9B45E = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					DCDBC6DC2B90559B00A9B45E = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = DCDBC6CA2B90559900A9B45E;
+					};
+					DCDBC6E62B90559B00A9B45E = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = DCDBC6CA2B90559900A9B45E;
+					};
+				};
+			};
+			buildConfigurationList = DCDBC6C22B90559900A9B45E /* Build configuration list for PBXProject "ModernNavigationLab" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCDBC6BE2B90559900A9B45E;
+			productRefGroup = DCDBC6C62B90559900A9B45E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCDBC6C42B90559900A9B45E /* ModernNavigationLab */,
+				DCDBC6CA2B90559900A9B45E /* ModernNavigationLab Watch App */,
+				DCDBC6DC2B90559B00A9B45E /* ModernNavigationLab Watch AppTests */,
+				DCDBC6E62B90559B00A9B45E /* ModernNavigationLab Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCDBC6C32B90559900A9B45E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDBC6C92B90559900A9B45E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDBC6D82B90559B00A9B45E /* Preview Assets.xcassets in Resources */,
+				DCDBC6D52B90559B00A9B45E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDBC6DB2B90559B00A9B45E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDBC6E52B90559B00A9B45E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCDBC6C72B90559900A9B45E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDBC6D32B90559900A9B45E /* ContentView.swift in Sources */,
+				DCDBC6D12B90559900A9B45E /* ModernNavigationLabApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDBC6D92B90559B00A9B45E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDBC6E22B90559B00A9B45E /* ModernNavigationLab_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDBC6E32B90559B00A9B45E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDBC6EC2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITests.swift in Sources */,
+				DCDBC6EE2B90559B00A9B45E /* ModernNavigationLab_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCDBC6CE2B90559900A9B45E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCDBC6CA2B90559900A9B45E /* ModernNavigationLab Watch App */;
+			targetProxy = DCDBC6CD2B90559900A9B45E /* PBXContainerItemProxy */;
+		};
+		DCDBC6DF2B90559B00A9B45E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCDBC6CA2B90559900A9B45E /* ModernNavigationLab Watch App */;
+			targetProxy = DCDBC6DE2B90559B00A9B45E /* PBXContainerItemProxy */;
+		};
+		DCDBC6E92B90559B00A9B45E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCDBC6CA2B90559900A9B45E /* ModernNavigationLab Watch App */;
+			targetProxy = DCDBC6E82B90559B00A9B45E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DCDBC6EF2B90559B00A9B45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCDBC6F02B90559B00A9B45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		DCDBC6F22B90559B00A9B45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ModernNavigationLab Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 4T9AZS63Q3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ModernNavigationLab;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.ModernNavigationLab.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		DCDBC6F32B90559B00A9B45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ModernNavigationLab Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 4T9AZS63Q3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ModernNavigationLab;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.ModernNavigationLab.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		DCDBC6F62B90559B00A9B45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9AZS63Q3;
+				INFOPLIST_KEY_CFBundleDisplayName = ModernNavigationLab;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.ModernNavigationLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DCDBC6F72B90559B00A9B45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9AZS63Q3;
+				INFOPLIST_KEY_CFBundleDisplayName = ModernNavigationLab;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.ModernNavigationLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCDBC6F92B90559B00A9B45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9AZS63Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.owino.ModernNavigationLab-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModernNavigationLab Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ModernNavigationLab Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		DCDBC6FA2B90559B00A9B45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9AZS63Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.owino.ModernNavigationLab-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModernNavigationLab Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ModernNavigationLab Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		DCDBC6FC2B90559B00A9B45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9AZS63Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.owino.ModernNavigationLab-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "ModernNavigationLab Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		DCDBC6FD2B90559B00A9B45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4T9AZS63Q3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.owino.ModernNavigationLab-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "ModernNavigationLab Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCDBC6C22B90559900A9B45E /* Build configuration list for PBXProject "ModernNavigationLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDBC6EF2B90559B00A9B45E /* Debug */,
+				DCDBC6F02B90559B00A9B45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCDBC6F12B90559B00A9B45E /* Build configuration list for PBXNativeTarget "ModernNavigationLab Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDBC6F22B90559B00A9B45E /* Debug */,
+				DCDBC6F32B90559B00A9B45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCDBC6F52B90559B00A9B45E /* Build configuration list for PBXNativeTarget "ModernNavigationLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDBC6F62B90559B00A9B45E /* Debug */,
+				DCDBC6F72B90559B00A9B45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCDBC6F82B90559B00A9B45E /* Build configuration list for PBXNativeTarget "ModernNavigationLab Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDBC6F92B90559B00A9B45E /* Debug */,
+				DCDBC6FA2B90559B00A9B45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCDBC6FB2B90559B00A9B45E /* Build configuration list for PBXNativeTarget "ModernNavigationLab Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDBC6FC2B90559B00A9B45E /* Debug */,
+				DCDBC6FD2B90559B00A9B45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCDBC6BF2B90559900A9B45E /* Project object */;
+}

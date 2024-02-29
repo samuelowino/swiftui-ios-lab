@@ -7,6 +7,7 @@
 import WidgetKit
 import SwiftUI
 import AppIntents
+import Charts
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
@@ -30,14 +31,36 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationAppIntent
 }
+struct MonthlyHoursOfSunshine: Identifiable {
+    var id: UUID = UUID()
+    var city: String
+    var date: Date
+    var hoursOfSunshine: Double
+    init(city: String, month: Int, hoursOfSunshine: Double) {
+        let calendar = Calendar.autoupdatingCurrent
+        self.city = city
+        self.date = calendar.date(from: DateComponents(year: 2020, month: month))!
+        self.hoursOfSunshine = hoursOfSunshine
+    }
+}
 struct CyclingStreakExtensionEntryView : View {
     @Environment(\.widgetFamily) var widgetFamily
     var entry: Provider.Entry
+    @State var data: [MonthlyHoursOfSunshine] = [
+        MonthlyHoursOfSunshine(city: "Seattle", month: 1, hoursOfSunshine: 74),
+        MonthlyHoursOfSunshine(city: "Cupertino", month: 1, hoursOfSunshine: 196),
+        MonthlyHoursOfSunshine(city: "Seattle", month: 12, hoursOfSunshine: 62),
+        MonthlyHoursOfSunshine(city: "Cupertino", month: 12, hoursOfSunshine: 199)
+    ]
     var body: some View {
         VStack {
-            Text("Time \(entry.configuration.timeDisplayMode)")
-            Text(entry.date, style: .time)
-            Text(entry.configuration.favoriteEmoji)
+            Chart(data) {
+                LineMark(
+                    x: .value("Month", $0.date),
+                    y: .value("Hours of Sunshine", $0.hoursOfSunshine)
+                )
+                .foregroundStyle(by: .value("City", $0.city))
+            }
         }
     }
 }
@@ -46,8 +69,9 @@ struct CyclingStreakExtension: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             CyclingStreakExtensionEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+                .containerBackground(.fill.tertiary , for: .widget)
         }
+        .supportedFamilies([.systemSmall])
     }
 }
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
