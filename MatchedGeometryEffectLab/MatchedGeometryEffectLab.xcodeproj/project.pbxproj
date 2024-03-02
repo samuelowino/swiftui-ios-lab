@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC75F84B2B930301003B136E /* MatchedGeometryEffectLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC75F84A2B930301003B136E /* MatchedGeometryEffectLabApp.swift */; };
+		DC75F84D2B930301003B136E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC75F84C2B930301003B136E /* ContentView.swift */; };
+		DC75F84F2B930302003B136E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC75F84E2B930302003B136E /* Assets.xcassets */; };
+		DC75F8522B930302003B136E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC75F8512B930302003B136E /* Preview Assets.xcassets */; };
+		DC75F85C2B930303003B136E /* MatchedGeometryEffectLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC75F85B2B930303003B136E /* MatchedGeometryEffectLabTests.swift */; };
+		DC75F8662B930303003B136E /* MatchedGeometryEffectLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC75F8652B930303003B136E /* MatchedGeometryEffectLabUITests.swift */; };
+		DC75F8682B930303003B136E /* MatchedGeometryEffectLabUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC75F8672B930303003B136E /* MatchedGeometryEffectLabUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC75F8582B930303003B136E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC75F83F2B930301003B136E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC75F8462B930301003B136E;
+			remoteInfo = MatchedGeometryEffectLab;
+		};
+		DC75F8622B930303003B136E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC75F83F2B930301003B136E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC75F8462B930301003B136E;
+			remoteInfo = MatchedGeometryEffectLab;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC75F8472B930301003B136E /* MatchedGeometryEffectLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchedGeometryEffectLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC75F84A2B930301003B136E /* MatchedGeometryEffectLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectLabApp.swift; sourceTree = "<group>"; };
+		DC75F84C2B930301003B136E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC75F84E2B930302003B136E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC75F8512B930302003B136E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC75F8572B930303003B136E /* MatchedGeometryEffectLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchedGeometryEffectLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC75F85B2B930303003B136E /* MatchedGeometryEffectLabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectLabTests.swift; sourceTree = "<group>"; };
+		DC75F8612B930303003B136E /* MatchedGeometryEffectLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchedGeometryEffectLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC75F8652B930303003B136E /* MatchedGeometryEffectLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectLabUITests.swift; sourceTree = "<group>"; };
+		DC75F8672B930303003B136E /* MatchedGeometryEffectLabUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectLabUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC75F8442B930301003B136E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC75F8542B930303003B136E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC75F85E2B930303003B136E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC75F83E2B930301003B136E = {
+			isa = PBXGroup;
+			children = (
+				DC75F8492B930301003B136E /* MatchedGeometryEffectLab */,
+				DC75F85A2B930303003B136E /* MatchedGeometryEffectLabTests */,
+				DC75F8642B930303003B136E /* MatchedGeometryEffectLabUITests */,
+				DC75F8482B930301003B136E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC75F8482B930301003B136E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC75F8472B930301003B136E /* MatchedGeometryEffectLab.app */,
+				DC75F8572B930303003B136E /* MatchedGeometryEffectLabTests.xctest */,
+				DC75F8612B930303003B136E /* MatchedGeometryEffectLabUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC75F8492B930301003B136E /* MatchedGeometryEffectLab */ = {
+			isa = PBXGroup;
+			children = (
+				DC75F84A2B930301003B136E /* MatchedGeometryEffectLabApp.swift */,
+				DC75F84C2B930301003B136E /* ContentView.swift */,
+				DC75F84E2B930302003B136E /* Assets.xcassets */,
+				DC75F8502B930302003B136E /* Preview Content */,
+			);
+			path = MatchedGeometryEffectLab;
+			sourceTree = "<group>";
+		};
+		DC75F8502B930302003B136E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DC75F8512B930302003B136E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC75F85A2B930303003B136E /* MatchedGeometryEffectLabTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC75F85B2B930303003B136E /* MatchedGeometryEffectLabTests.swift */,
+			);
+			path = MatchedGeometryEffectLabTests;
+			sourceTree = "<group>";
+		};
+		DC75F8642B930303003B136E /* MatchedGeometryEffectLabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC75F8652B930303003B136E /* MatchedGeometryEffectLabUITests.swift */,
+				DC75F8672B930303003B136E /* MatchedGeometryEffectLabUITestsLaunchTests.swift */,
+			);
+			path = MatchedGeometryEffectLabUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC75F8462B930301003B136E /* MatchedGeometryEffectLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC75F86B2B930303003B136E /* Build configuration list for PBXNativeTarget "MatchedGeometryEffectLab" */;
+			buildPhases = (
+				DC75F8432B930301003B136E /* Sources */,
+				DC75F8442B930301003B136E /* Frameworks */,
+				DC75F8452B930301003B136E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MatchedGeometryEffectLab;
+			productName = MatchedGeometryEffectLab;
+			productReference = DC75F8472B930301003B136E /* MatchedGeometryEffectLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC75F8562B930303003B136E /* MatchedGeometryEffectLabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC75F86E2B930303003B136E /* Build configuration list for PBXNativeTarget "MatchedGeometryEffectLabTests" */;
+			buildPhases = (
+				DC75F8532B930303003B136E /* Sources */,
+				DC75F8542B930303003B136E /* Frameworks */,
+				DC75F8552B930303003B136E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC75F8592B930303003B136E /* PBXTargetDependency */,
+			);
+			name = MatchedGeometryEffectLabTests;
+			productName = MatchedGeometryEffectLabTests;
+			productReference = DC75F8572B930303003B136E /* MatchedGeometryEffectLabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC75F8602B930303003B136E /* MatchedGeometryEffectLabUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC75F8712B930303003B136E /* Build configuration list for PBXNativeTarget "MatchedGeometryEffectLabUITests" */;
+			buildPhases = (
+				DC75F85D2B930303003B136E /* Sources */,
+				DC75F85E2B930303003B136E /* Frameworks */,
+				DC75F85F2B930303003B136E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC75F8632B930303003B136E /* PBXTargetDependency */,
+			);
+			name = MatchedGeometryEffectLabUITests;
+			productName = MatchedGeometryEffectLabUITests;
+			productReference = DC75F8612B930303003B136E /* MatchedGeometryEffectLabUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC75F83F2B930301003B136E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					DC75F8462B930301003B136E = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					DC75F8562B930303003B136E = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = DC75F8462B930301003B136E;
+					};
+					DC75F8602B930303003B136E = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = DC75F8462B930301003B136E;
+					};
+				};
+			};
+			buildConfigurationList = DC75F8422B930301003B136E /* Build configuration list for PBXProject "MatchedGeometryEffectLab" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC75F83E2B930301003B136E;
+			productRefGroup = DC75F8482B930301003B136E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC75F8462B930301003B136E /* MatchedGeometryEffectLab */,
+				DC75F8562B930303003B136E /* MatchedGeometryEffectLabTests */,
+				DC75F8602B930303003B136E /* MatchedGeometryEffectLabUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC75F8452B930301003B136E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC75F8522B930302003B136E /* Preview Assets.xcassets in Resources */,
+				DC75F84F2B930302003B136E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC75F8552B930303003B136E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC75F85F2B930303003B136E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC75F8432B930301003B136E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC75F84D2B930301003B136E /* ContentView.swift in Sources */,
+				DC75F84B2B930301003B136E /* MatchedGeometryEffectLabApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC75F8532B930303003B136E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC75F85C2B930303003B136E /* MatchedGeometryEffectLabTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC75F85D2B930303003B136E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC75F8682B930303003B136E /* MatchedGeometryEffectLabUITestsLaunchTests.swift in Sources */,
+				DC75F8662B930303003B136E /* MatchedGeometryEffectLabUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC75F8592B930303003B136E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC75F8462B930301003B136E /* MatchedGeometryEffectLab */;
+			targetProxy = DC75F8582B930303003B136E /* PBXContainerItemProxy */;
+		};
+		DC75F8632B930303003B136E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC75F8462B930301003B136E /* MatchedGeometryEffectLab */;
+			targetProxy = DC75F8622B930303003B136E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DC75F8692B930303003B136E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC75F86A2B930303003B136E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC75F86C2B930303003B136E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MatchedGeometryEffectLab/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.MatchedGeometryEffectLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC75F86D2B930303003B136E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MatchedGeometryEffectLab/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.MatchedGeometryEffectLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DC75F86F2B930303003B136E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.MatchedGeometryEffectLabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatchedGeometryEffectLab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MatchedGeometryEffectLab";
+			};
+			name = Debug;
+		};
+		DC75F8702B930303003B136E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.MatchedGeometryEffectLabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatchedGeometryEffectLab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MatchedGeometryEffectLab";
+			};
+			name = Release;
+		};
+		DC75F8722B930303003B136E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.MatchedGeometryEffectLabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MatchedGeometryEffectLab;
+			};
+			name = Debug;
+		};
+		DC75F8732B930303003B136E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owino.MatchedGeometryEffectLabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MatchedGeometryEffectLab;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC75F8422B930301003B136E /* Build configuration list for PBXProject "MatchedGeometryEffectLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC75F8692B930303003B136E /* Debug */,
+				DC75F86A2B930303003B136E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC75F86B2B930303003B136E /* Build configuration list for PBXNativeTarget "MatchedGeometryEffectLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC75F86C2B930303003B136E /* Debug */,
+				DC75F86D2B930303003B136E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC75F86E2B930303003B136E /* Build configuration list for PBXNativeTarget "MatchedGeometryEffectLabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC75F86F2B930303003B136E /* Debug */,
+				DC75F8702B930303003B136E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC75F8712B930303003B136E /* Build configuration list for PBXNativeTarget "MatchedGeometryEffectLabUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC75F8722B930303003B136E /* Debug */,
+				DC75F8732B930303003B136E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC75F83F2B930301003B136E /* Project object */;
+}
