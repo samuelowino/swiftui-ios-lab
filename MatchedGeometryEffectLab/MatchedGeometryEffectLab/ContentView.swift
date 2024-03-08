@@ -9,6 +9,7 @@ struct ContentView: View {
     @Namespace var animationNameSpace
     @State var isExpanded: Bool = false
     var animationId = "animationID"
+    @State var selected: Bool = false
     var body: some View {
         VStack {
             if isExpanded {
@@ -28,14 +29,19 @@ struct ContentView: View {
                         .matchedGeometryEffect(id: animationId, in: animationNameSpace)
                     Text("Collapsed View")
                         .font(.title)
+                        .scaleEffect(selected ? 1.5 : 1.0)
+                        .animation(.bouncy, value: selected)
+                        .onTapGesture {
+                            selected.toggle()
+                        }
                 }
             }
         }
-        .onTapGesture {
-            withAnimation(.spring) {
-                isExpanded.toggle()
-            }
-        }
+//        .onTapGesture {
+//            withAnimation(.spring) {
+//                isExpanded.toggle()
+//            }
+//        }
         .padding()
     }
 }
